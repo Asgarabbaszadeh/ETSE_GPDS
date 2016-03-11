@@ -1,0 +1,8 @@
+LP
+P*G
+R*G
+LP
+P+G
+R+G
+R-G
+R-G

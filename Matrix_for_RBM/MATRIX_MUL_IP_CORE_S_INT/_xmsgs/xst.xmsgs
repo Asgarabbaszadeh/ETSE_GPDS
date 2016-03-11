@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"E:\valencia\ETSE_GDSP-master - Copy\Matrix_for_RBM\MATRIX_MUL_IP_CORE_S_INT\CONTROL_UNIT_S_INT.vhd" Line 78: Assignment to <arg fmt="%s" index="1">g_cnt_delay_ready</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="new" >"E:\valencia\ETSE_GDSP-master - Copy\Matrix_for_RBM\MATRIX_MUL_IP_CORE_S_INT\CONTROL_UNIT_S_INT.vhd" Line 1452: <arg fmt="%s" index="1">mode</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"E:\valencia\ETSE_GDSP-master - Copy\SharedLibraries\BRAM_WRAPPER_V2.vhd" Line 52: Assignment to <arg fmt="%s" index="1">i_oe</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="Xst" num="2404" delta="new" > FFs/Latches &lt;<arg fmt="%s" index="1">OEB</arg>&lt;<arg fmt="%d" index="2">0</arg>:<arg fmt="%d" index="3">0</arg>&gt;&gt; (without init value) have a constant value of <arg fmt="%c" index="4">1</arg> in block &lt;<arg fmt="%s" index="5">MATRIX_MUL_IP_CORE_S_INT</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">i_rst</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">BLOCK_A_MEM_GEN[0].MEMA</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">i_rst</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">BLOCK_A_MEM_GEN[1].MEMA</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">i_rst</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">BLOCK_A_MEM_GEN[2].MEMA</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">i_rst</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">BLOCK_A_MEM_GEN[3].MEMA</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[0].MEMA/i_Read_addr_8</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">MATRIX_MUL_IP_CORE_S_INT</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[0].MEMA/i_Read_addr_7</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">MATRIX_MUL_IP_CORE_S_INT</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[0].MEMA/i_Read_addr_6</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">MATRIX_MUL_IP_CORE_S_INT</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[0].MEMA/i_Read_addr_5</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">MATRIX_MUL_IP_CORE_S_INT</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[0].MEMA/i_Read_addr_4</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">MATRIX_MUL_IP_CORE_S_INT</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[0].MEMA/i_Read_addr_3</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">MATRIX_MUL_IP_CORE_S_INT</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[1].MEMA/i_Read_addr_8</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">MATRIX_MUL_IP_CORE_S_INT</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[2].MEMA/i_Read_addr_8</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">MATRIX_MUL_IP_CORE_S_INT</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[2].MEMA/i_Read_addr_7</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">MATRIX_MUL_IP_CORE_S_INT</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[2].MEMA/i_Read_addr_6</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">MATRIX_MUL_IP_CORE_S_INT</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[2].MEMA/i_Read_addr_5</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">MATRIX_MUL_IP_CORE_S_INT</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[2].MEMA/i_Read_addr_4</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">MATRIX_MUL_IP_CORE_S_INT</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[3].MEMA/i_Read_addr_8</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">MATRIX_MUL_IP_CORE_S_INT</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[0].MEMA/i_rst</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">MATRIX_MUL_IP_CORE_S_INT</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[1].MEMA/i_Read_addr_7</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">MATRIX_MUL_IP_CORE_S_INT</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[1].MEMA/i_Read_addr_3</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">MATRIX_MUL_IP_CORE_S_INT</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[1].MEMA/i_rst</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">MATRIX_MUL_IP_CORE_S_INT</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[2].MEMA/i_Read_addr_3</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">MATRIX_MUL_IP_CORE_S_INT</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[2].MEMA/i_rst</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">MATRIX_MUL_IP_CORE_S_INT</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[3].MEMA/i_Read_addr_7</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">MATRIX_MUL_IP_CORE_S_INT</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[3].MEMA/i_Read_addr_3</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">MATRIX_MUL_IP_CORE_S_INT</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[3].MEMA/i_rst</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">MATRIX_MUL_IP_CORE_S_INT</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">p_Write_ADDR_4_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MATRIX_MUL_IP_CORE_S_INT</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">5 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;p_Write_ADDR_4_4&gt; &lt;p_Write_ADDR_4_5&gt; &lt;p_Write_ADDR_4_6&gt; &lt;p_Write_ADDR_4_7&gt; &lt;p_Write_ADDR_4_8&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[3].MEMA/i_write_addr_8</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MATRIX_MUL_IP_CORE_S_INT</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">4 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;BLOCK_A_MEM_GEN[3].MEMA/i_write_addr_7&gt; &lt;BLOCK_A_MEM_GEN[3].MEMA/i_write_addr_6&gt; &lt;BLOCK_A_MEM_GEN[3].MEMA/i_write_addr_5&gt; &lt;BLOCK_A_MEM_GEN[3].MEMA/i_write_addr_4&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">i_P_Write_ADDR_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MATRIX_MUL_IP_CORE_S_INT</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">5 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;i_P_Write_ADDR_4&gt; &lt;i_P_Write_ADDR_5&gt; &lt;i_P_Write_ADDR_6&gt; &lt;i_P_Write_ADDR_7&gt; &lt;i_P_Write_ADDR_8&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">p_Write_ADDR_5_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MATRIX_MUL_IP_CORE_S_INT</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">5 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;p_Write_ADDR_5_4&gt; &lt;p_Write_ADDR_5_5&gt; &lt;p_Write_ADDR_5_6&gt; &lt;p_Write_ADDR_5_7&gt; &lt;p_Write_ADDR_5_8&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">p_Write_ADDR_6_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MATRIX_MUL_IP_CORE_S_INT</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">5 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;p_Write_ADDR_6_4&gt; &lt;p_Write_ADDR_6_5&gt; &lt;p_Write_ADDR_6_6&gt; &lt;p_Write_ADDR_6_7&gt; &lt;p_Write_ADDR_6_8&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[0].MEMA/i_write_addr_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MATRIX_MUL_IP_CORE_S_INT</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;BLOCK_A_MEM_GEN[2].MEMA/i_write_addr_0&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[0].MEMA/i_write_addr_8</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MATRIX_MUL_IP_CORE_S_INT</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;BLOCK_A_MEM_GEN[0].MEMA/i_write_addr_7&gt; &lt;BLOCK_A_MEM_GEN[0].MEMA/i_write_addr_5&gt; &lt;BLOCK_A_MEM_GEN[0].MEMA/i_write_addr_4&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[0].MEMA/i_write_addr_9</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MATRIX_MUL_IP_CORE_S_INT</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;BLOCK_A_MEM_GEN[1].MEMA/i_write_addr_9&gt; &lt;BLOCK_A_MEM_GEN[2].MEMA/i_write_addr_9&gt; &lt;BLOCK_A_MEM_GEN[3].MEMA/i_write_addr_9&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[1].MEMA/i_write_addr_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MATRIX_MUL_IP_CORE_S_INT</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;BLOCK_A_MEM_GEN[3].MEMA/i_write_addr_0&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">p_Write_ADDR_7_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MATRIX_MUL_IP_CORE_S_INT</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">5 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;p_Write_ADDR_7_4&gt; &lt;p_Write_ADDR_7_5&gt; &lt;p_Write_ADDR_7_6&gt; &lt;p_Write_ADDR_7_7&gt; &lt;p_Write_ADDR_7_8&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[1].MEMA/i_write_addr_8</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MATRIX_MUL_IP_CORE_S_INT</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">4 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;BLOCK_A_MEM_GEN[1].MEMA/i_write_addr_7&gt; &lt;BLOCK_A_MEM_GEN[1].MEMA/i_write_addr_6&gt; &lt;BLOCK_A_MEM_GEN[1].MEMA/i_write_addr_5&gt; &lt;BLOCK_A_MEM_GEN[1].MEMA/i_write_addr_4&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">p_Write_ADDR_0_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MATRIX_MUL_IP_CORE_S_INT</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;BLOCK_A_MEM_GEN[0].MEMA/i_Read_addr_0&gt; &lt;BLOCK_A_MEM_GEN[2].MEMA/i_Read_addr_0&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">p_Write_ADDR_0_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MATRIX_MUL_IP_CORE_S_INT</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">5 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;p_Write_ADDR_0_4&gt; &lt;p_Write_ADDR_0_5&gt; &lt;p_Write_ADDR_0_6&gt; &lt;p_Write_ADDR_0_7&gt; &lt;p_Write_ADDR_0_8&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[2].MEMA/i_write_addr_8</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MATRIX_MUL_IP_CORE_S_INT</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">4 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;BLOCK_A_MEM_GEN[2].MEMA/i_write_addr_7&gt; &lt;BLOCK_A_MEM_GEN[2].MEMA/i_write_addr_6&gt; &lt;BLOCK_A_MEM_GEN[2].MEMA/i_write_addr_5&gt; &lt;BLOCK_A_MEM_GEN[2].MEMA/i_write_addr_4&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[0].MEMA/i_Read_addr_9</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MATRIX_MUL_IP_CORE_S_INT</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;BLOCK_A_MEM_GEN[1].MEMA/i_Read_addr_9&gt; &lt;BLOCK_A_MEM_GEN[2].MEMA/i_Read_addr_9&gt; &lt;BLOCK_A_MEM_GEN[3].MEMA/i_Read_addr_9&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">p_Write_ADDR_1_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MATRIX_MUL_IP_CORE_S_INT</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">5 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;p_Write_ADDR_1_4&gt; &lt;p_Write_ADDR_1_5&gt; &lt;p_Write_ADDR_1_6&gt; &lt;p_Write_ADDR_1_7&gt; &lt;p_Write_ADDR_1_8&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[1].MEMA/i_Read_addr_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MATRIX_MUL_IP_CORE_S_INT</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;BLOCK_A_MEM_GEN[3].MEMA/i_Read_addr_0&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">p_Write_ADDR_2_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MATRIX_MUL_IP_CORE_S_INT</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">5 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;p_Write_ADDR_2_4&gt; &lt;p_Write_ADDR_2_5&gt; &lt;p_Write_ADDR_2_6&gt; &lt;p_Write_ADDR_2_7&gt; &lt;p_Write_ADDR_2_8&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">p_Write_ADDR_3_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MATRIX_MUL_IP_CORE_S_INT</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">5 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;p_Write_ADDR_3_4&gt; &lt;p_Write_ADDR_3_5&gt; &lt;p_Write_ADDR_3_6&gt; &lt;p_Write_ADDR_3_7&gt; &lt;p_Write_ADDR_3_8&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[1].MEMA/i_Read_addr_6</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MATRIX_MUL_IP_CORE_S_INT</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;BLOCK_A_MEM_GEN[1].MEMA/i_Read_addr_5&gt; &lt;BLOCK_A_MEM_GEN[1].MEMA/i_Read_addr_4&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[3].MEMA/i_Read_addr_6</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MATRIX_MUL_IP_CORE_S_INT</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;BLOCK_A_MEM_GEN[3].MEMA/i_Read_addr_5&gt; &lt;BLOCK_A_MEM_GEN[3].MEMA/i_Read_addr_4&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">BLOCK_A_MEM_GEN[0].MEMA/i_write_addr_8</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MATRIX_MUL_IP_CORE_S_INT</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;BLOCK_A_MEM_GEN[0].MEMA/i_write_addr_6&gt; </arg>
+</msg>
+
+</messages>
+

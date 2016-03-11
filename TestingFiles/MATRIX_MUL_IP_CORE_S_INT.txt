@@ -1,0 +1,63 @@
+ ---------------BEGINNING OF SECTION (See end of Section for details)---------------
+1         2         3         4         
+8         5         6         7         
+11        12        9         10        
+14        15        16        13        
+--------------- Data loaded into BRAM. 27 clock cycles to load,26 clock cycles to unload---------------
+ 
+ ---------------BEGINNING OF SECTION (See end of Section for details)---------------
+1         2         3         4         
+8         5         6         7         
+11        12        9         10        
+14        15        16        13        
+--------------- Data loaded into BRAM. 27 clock cycles to load,26 clock cycles to unload---------------
+ 
+---------------BEGINNING OF SECTION (See end of Section for details)---------------
+124       130       90        140       
+364       320       318       246       
+402       588       516       506       
+694       558       812       712       
+--------------- result of P * G from upper bank of BRAM. 26 clock cycles to finish multiplication, 26 clock cycles to unload---------------
+ 
+---------------BEGINNING OF SECTION (See end of Section for details)---------------
+5182      5828      4628      6466      
+16682     13750     15124     11808     
+18988     26898     22318     24420     
+33716     26168     37114     30886     
+--------------- result of R * G from lower bank of BRAM. 26 clock cycles to finish multiplication, 26 clock cycles to unload---------------
+ 
+ ---------------BEGINNING OF SECTION (See end of Section for details)---------------
+1         2         3         4         
+8         5         6         7         
+11        12        9         10        
+14        15        16        13        
+--------------- Data loaded into BRAM. 27 clock cycles to load,26 clock cycles to unload---------------
+ 
+---------------BEGINNING OF SECTION (See end of Section for details)---------------
+14        14        10        13        
+26        7         12        24        
+22        33        38        20        
+33        19        24        18        
+--------------- result of P + G from upper bank of BRAM. 26 clock cycles to finish addition, 26 clock cycles to unload---------------
+ 
+---------------BEGINNING OF SECTION (See end of Section for details)---------------
+27        26        17        22        
+44        9         18        41        
+33        54        67        30        
+52        23        32        23        
+--------------- result of R + G from lower bank of BRAM. 26 clock cycles to finish addition, 26 clock cycles to unload---------------
+ 
+---------------BEGINNING OF SECTION (See end of Section for details)---------------
+1         2         3         4         
+8         5         6         7         
+11        12        9         10        
+14        15        16        13        
+--------------- result of R - G from lower bank of BRAM. 26 clock cycles to finish subtraction, 26 clock cycles to unload---------------
+ 
+---------------BEGINNING OF SECTION (See end of Section for details)---------------
+1         2         3         4         
+8         5         6         7         
+11        12        9         10        
+14        15        16        13        
+--------------- result of R - G from lower bank of BRAM. 26 clock cycles to finish subtraction, 26 clock cycles to unload---------------
+ 

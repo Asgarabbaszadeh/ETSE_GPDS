@@ -1,0 +1,28 @@
+Command line:
+   TB_MATRIX_MUL_IP_CORE_S_INT_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  49232
+
+Thu Mar 10 05:46:46 2016
+
+
+ Elaboration Time: 0.514803 sec
+
+ Current Memory Usage: 733.7 Meg
+
+ Total Signals          : 4625
+ Total Nets             : 91934
+ Total Signal Drivers   : 1468
+ Total Blocks           : 801
+ Total Primitive Blocks : 280
+ Total Processes        : 1313
+ Total Traceable Variables  : 4759
+ Total Scalar Nets and Variables : 112850
+
+ Total Simulation Time: 1.34161 sec
+
+ Current Memory Usage: 733.7 Meg
+
+Thu Mar 10 05:51:46 2016
+
