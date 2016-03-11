@@ -1,8 +1,6 @@
 LP
-P*G
+G-P
 R*G
-LP
-P+G
-R+G
-R-G
-R-G
+Gt-P
+G-Pt
+Gt-Pt

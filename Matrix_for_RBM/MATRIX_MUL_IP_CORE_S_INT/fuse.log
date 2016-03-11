@@ -14,8 +14,8 @@ Parsing VHDL file "E:/valencia/ETSE_GDSP-master - Copy/Matrix_for_RBM/MATRIX_MUL
 Parsing VHDL file "E:/valencia/ETSE_GDSP-master - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/TB_MATRIX_MUL_IP_CORE_S_INT.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 109172 KB
-Fuse CPU Usage: 1808 ms
+Fuse Memory Usage: 109364 KB
+Fuse CPU Usage: 1434 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package textio
@@ -66,8 +66,8 @@ Compiling architecture behavioral of entity MATRIX_MUL_IP_CORE_S_INT [\MATRIX_MU
 Compiling architecture behavioral of entity STANDARD_RAM [\STANDARD_RAM(4,10,18)\]
 Compiling architecture behavior of entity tb_matrix_mul_ip_core_s_int
 Time Resolution for simulation is 1ps.
-Waiting for 33 sub-compilation(s) to finish...
+Waiting for 22 sub-compilation(s) to finish...
 Compiled 82 VHDL Units
 Built simulation executable E:/valencia/ETSE_GDSP-master - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/TB_MATRIX_MUL_IP_CORE_S_INT_isim_beh.exe
-Fuse Memory Usage: 152864 KB
-Fuse CPU Usage: 3806 ms
+Fuse Memory Usage: 152032 KB
+Fuse CPU Usage: 2979 ms

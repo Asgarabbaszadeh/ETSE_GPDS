@@ -2,14 +2,14 @@ Command line:
    TB_MATRIX_MUL_IP_CORE_S_INT_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  49232
+     -socket  53975
 
-Thu Mar 10 05:46:46 2016
+Fri Mar 11 08:10:24 2016
 
 
- Elaboration Time: 0.514803 sec
+ Elaboration Time: 0.452402 sec
 
- Current Memory Usage: 733.7 Meg
+ Current Memory Usage: 733.671 Meg
 
  Total Signals          : 4625
  Total Nets             : 91934
@@ -20,9 +20,9 @@ Thu Mar 10 05:46:46 2016
  Total Traceable Variables  : 4759
  Total Scalar Nets and Variables : 112850
 
- Total Simulation Time: 1.34161 sec
+ Total Simulation Time: 1.37281 sec
 
- Current Memory Usage: 733.7 Meg
+ Current Memory Usage: 733.671 Meg
 
-Thu Mar 10 05:51:46 2016
+Fri Mar 11 08:50:33 2016
 

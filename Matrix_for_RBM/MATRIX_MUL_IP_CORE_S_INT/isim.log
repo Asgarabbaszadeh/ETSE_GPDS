@@ -75,7 +75,6 @@ at 85 ns(1), Instance /tb_matrix_mul_ip_core_s_int/uut/\block_a_mem_gen(0)\/MEMA
 at 85 ns(1), Instance /tb_matrix_mul_ip_core_s_int/uut/\block_a_mem_gen(1)\/MEMA/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 85 ns(1), Instance /tb_matrix_mul_ip_core_s_int/uut/\block_a_mem_gen(2)\/MEMA/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 85 ns(1), Instance /tb_matrix_mul_ip_core_s_int/uut/\block_a_mem_gen(3)\/MEMA/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 4845 ns(2), Instance /tb_matrix_mul_ip_core_s_int/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
  ---------------BEGINNING OF SECTION (See end of Section for details)---------------
 1         2         3         4         
 8         5         6         7         
@@ -91,51 +90,37 @@ at 4845 ns(2), Instance /tb_matrix_mul_ip_core_s_int/ : Warning: NUMERIC_STD.TO_
 --------------- Data loaded into BRAM. 27 clock cycles to load,26 clock cycles to unload---------------
  
 ---------------BEGINNING OF SECTION (See end of Section for details)---------------
-124       130       90        140       
-364       320       318       246       
-402       588       516       506       
-694       558       812       712       
---------------- result of P * G from upper bank of BRAM. 26 clock cycles to finish multiplication, 26 clock cycles to unload---------------
+12        10        4         5         
+10        262141    0         10        
+0         9         20        0         
+5         262133    262136    262136    
+--------------- result of G-P from upper bank of BRAM. 26 clock cycles to finish subtraction, 26 clock cycles to unload---------------
  
 ---------------BEGINNING OF SECTION (See end of Section for details)---------------
-5182      5828      4628      6466      
-16682     13750     15124     11808     
-18988     26898     22318     24420     
-33716     26168     37114     30886     
+317       339       318       412       
+263       301       254       129       
+176       252       305       411       
+261816    262020    261867    261691    
 --------------- result of R * G from lower bank of BRAM. 26 clock cycles to finish multiplication, 26 clock cycles to unload---------------
  
- ---------------BEGINNING OF SECTION (See end of Section for details)---------------
-1         2         3         4         
-8         5         6         7         
-11        12        9         10        
-14        15        16        13        
---------------- Data loaded into BRAM. 27 clock cycles to load,26 clock cycles to unload---------------
+---------------BEGINNING OF SECTION (See end of Section for details)---------------
+261840    261807    261855    261737    
+261900    261855    261896    262025    
+261979    261896    261846    261750    
+346       145       285       462       
+--------------- result of Gt-P from upper bank of BRAM. 26 clock cycles to finish subtraction, 26 clock cycles to unload---------------
  
 ---------------BEGINNING OF SECTION (See end of Section for details)---------------
-14        14        10        13        
-26        7         12        24        
-22        33        38        20        
-33        19        24        18        
---------------- result of P + G from upper bank of BRAM. 26 clock cycles to finish addition, 26 clock cycles to unload---------------
+261840    261855    261846    462       
+346       261807    261896    261750    
+261979    145       261855    262025    
+261900    261896    285       261737    
+--------------- result of G-Pt from upper bank of BRAM. 26 clock cycles to finish subtraction, 26 clock cycles to unload---------------
  
 ---------------BEGINNING OF SECTION (See end of Section for details)---------------
-27        26        17        22        
-44        9         18        41        
-33        54        67        30        
-52        23        32        23        
---------------- result of R + G from lower bank of BRAM. 26 clock cycles to finish addition, 26 clock cycles to unload---------------
- 
----------------BEGINNING OF SECTION (See end of Section for details)---------------
-1         2         3         4         
-8         5         6         7         
-11        12        9         10        
-14        15        16        13        
---------------- result of R - G from lower bank of BRAM. 26 clock cycles to finish subtraction, 26 clock cycles to unload---------------
- 
----------------BEGINNING OF SECTION (See end of Section for details)---------------
-1         2         3         4         
-8         5         6         7         
-11        12        9         10        
-14        15        16        13        
---------------- result of R - G from lower bank of BRAM. 26 clock cycles to finish subtraction, 26 clock cycles to unload---------------
+261840    261845    261868    458       
+347       261817    261896    261743    
+261979    128       261833    262032    
+261899    261913    285       261741    
+--------------- result of Gt-Pt from upper bank of BRAM. 26 clock cycles to finish subtraction, 26 clock cycles to unload---------------
  

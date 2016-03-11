@@ -11,23 +11,5 @@
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;E:/valencia/ETSE_GDSP-master - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/CONTROL_UNIT_S_INT.vhd&quot; into library work</arg>
 </msg>
 
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;E:/valencia/ETSE_GDSP-master - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/MATRIX_MUL_IP_CORE_S_INT.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;E:/valencia/ETSE_GDSP-master - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/TB_MATRIX_MUL_IP_CORE_S_INT.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;E:/valencia/ETSE_GDSP-master - Copy/SharedLibraries/BRAM_WRAPPER_V2.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;E:/valencia/ETSE_GDSP-master - Copy/SharedLibraries/MATRIX_MUL_IP_CORE_LIBRARY.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;E:/valencia/ETSE_GDSP-master - Copy/SharedLibraries/STANDARD_RAM.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;E:/valencia/ETSE_GDSP-master - Copy/SharedLibraries/txt_util.vhd&quot; into library work</arg>
-</msg>
-
 </messages>
 

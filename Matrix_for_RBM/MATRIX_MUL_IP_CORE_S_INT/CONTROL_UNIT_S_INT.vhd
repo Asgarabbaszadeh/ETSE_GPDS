@@ -234,236 +234,68 @@ if (rising_edge(CLK)) then
 						else
 						G_EN <= '1'; -- Enable GRAM
 						if (mode="000") then
-						    if (P='0') then
-							   	if G='0' then
-								   	state<=PG;
-										Write_SHFT <= '1';
-									   i_addr_cnt<=COLUMN_TOTAL-1;
-									   i_row_cnt<=1;
-									   i_col_cnt<=0;
-									   Read_SHFT <='1';							
-									   OPCODE<="001";
-            						s_CSEL <= (others => '1');--Enble BRAM for Saving multiplication result.		
-             						WE <= '0';
-								   else
-									   state<=PGt;
-										Write_SHFT <= '1';
-									   Read_SHFT <='1';							
-									   i_addr_cnt<=COLUMN_TOTAL-1;
-									   i_row_cnt<=0;
-									   i_col_cnt<=1;
-									   OPCODE<="001";
-            						s_CSEL <= (others => '1');--Enble BRAM for Saving multiplication result.		
-             						WE <= '0';
-								  end if;
-							 else
-								if G='0' then
-									state<=PtG;
-									Write_SHFT <= '1';
-									Read_SHFT <='0';							
-									i_addr_cnt<=1;
-									i_row_cnt<=1;
-									i_col_cnt<=0;
-									OPCODE<="001";
-           						s_CSEL <= (others => '1');--Enble BRAM for Saving multiplication result.		
-           						WE <= '0';
-								else
-									state<=PtGt;
-									Write_SHFT <= '1';
-									Read_SHFT <='0';
-									i_addr_cnt<=1;
+   						Write_SHFT <= '1';
+							OPCODE<="001";
+     						s_CSEL <= (others => '1');--Enble BRAM for Saving multiplication result.		
+     						WE <= '0';
+							if G='0' then
+								i_row_cnt<=1;
+								i_col_cnt<=0;
+							else
 									i_row_cnt<=0;
 									i_col_cnt<=1;
-									OPCODE<="001";
-           						s_CSEL <= (others => '1');--Enble BRAM for Saving multiplication result.		
-           						WE <= '0';
-								end if;
 							end if;
-						elsif mode="001" then
-						    if (P='0') then
+    					   if (P='0') then
+      						   Read_SHFT <='1';							
+								   i_addr_cnt<=COLUMN_TOTAL-1;
 							   	if G='0' then
-								   	state<=PpG;
-										Write_SHFT <= '0';
-									   i_addr_cnt<=0;
-									   i_row_cnt<=0;
-									   i_col_cnt<=0;
-									   Read_SHFT <='0';							
-									   OPCODE<="010";
-            						s_CSEL <= (0=>'1',others => '0');--Enble BRAM for Saving multiplication result.		
-             						WE <= '1';
+								   	state<=PG;
 								   else
-									   state<=PpGt;
-										Write_SHFT <= '0';
-									   Read_SHFT <='0';							
-									   i_addr_cnt<=0;
-									   i_row_cnt<=0;
-									   i_col_cnt<=0;
-									   OPCODE<="010";
-            						s_CSEL <= (0=>'1',others => '0');--Enble BRAM for Saving multiplication result.		
-             						WE <= '1';
+									   state<=PGt;
 								  end if;
 							 else
+  							Read_SHFT <='0';
+							i_addr_cnt<=1;
 								if G='0' then
-									state<=PtpG;
-									Write_SHFT <= '0';
-									Read_SHFT <='1';							
-									i_addr_cnt<=0;
-									i_row_cnt<=0;
-									i_col_cnt<=0;
-									OPCODE<="010";
-           						s_CSEL <= (0=>'1',others => '0');--Enble BRAM for Saving multiplication result.		
-           						WE <= '1';
+									state<=PtG;
 								else
-									state<=PtpGt;
-									Write_SHFT <= '0';
-									Read_SHFT <='1';
-									i_addr_cnt<=0;
-									i_row_cnt<=0;
-									i_col_cnt<=0;
-									OPCODE<="010";
-          						s_CSEL <= (0=>'1',others => '0');--Enble BRAM for Saving multiplication result.		
-           						WE <= '1';
+									state<=PtGt;
 								end if;
 							end if;
-						elsif mode="010" then
-						    if (P='0') then
-							   	if G='0' then
-								   	state<=PmG;
-										Write_SHFT <= '0';
-									   i_addr_cnt<=0;
-									   i_row_cnt<=0;
-									   i_col_cnt<=0;
-									   Read_SHFT <='0';							
-									   OPCODE<="100";
-            						s_CSEL <= (0=>'1',others => '0');--Enble BRAM for Saving multiplication result.		
-             						WE <= '1';
-								   else
-									   state<=PmGt;
-										Write_SHFT <= '0';
-									   Read_SHFT <='0';							
-									   i_addr_cnt<=0;
-									   i_row_cnt<=0;
-									   i_col_cnt<=0;
-									   OPCODE<="100";
-            						s_CSEL <= (0=>'1',others => '0');--Enble BRAM for Saving multiplication result.		
-             						WE <= '1';
-								  end if;
-							 else
-								if G='0' then
-									state<=PtmG;
-									Write_SHFT <= '0';
-									Read_SHFT <='1';							
-									i_addr_cnt<=0;
-									i_row_cnt<=0;
-									i_col_cnt<=0;
-									OPCODE<="100";
-           						s_CSEL <= (0=>'1',others => '0');--Enble BRAM for Saving multiplication result.		
-           						WE <= '1';
-								else
-									state<=PtmGt;
-									Write_SHFT <= '0';
-									Read_SHFT <='1';
-									i_addr_cnt<=0;
-									i_row_cnt<=0;
-									i_col_cnt<=0;
-									OPCODE<="100";
-          						s_CSEL <= (0=>'1',others => '0');--Enble BRAM for Saving multiplication result.		
-           						WE <= '1';
-								end if;
-							end if;
-						elsif mode="011" then
-						    if (P='0') then
-							   	if G='0' then
-								   	state<=GmP;
-										Write_SHFT <= '0';
-									   i_addr_cnt<=0;
-									   i_row_cnt<=0;
-									   i_col_cnt<=0;
-									   Read_SHFT <='0';							
-									   OPCODE<="101";
-            						s_CSEL <= (0=>'1',others => '0');--Enble BRAM for Saving multiplication result.		
-             						WE <= '1';
-								   else
-									   state<=GtmP;
-										Write_SHFT <= '0';
-									   Read_SHFT <='0';							
-									   i_addr_cnt<=0;
-									   i_row_cnt<=0;
-									   i_col_cnt<=0;
-									   OPCODE<="101";
-            						s_CSEL <= (0=>'1',others => '0');--Enble BRAM for Saving multiplication result.		
-             						WE <= '1';
-								  end if;
-							 else
-								if G='0' then
-									state<=GmPt;
-									Write_SHFT <= '0';
-									Read_SHFT <='1';							
-									i_addr_cnt<=0;
-									i_row_cnt<=0;
-									i_col_cnt<=0;
-									OPCODE<="101";
-           						s_CSEL <= (0=>'1',others => '0');--Enble BRAM for Saving multiplication result.		
-           						WE <= '1';
-								else
-									state<=GtmPt;
-									Write_SHFT <= '0';
-									Read_SHFT <='1';
-									i_addr_cnt<=0;
-									i_row_cnt<=0;
-									i_col_cnt<=0;
-									OPCODE<="101";
-          						s_CSEL <= (0=>'1',others => '0');--Enble BRAM for Saving multiplication result.		
-           						WE <= '1';
-								end if;
-							end if;
-						elsif mode="100" then
-						    if (P='0') then
-							   	if G='0' then
-								   	state<=PdG;
-										Write_SHFT <= '0';
-									   i_addr_cnt<=0;
-									   i_row_cnt<=0;
-									   i_col_cnt<=0;
-									   Read_SHFT <='0';							
-									   OPCODE<="001";
-            						s_CSEL <= (0=>'1',others => '0');--Enble BRAM for Saving multiplication result.		
-             						WE <= '1';
-								   else
-									   state<=PdGt;
-										Write_SHFT <= '0';
-									   Read_SHFT <='0';							
-									   i_addr_cnt<=0;
-									   i_row_cnt<=0;
-									   i_col_cnt<=0;
-									   OPCODE<="001";
-            						s_CSEL <= (0=>'1',others => '0');--Enble BRAM for Saving multiplication result.		
-             						WE <= '1';
-								  end if;
-							 else
-								if G='0' then
-									state<=PtdG;
-									Write_SHFT <= '0';
-									Read_SHFT <='1';							
-									i_addr_cnt<=0;
-									i_row_cnt<=0;
-									i_col_cnt<=0;
-									OPCODE<="001";
-           						s_CSEL <= (0=>'1',others => '0');--Enble BRAM for Saving multiplication result.		
-           						WE <= '1';
-								else
-									state<=PtdGt;
-									Write_SHFT <= '0';
-									Read_SHFT <='1';
-									i_addr_cnt<=0;
-									i_row_cnt<=0;
-									i_col_cnt<=0;
-									OPCODE<="001";
-          						s_CSEL <= (0=>'1',others => '0');--Enble BRAM for Saving multiplication result.		
-           						WE <= '1';
-								end if;
-							end if;
-						
+						else
+						   Write_SHFT <= '0';
+					      i_addr_cnt<=0;
+					      i_row_cnt<=0;
+					      i_col_cnt<=0;
+  						   s_CSEL <= (0=>'1',others => '0');--Enble BRAM for Saving multiplication result.		
+  						   WE <= '1';
+						   if P='0' then
+						      Read_SHFT <='0';
+						   else
+						      Read_SHFT <='1';
+						   end if;   
+				         if (P='0') then
+						  	   if G='0' then
+						   	   state<=PpG;
+						      else
+							      state<=PpGt;
+					 	      end if;
+					     else
+						     if G='0' then
+							     state<=PtpG;
+					        else
+							     state<=PtpGt;
+						     end if;
+                    end if;
+						  if mode="001" then
+						     OPCODE<="010";
+   					   elsif mode="010" then
+		     				   OPCODE<="100";
+      					elsif mode="011" then
+   						    OPCODE<="101";
+	      				elsif mode="100" then
+			   			    OPCODE<="001";
+          				end if;		
                   end if;
 					end if;
 				when PG =>
@@ -675,17 +507,15 @@ if (rising_edge(CLK)) then
 								if i= COLUMN_TOTAL-1 then-- full round 
 									j:=j+1;
 									if i_addr_cnt/=COLUMN_TOTAL-1 then -- P addr
-									   i_addr_cnt<=i_addr_cnt+1;
+									   i_addr_cnt<=j;
+										i_row_cnt<=j;
                            end if;
-									if i_row_cnt/=COLUMN_TOTAL-1 then -- P addr
-										i_row_cnt<=i_row_cnt+1;
-									end if;
 									i:=0;
 								else
 									i:=i+1;
-                           if i_col_cnt=COLUMN_TOTAL-1 then							   
+                            if i_col_cnt=COLUMN_TOTAL-1 then							   
 								      i_col_cnt<=0;
-                           else
+							      else
                               i_col_cnt<=i_col_cnt+1;
                            end if;									 
 								end if;
@@ -764,7 +594,6 @@ if (rising_edge(CLK)) then
 									if i_addr_cnt=0 then
 									   i_addr_cnt<=COLUMN_TOTAL-1;
 									else
---									i_addr_cnt/=COLUMN_TOTAL-1 then -- P addr
 									   i_addr_cnt<=i_addr_cnt-1;
                            end if;
 									if i_row_cnt/=COLUMN_TOTAL-1 then -- P addr
@@ -800,570 +629,6 @@ if (rising_edge(CLK)) then
 							end if;
 -------------------------------------------------------------------------------------------------
 					when PtpGt =>
-							if v_OP_DONE = '1' then
-							   WE <='0';
-								s_CSEL <= (others => '1');--Enble BRAM for Saving multiplication result.		
-							end if;
-							if v_OP_DONE = '0' then 
-								WE <='1';					
-								if i= COLUMN_TOTAL-1 then-- full round 
-									j:=j+1;
-									if i_addr_cnt=0 then
-									   i_addr_cnt<=COLUMN_TOTAL-1;
-									else
-									   i_addr_cnt<=i_addr_cnt-1;
-                           end if;
-
---									if i_addr_cnt/=COLUMN_TOTAL-1 then -- P addr
---									   i_addr_cnt<=i_addr_cnt+1;
---                           end if;
-									if i_col_cnt/=COLUMN_TOTAL-1 then -- P addr
-										i_col_cnt<=i_col_cnt+1;
-									end if;
-									i:=0;
-								else
-									i:=i+1;
-                        if i_row_cnt=COLUMN_TOTAL-1 then							   
-								    i_row_cnt<=0;
-                        else
-                            i_row_cnt<=i_row_cnt+1;
-                        end if;									 
-
-								end if;
-   							if j= COLUMN_TOTAL then 
-									s_CSEL<=(others => '0');
-								else 
-    							      s_CSEL <= s_CSEL(s_CSEL'length - 2 downto 0) & s_CSEL(s_CSEL'length - 1); --rol 1 (shift one place left with roll over).
-								end if;	
-
-								if j= COLUMN_TOTAL then 
-									v_OP_DONE :='1';
-									v_OPCODE :="111";
-								else
-									v_OP_DONE :='0';
-								end if;
-							else
-								if v_OP_DONE = '1' and cnt_delay_ready = (PIPELINE_DELAY + COLUMN_TOTAL*COLUMN_TOTAL) then -- wait until gets to BRAM.--then
-									WE<='0';								
-									state<=DONE;
-								end if;
-							end if;
--------------------------------------------------------------------------------------------------
-					when PmG =>
-							if v_OP_DONE = '1' then
-							   WE <='0';
-								s_CSEL <= (others => '1');--Enble BRAM for Saving multiplication result.		
-							end if;
-							if v_OP_DONE = '0' then 
-								WE <='1';					
-								if i= COLUMN_TOTAL-1 then-- full round 
-									j:=j+1;
-									if i_addr_cnt/=COLUMN_TOTAL-1 then -- P addr
-									   i_addr_cnt<=i_addr_cnt+1;
-                           end if;
-									if i_row_cnt/=COLUMN_TOTAL-1 then -- P addr
-										i_row_cnt<=i_row_cnt+1;
-									end if;
-									i:=0;
-								else
-									i:=i+1;
-                        if i_col_cnt=COLUMN_TOTAL-1 then							   
-								    i_col_cnt<=0;
-                        else
-                            i_col_cnt<=i_col_cnt+1;
-                        end if;									 
-
-								end if;
-   							if j= COLUMN_TOTAL then 
-									s_CSEL<=(others => '0');
-								else 
-    							      s_CSEL <= s_CSEL(s_CSEL'length - 2 downto 0) & s_CSEL(s_CSEL'length - 1); --rol 1 (shift one place left with roll over).
-								end if;
-
-								if j= COLUMN_TOTAL then 
-									v_OP_DONE :='1';
-									v_OPCODE :="111";
-								else
-									v_OP_DONE :='0';
-								end if;
-							else
-								if v_OP_DONE = '1' and cnt_delay_ready = (PIPELINE_DELAY + COLUMN_TOTAL*COLUMN_TOTAL) then -- wait until gets to BRAM.--then
-									WE<='0';								
-									state<=DONE;
-								end if;
-							end if;
--------------------------------------------------------------------------------------------------
-					when PmGt =>
-							if v_OP_DONE = '1' then
-							   WE <='0';
-								s_CSEL <= (others => '1');--Enble BRAM for Saving multiplication result.		
-							end if;
-							if v_OP_DONE = '0' then 
-								WE <='1';					
-								if i= COLUMN_TOTAL-1 then-- full round 
-									j:=j+1;
-									if i_addr_cnt/=COLUMN_TOTAL-1 then -- P addr
-									   i_addr_cnt<=i_addr_cnt+1;
-                           end if;
-									if i_col_cnt/=COLUMN_TOTAL-1 then -- P addr
-										i_col_cnt<=i_col_cnt+1;
-									end if;
-									i:=0;
-								else
-									i:=i+1;
-                        if i_row_cnt=COLUMN_TOTAL-1 then							   
-								    i_row_cnt<=0;
-                        else
-                            i_row_cnt<=i_row_cnt+1;
-                        end if;									 
-
-								end if;
-   							if j= COLUMN_TOTAL then 
-									s_CSEL<=(others => '0');
-								else 
-    							      s_CSEL <= s_CSEL(s_CSEL'length - 2 downto 0) & s_CSEL(s_CSEL'length - 1); --rol 1 (shift one place left with roll over).
-								end if;
-
-								if j= COLUMN_TOTAL then 
-									v_OP_DONE :='1';
-									v_OPCODE :="111";
-								else
-									v_OP_DONE :='0';
-								end if;
-							else
-								if v_OP_DONE = '1' and cnt_delay_ready = (PIPELINE_DELAY + COLUMN_TOTAL*COLUMN_TOTAL) then -- wait until gets to BRAM.--then
-									WE<='0';								
-									state<=DONE;
-								end if;
-							end if;
--------------------------------------------------------------------------------------------------
-					when PtmG =>
-							if v_OP_DONE = '1' then
-							   WE <='0';
-								s_CSEL <= (others => '1');--Enble BRAM for Saving multiplication result.		
-							end if;
-							if v_OP_DONE = '0' then 
-								WE <='1';					
-								if i= COLUMN_TOTAL-1 then-- full round 
-									j:=j+1;
-									if i_addr_cnt=0 then
-									   i_addr_cnt<=COLUMN_TOTAL-1;
-									else
---									i_addr_cnt/=COLUMN_TOTAL-1 then -- P addr
-									   i_addr_cnt<=i_addr_cnt-1;
-                           end if;
-									if i_row_cnt/=COLUMN_TOTAL-1 then -- P addr
-										i_row_cnt<=i_row_cnt+1;
-									end if;
-									i:=0;
-								else
-									i:=i+1;
-                        if i_col_cnt=COLUMN_TOTAL-1 then							   
-								    i_col_cnt<=0;
-                        else
-                            i_col_cnt<=i_col_cnt+1;
-                        end if;									 
-
-								end if;
-   							if j= COLUMN_TOTAL then 
-									s_CSEL<=(others => '0');
-								else 
-    							      s_CSEL <= s_CSEL(s_CSEL'length - 2 downto 0) & s_CSEL(s_CSEL'length - 1); --rol 1 (shift one place left with roll over).
-								end if;
-
-								if j= COLUMN_TOTAL then 
-									v_OP_DONE :='1';
-									v_OPCODE :="111";
-								else
-									v_OP_DONE :='0';
-								end if;
-							else
-								if v_OP_DONE = '1' and cnt_delay_ready = (PIPELINE_DELAY + COLUMN_TOTAL*COLUMN_TOTAL) then -- wait until gets to BRAM.--then
-									WE<='0';								
-									state<=DONE;
-								end if;
-							end if;
--------------------------------------------------------------------------------------------------
-					when PtmGt =>
-							if v_OP_DONE = '1' then
-							   WE <='0';
-								s_CSEL <= (others => '1');--Enble BRAM for Saving multiplication result.		
-							end if;
-							if v_OP_DONE = '0' then 
-								WE <='1';					
-								if i= COLUMN_TOTAL-1 then-- full round 
-									j:=j+1;
-									if i_addr_cnt=0 then
-									   i_addr_cnt<=COLUMN_TOTAL-1;
-									else
---									i_addr_cnt/=COLUMN_TOTAL-1 then -- P addr
-									   i_addr_cnt<=i_addr_cnt-1;
-                           end if;
-									if i_col_cnt/=COLUMN_TOTAL-1 then -- P addr
-										i_col_cnt<=i_col_cnt+1;
-									end if;
-									i:=0;
-								else
-									i:=i+1;
-                        if i_row_cnt=COLUMN_TOTAL-1 then							   
-								    i_row_cnt<=0;
-                        else
-                            i_row_cnt<=i_row_cnt+1;
-                        end if;									 
-
-								end if;
-   							if j= COLUMN_TOTAL then 
-									s_CSEL<=(others => '0');
-								else 
-    							      s_CSEL <= s_CSEL(s_CSEL'length - 2 downto 0) & s_CSEL(s_CSEL'length - 1); --rol 1 (shift one place left with roll over).
-								end if;
-
-								if j= COLUMN_TOTAL then 
-									v_OP_DONE :='1';
-									v_OPCODE :="111";
-								else
-									v_OP_DONE :='0';
-								end if;
-							else
-								if v_OP_DONE = '1' and cnt_delay_ready = (PIPELINE_DELAY + COLUMN_TOTAL*COLUMN_TOTAL) then -- wait until gets to BRAM.--then
-									WE<='0';								
-									state<=DONE;
-								end if;
-							end if;
--------------------------------------------------------------------------------------------------
-					when GmP =>
-							if v_OP_DONE = '1' then
-							   WE <='0';
-								s_CSEL <= (others => '1');--Enble BRAM for Saving multiplication result.		
-							end if;
-							if v_OP_DONE = '0' then 
-								WE <='1';					
-								if i= COLUMN_TOTAL-1 then-- full round 
-									j:=j+1;
-									if i_addr_cnt/=COLUMN_TOTAL-1 then -- P addr
-									   i_addr_cnt<=i_addr_cnt+1;
-                           end if;
-									if i_row_cnt/=COLUMN_TOTAL-1 then -- P addr
-										i_row_cnt<=i_row_cnt+1;
-									end if;
-									i:=0;
-								else
-									i:=i+1;
-                        if i_col_cnt=COLUMN_TOTAL-1 then							   
-								    i_col_cnt<=0;
-                        else
-                            i_col_cnt<=i_col_cnt+1;
-                        end if;									 
-
-								end if;
-   							if j= COLUMN_TOTAL then 
-									s_CSEL<=(others => '0');
-								else 
-    							      s_CSEL <= s_CSEL(s_CSEL'length - 2 downto 0) & s_CSEL(s_CSEL'length - 1); --rol 1 (shift one place left with roll over).
-								end if;
-
-								if j= COLUMN_TOTAL then 
-									v_OP_DONE :='1';
-									v_OPCODE :="111";
-								else
-									v_OP_DONE :='0';
-								end if;
-							else
-								if v_OP_DONE = '1' and cnt_delay_ready = (PIPELINE_DELAY + COLUMN_TOTAL*COLUMN_TOTAL) then -- wait until gets to BRAM.--then
-									WE<='0';								
-									state<=DONE;
---									v_OPCODE := "111";
-								end if;
-							end if;
---							OPCODE<= v_OPCODE; --"111";
--------------------------------------------------------------------------------------------------
-					when GtmP =>
-							if v_OP_DONE = '1' then
-							   WE <='0';
-								s_CSEL <= (others => '1');--Enble BRAM for Saving multiplication result.		
-							end if;
-							if v_OP_DONE = '0' then 
-								WE <='1';					
-								if i= COLUMN_TOTAL-1 then-- full round 
-									j:=j+1;
-									if i_addr_cnt/=COLUMN_TOTAL-1 then -- P addr
-									   i_addr_cnt<=i_addr_cnt+1;
-                           end if;
-									if i_col_cnt/=COLUMN_TOTAL-1 then -- P addr
-										i_col_cnt<=i_col_cnt+1;
-									end if;
-									i:=0;
-								else
-									i:=i+1;
-                        if i_row_cnt=COLUMN_TOTAL-1 then							   
-								    i_row_cnt<=0;
-                        else
-                            i_row_cnt<=i_row_cnt+1;
-                        end if;									 
-
-								end if;
-   							if j= COLUMN_TOTAL then 
-									s_CSEL<=(others => '0');
-								else 
-    							      s_CSEL <= s_CSEL(s_CSEL'length - 2 downto 0) & s_CSEL(s_CSEL'length - 1); --rol 1 (shift one place left with roll over).
-								end if;
-
-								if j= COLUMN_TOTAL then 
-									v_OP_DONE :='1';
-									v_OPCODE :="111";
-								else
-									v_OP_DONE :='0';
-								end if;
-							else
-								if v_OP_DONE = '1' and cnt_delay_ready = (PIPELINE_DELAY + COLUMN_TOTAL*COLUMN_TOTAL) then -- wait until gets to BRAM.--then
-									WE<='0';								
-									state<=DONE;
---									v_OPCODE := "111";
-								end if;
-							end if;
---							OPCODE<= v_OPCODE; --"111";
--------------------------------------------------------------------------------------------------
-					when GmPt =>
-							if v_OP_DONE = '1' then
-							   WE <='0';
-								s_CSEL <= (others => '1');--Enble BRAM for Saving multiplication result.		
-							end if;
-							if v_OP_DONE = '0' then 
-								WE <='1';					
-								if i= COLUMN_TOTAL-1 then-- full round 
-									j:=j+1;
-									if i_addr_cnt=0 then
-									   i_addr_cnt<=COLUMN_TOTAL-1;
-									else
---									i_addr_cnt/=COLUMN_TOTAL-1 then -- P addr
-									   i_addr_cnt<=i_addr_cnt-1;
-                           end if;
-									if i_row_cnt/=COLUMN_TOTAL-1 then -- P addr
-										i_row_cnt<=i_row_cnt+1;
-									end if;
-									i:=0;
-								else
-									i:=i+1;
-                        if i_col_cnt=COLUMN_TOTAL-1 then							   
-								    i_col_cnt<=0;
-                        else
-                            i_col_cnt<=i_col_cnt+1;
-                        end if;									 
-
-								end if;
-   							if j= COLUMN_TOTAL then 
-									s_CSEL<=(others => '0');
-								else 
-    							      s_CSEL <= s_CSEL(s_CSEL'length - 2 downto 0) & s_CSEL(s_CSEL'length - 1); --rol 1 (shift one place left with roll over).
-								end if;
-
-								if j= COLUMN_TOTAL then 
-									v_OP_DONE :='1';
-									v_OPCODE :="111";
-								else
-									v_OP_DONE :='0';
-								end if;
-							else
-								if v_OP_DONE = '1' and cnt_delay_ready = (PIPELINE_DELAY + COLUMN_TOTAL*COLUMN_TOTAL) then -- wait until gets to BRAM.--then
-									WE<='0';								
-									state<=DONE;
---									v_OPCODE := "111";
-								end if;
-							end if;
---							OPCODE<= v_OPCODE; --"111";
--------------------------------------------------------------------------------------------------
-					when GtmPt =>
-							if v_OP_DONE = '1' then
-							   WE <='0';
-								s_CSEL <= (others => '1');--Enble BRAM for Saving multiplication result.		
-							end if;
-							if v_OP_DONE = '0' then 
-								WE <='1';					
-								if i= COLUMN_TOTAL-1 then-- full round 
-									j:=j+1;
-									if i_addr_cnt=0 then
-									   i_addr_cnt<=COLUMN_TOTAL-1;
-									else
---									i_addr_cnt/=COLUMN_TOTAL-1 then -- P addr
-									   i_addr_cnt<=i_addr_cnt-1;
-                           end if;
-									if i_col_cnt/=COLUMN_TOTAL-1 then -- P addr
-										i_col_cnt<=i_col_cnt+1;
-									end if;
-									i:=0;
-								else
-									i:=i+1;
-                        if i_row_cnt=COLUMN_TOTAL-1 then							   
-								    i_row_cnt<=0;
-                        else
-                            i_row_cnt<=i_row_cnt+1;
-                        end if;									 
-
-								end if;
-   							if j= COLUMN_TOTAL then 
-									s_CSEL<=(others => '0');
-								else 
-    							      s_CSEL <= s_CSEL(s_CSEL'length - 2 downto 0) & s_CSEL(s_CSEL'length - 1); --rol 1 (shift one place left with roll over).
-								end if;
-
-								if j= COLUMN_TOTAL then 
-									v_OP_DONE :='1';
-									v_OPCODE :="111";
-								else
-									v_OP_DONE :='0';
-								end if;
-							else
-								if v_OP_DONE = '1' and cnt_delay_ready = (PIPELINE_DELAY + COLUMN_TOTAL*COLUMN_TOTAL) then -- wait until gets to BRAM.--then
-									WE<='0';								
-									state<=DONE;
---									v_OPCODE := "111";
-								end if;
-							end if;
---							OPCODE<= v_OPCODE; --"111";
--------------------------------------------------------------------------------------------------
-
-					when PdG =>
-							if v_OP_DONE = '1' then
-							   WE <='0';
-								s_CSEL <= (others => '1');--Enble BRAM for Saving multiplication result.		
-							end if;
-							if v_OP_DONE = '0' then 
-								WE <='1';					
-								if i= COLUMN_TOTAL-1 then-- full round 
-									j:=j+1;
-									if i_addr_cnt/=COLUMN_TOTAL-1 then -- P addr
-									   i_addr_cnt<=i_addr_cnt+1;
-                           end if;
-									if i_row_cnt/=COLUMN_TOTAL-1 then -- P addr
-										i_row_cnt<=i_row_cnt+1;
-									end if;
-									i:=0;
-								else
-									i:=i+1;
-                        if i_col_cnt=COLUMN_TOTAL-1 then							   
-								    i_col_cnt<=0;
-                        else
-                            i_col_cnt<=i_col_cnt+1;
-                        end if;									 
-
-								end if;
-   							if j= COLUMN_TOTAL then 
-									s_CSEL<=(others => '0');
-								else 
-								--   if (i>1 or j/=0) then
-    							      s_CSEL <= s_CSEL(s_CSEL'length - 2 downto 0) & s_CSEL(s_CSEL'length - 1); --rol 1 (shift one place left with roll over).
-								--	end if;	
-								end if;
-
-								if j= COLUMN_TOTAL then 
-									v_OP_DONE :='1';
-									v_OPCODE :="111";
-								else
-									v_OP_DONE :='0';
-								end if;
-							else
-								if v_OP_DONE = '1' and cnt_delay_ready = (PIPELINE_DELAY + COLUMN_TOTAL*COLUMN_TOTAL) then -- wait until gets to BRAM.--then
-									WE<='0';								
-									state<=DONE;
-								end if;
-							end if;
--------------------------------------------------------------------------------------------------
-
-					when PdGt =>
-							if v_OP_DONE = '1' then
-							   WE <='0';
-								s_CSEL <= (others => '1');--Enble BRAM for Saving multiplication result.		
-							end if;
-							if v_OP_DONE = '0' then 
-								WE <='1';					
-								if i= COLUMN_TOTAL-1 then-- full round 
-									j:=j+1;
-									if i_addr_cnt/=COLUMN_TOTAL-1 then -- P addr
-									   i_addr_cnt<=i_addr_cnt+1;
-                           end if;
-									if i_col_cnt/=COLUMN_TOTAL-1 then -- P addr
-										i_col_cnt<=i_col_cnt+1;
-									end if;
-									i:=0;
-								else
-									i:=i+1;
-                        if i_row_cnt=COLUMN_TOTAL-1 then							   
-								    i_row_cnt<=0;
-                        else
-                            i_row_cnt<=i_row_cnt+1;
-                        end if;									 
-
-								end if;
-   							if j= COLUMN_TOTAL then 
-									s_CSEL<=(others => '0');
-								else 
-								--   if (i>1 or j/=0) then
-    							      s_CSEL <= s_CSEL(s_CSEL'length - 2 downto 0) & s_CSEL(s_CSEL'length - 1); --rol 1 (shift one place left with roll over).
-								--	end if;	
-								end if;
-
-								if j= COLUMN_TOTAL then 
-									v_OP_DONE :='1';
-									v_OPCODE :="111";
-								else
-									v_OP_DONE :='0';
-								end if;
-							else
-								if v_OP_DONE = '1' and cnt_delay_ready = (PIPELINE_DELAY + COLUMN_TOTAL*COLUMN_TOTAL) then -- wait until gets to BRAM.--then
-									WE<='0';								
-									state<=DONE;
-								end if;
-							end if;
--------------------------------------------------------------------------------------------------
-					when PtdG =>
-							if v_OP_DONE = '1' then
-							   WE <='0';
-								s_CSEL <= (others => '1');--Enble BRAM for Saving multiplication result.		
-							end if;
-							if v_OP_DONE = '0' then 
-								WE <='1';					
-								if i= COLUMN_TOTAL-1 then-- full round 
-									j:=j+1;
-									if i_addr_cnt=0 then
-									   i_addr_cnt<=COLUMN_TOTAL-1;
-									else
-									   i_addr_cnt<=i_addr_cnt-1;
-                           end if;
-									if i_row_cnt/=COLUMN_TOTAL-1 then -- P addr
-										i_row_cnt<=i_row_cnt+1;
-									end if;
-									i:=0;
-								else
-									i:=i+1;
-                        if i_col_cnt=COLUMN_TOTAL-1 then							   
-								    i_col_cnt<=0;
-                        else
-                            i_col_cnt<=i_col_cnt+1;
-                        end if;									 
-
-								end if;
-   							if j= COLUMN_TOTAL then 
-									s_CSEL<=(others => '0');
-								else 
-								--   if (i>1 or j/=0) then
-    							      s_CSEL <= s_CSEL(s_CSEL'length - 2 downto 0) & s_CSEL(s_CSEL'length - 1); --rol 1 (shift one place left with roll over).
-								--	end if;	
-								end if;
-
-								if j= COLUMN_TOTAL then 
-									v_OP_DONE :='1';
-									v_OPCODE :="111";
-								else
-									v_OP_DONE :='0';
-								end if;
-							else
-								if v_OP_DONE = '1' and cnt_delay_ready = (PIPELINE_DELAY + COLUMN_TOTAL*COLUMN_TOTAL) then -- wait until gets to BRAM.--then
-									WE<='0';								
-									state<=DONE;
-								end if;
-							end if;
--------------------------------------------------------------------------------------------------
-					when PtdGt =>
 							if v_OP_DONE = '1' then
 							   WE <='0';
 								s_CSEL <= (others => '1');--Enble BRAM for Saving multiplication result.		
@@ -1499,16 +764,10 @@ begin
 		end if;
 	--end if;
 end process;
-						
-
-				
-				
+										
 				G_ROW<=std_logic_vector(to_unsigned(i_row_cnt,ADDR_WIDTH));
 				G_COLUMN<=std_logic_vector(to_unsigned(i_col_cnt,ADDR_WIDTH));
 				CSEL <= s_CSEL;
-
-
-
 							
 -----------------------------------------------------------
 end Behavioral;
