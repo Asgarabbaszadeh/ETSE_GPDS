@@ -1,6 +1,6 @@
 LP
-G-P
-R*G
-Gt-P
-G-Pt
-Gt-Pt
+SP
+VP
+PV
+VPt
+PtV

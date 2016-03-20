@@ -62,7 +62,7 @@ ARCHITECTURE behavior OF TB_MATRIX_MUL_IP_CORE_S_INT IS
    -- Control Signals----
    signal DATA_INPUT: std_logic:='0';
    signal GREAD_DONE: std_logic :='0';   
-   type COMMAND is (cmd_G_READ_START,cmd_P_READ_START,cmd_Unload_BRAM_Content,cmd_PG,cmd_PGt,cmd_PtG,cmd_PtGt,cmd_PpG,cmd_PpGt,cmd_PtpG,cmd_PtpGt,cmd_PmG,cmd_PmGt,cmd_PtmG,cmd_PtmGt,cmd_GmP,cmd_GmPt,cmd_GtmP,cmd_GtmPt,cmd_PdG,cmd_PdGt,cmd_PtdG,cmd_PtdGt,cmd_dummy);
+   type COMMAND is (cmd_G_READ_START,cmd_P_READ_START,cmd_Unload_BRAM_Content,cmd_PG,cmd_PGt,cmd_PtG,cmd_PtGt,cmd_PpG,cmd_PpGt,cmd_PtpG,cmd_PtpGt,cmd_PmG,cmd_PmGt,cmd_PtmG,cmd_PtmGt,cmd_GmP,cmd_GmPt,cmd_GtmP,cmd_GtmPt,cmd_PdG,cmd_PdGt,cmd_PtdG,cmd_PtdGt,cmd_VP,cmd_VPt,cmd_PV,cmd_PtV,cmd_SP,cmd_dummy);
 	signal CMD: COMMAND;
    signal r_loop_count : std_logic_vector(2 downto 0) := (others => '0');
    
@@ -265,7 +265,7 @@ variable loop_count: integer:=0;
 
 
 variable Ptrans,Gtrans: std_logic;
-variable Oper: std_logic_vector(2 downto 0);
+variable Oper: std_logic_vector(3 downto 0);
 variable P_source: std_logic;
 variable v_space,v_space1,v_space2 : character;
 variable line_num3: line;
@@ -307,7 +307,7 @@ while not endfile(Result_file_pointer3) loop
 				loop_count:=loop_count+1;
             r_loop_count<=std_logic_vector(to_unsigned(loop_count,3));
 
-			if oper="000" then
+			if oper="0000" then
 				  if P_source='0' then
 					   Bank_sel_in <= '0'; -- Tell BRAM to Write data to upper Bank.
 					else
@@ -335,87 +335,108 @@ while not endfile(Result_file_pointer3) loop
 				   Bank_sel_in <= '1'; -- Tell BRAM to save result in upper bank.
 				end if;
 
-				 if Ptrans='0' and Gtrans='0' and oper="001" then
+				 if Ptrans='0' and Gtrans='0' and oper="0001" then
            	      CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
            	      wait for clk_period;
 	               CMD <= cmd_PG; --Real Command	
-				elsif Ptrans='0' and Gtrans='1' and oper="001" then
+				elsif Ptrans='0' and Gtrans='1' and oper="0001" then
            	      CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
            	      wait for clk_period;
 				      CMD <= cmd_PGt; --Real Command
 						
-            elsif	Ptrans='1' and Gtrans='0' and oper="001" then					
+            elsif	Ptrans='1' and Gtrans='0' and oper="0001" then					
            	      CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
            	      wait for clk_period;
 				       CMD <= cmd_PtG; --Real Command
-            elsif	Ptrans='1' and Gtrans='1' and oper="001" then					
+            elsif	Ptrans='1' and Gtrans='1' and oper="0001" then					
            	      CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
            	      wait for clk_period;
 				       CMD <= cmd_PtGt; --Real Command
-            elsif	Ptrans='0' and Gtrans='0' and oper="010" then					
+            elsif	Ptrans='0' and Gtrans='0' and oper="0010" then					
            	      CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
            	      wait for clk_period;
 				       CMD <= cmd_PpG; --Real Command				
-            elsif	Ptrans='0' and Gtrans='1' and oper="010" then					
+            elsif	Ptrans='0' and Gtrans='1' and oper="0010" then					
            	      CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
            	      wait for clk_period;
 				       CMD <= cmd_PpGt; --Real Command						 
-            elsif	Ptrans='1' and Gtrans='0' and oper="010" then					
+            elsif	Ptrans='1' and Gtrans='0' and oper="0010" then					
            	      CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
            	      wait for clk_period;
 				      CMD <= cmd_PtpG; --Real Command
-            elsif	Ptrans='1' and Gtrans='1' and oper="010" then					
+            elsif	Ptrans='1' and Gtrans='1' and oper="0010" then					
            	      CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
            	      wait for clk_period;
 				       CMD <= cmd_PtpGt; --Real Command
-            elsif	Ptrans='0' and Gtrans='0' and oper="011" then					
+            elsif	Ptrans='0' and Gtrans='0' and oper="0011" then					
            	      CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
            	      wait for clk_period;
 				       CMD <= cmd_PmG; --Real Command
-            elsif	Ptrans='0' and Gtrans='1' and oper="011" then					
+            elsif	Ptrans='0' and Gtrans='1' and oper="0011" then					
            	      CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
            	      wait for clk_period;
 				       CMD <= cmd_PmGt; --Real Command
-            elsif	Ptrans='1' and Gtrans='0' and oper="011" then					
+            elsif	Ptrans='1' and Gtrans='0' and oper="0011" then					
            	      CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
            	      wait for clk_period;
 				       CMD <= cmd_PtmG; --Real Command
-            elsif	Ptrans='1' and Gtrans='1' and oper="011" then					
+            elsif	Ptrans='1' and Gtrans='1' and oper="0011" then					
            	      CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
            	      wait for clk_period;
 				       CMD <= cmd_PtmGt; --Real Command
-            elsif	Ptrans='0' and Gtrans='0' and oper="100" then					
+            elsif	Ptrans='0' and Gtrans='0' and oper="0100" then					
            	      CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
            	      wait for clk_period;
 				       CMD <= cmd_GmP; --Real Command
-            elsif	Ptrans='0' and Gtrans='1' and oper="100" then					
+            elsif	Ptrans='0' and Gtrans='1' and oper="0100" then					
            	      CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
            	      wait for clk_period;
 				       CMD <= cmd_GtmP; --Real Command
-            elsif	Ptrans='1' and Gtrans='0' and oper="100" then					
+            elsif	Ptrans='1' and Gtrans='0' and oper="0100" then					
            	      CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
            	      wait for clk_period;
 				       CMD <= cmd_GmPt; --Real Command
-            elsif	Ptrans='1' and Gtrans='1' and oper="100" then					
+            elsif	Ptrans='1' and Gtrans='1' and oper="0100" then					
            	      CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
            	      wait for clk_period;
 				       CMD <= cmd_GtmPt; --Real Command
-            elsif	Ptrans='0' and Gtrans='0' and oper="101" then					
+            elsif	Ptrans='0' and Gtrans='0' and oper="0101" then					
            	      CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
            	      wait for clk_period;
 				       CMD <= cmd_PdG; --Real Command
-            elsif	Ptrans='0' and Gtrans='1' and oper="101" then					
+            elsif	Ptrans='0' and Gtrans='1' and oper="0101" then					
            	      CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
            	      wait for clk_period;
 				       CMD <= cmd_PdGt; --Real Command
-            elsif	 Ptrans='1' and Gtrans='0' and oper="101" then					
+            elsif	 Ptrans='1' and Gtrans='0' and oper="0101" then					
            	      CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
            	      wait for clk_period;
 				       CMD <= cmd_PtdG; --Real Command
-            elsif	 Ptrans='1' and Gtrans='1' and oper="101" then					
+            elsif	 Ptrans='1' and Gtrans='1' and oper="0101" then					
            	      CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
            	      wait for clk_period;
 				       CMD <= cmd_PtdGt; --Real Command
+            elsif	 Ptrans='0' and Gtrans='0' and oper="0110" then					
+           	      CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
+           	      wait for clk_period;
+				      CMD <= cmd_VP; --Real Command	
+            elsif	 Ptrans='0' and Gtrans='1' and oper="0110" then					
+           	      CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
+           	      wait for clk_period;
+				      CMD <= cmd_VPt; --Real Command	
+            elsif	 Ptrans='0' and Gtrans='0' and oper="0111" then					
+           	      CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
+           	      wait for clk_period;
+				      CMD <= cmd_PV; --Real Command		 
+            elsif	 Ptrans='0' and Gtrans='1' and oper="0111" then					
+           	      CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
+           	      wait for clk_period;
+				      CMD <= cmd_PtV; --Real Command		 
+            elsif	 Ptrans='0' and Gtrans='0' and oper="1000" then					
+           	      CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
+           	      wait for clk_period;
+				      CMD <= cmd_SP; --Real Command		 
+						
 				else
            	      CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
            	      wait for clk_period;				
@@ -434,89 +455,108 @@ while not endfile(Result_file_pointer3) loop
 
 
         if P_source='1' then
-  				if Ptrans='0' and Gtrans='0' and oper="001" then
+  				if Ptrans='0' and Gtrans='0' and oper="0001" then
                  write(sv_line,"---------------" & " result of R * G from lower bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish multiplication, ");
-				elsif Ptrans='0' and Gtrans='1' and oper="001" then
+				elsif Ptrans='0' and Gtrans='1' and oper="0001" then
                  write(sv_line,"---------------" & " result of R * Gt from lower bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish multiplication, ");
-            elsif	Ptrans='1' and Gtrans='0' and oper="001" then					
+            elsif	Ptrans='1' and Gtrans='0' and oper="0001" then					
                  write(sv_line,"---------------" & " result of Rt * G from lower bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish multiplication, ");
-            elsif	Ptrans='1' and Gtrans='1' and oper="001" then					
+            elsif	Ptrans='1' and Gtrans='1' and oper="0001" then					
                  write(sv_line,"---------------" & " result of Rt * Gt from lower bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish multiplication, ");
-            elsif	Ptrans='0' and Gtrans='0' and oper="010" then					
+            elsif	Ptrans='0' and Gtrans='0' and oper="0010" then					
                  write(sv_line,"---------------" & " result of R + G from lower bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish addition, ");
-            elsif	Ptrans='0' and Gtrans='1' and oper="010" then					
+            elsif	Ptrans='0' and Gtrans='1' and oper="0010" then					
                  write(sv_line,"---------------" & " result of R + Gt from lower bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish addition, ");
-            elsif	Ptrans='1' and Gtrans='0' and oper="010" then					
+            elsif	Ptrans='1' and Gtrans='0' and oper="0010" then					
                  write(sv_line,"---------------" & " result of Rt + G from lower bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish addition, ");
-            elsif	Ptrans='1' and Gtrans='1' and oper="010" then					
+            elsif	Ptrans='1' and Gtrans='1' and oper="0010" then					
                  write(sv_line,"---------------" & " result of Rt + Gt from lower bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish addition, ");
-            elsif	Ptrans='0' and Gtrans='0' and oper="011" then					
+            elsif	Ptrans='0' and Gtrans='0' and oper="0011" then					
                  write(sv_line,"---------------" & " result of R - G from lower bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish subtraction, ");
-            elsif	Ptrans='0' and Gtrans='1' and oper="011" then					
+            elsif	Ptrans='0' and Gtrans='1' and oper="0011" then					
                  write(sv_line,"---------------" & " result of R - Gt from lower bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish subtraction, ");
-            elsif	Ptrans='1' and Gtrans='0' and oper="011" then					
+            elsif	Ptrans='1' and Gtrans='0' and oper="0011" then					
                  write(sv_line,"---------------" & " result of Rt - G from lower bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish subtraction, ");
-            elsif	Ptrans='1' and Gtrans='1' and oper="011" then					
+            elsif	Ptrans='1' and Gtrans='1' and oper="0011" then					
                   write(sv_line,"---------------" & " result of Rt - Gt from lower bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish subtraction, ");
-            elsif	Ptrans='0' and Gtrans='0' and oper="100" then					
+            elsif	Ptrans='0' and Gtrans='0' and oper="0100" then					
                  write(sv_line,"---------------" & " result of G-R from lower bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish subtraction, ");
-            elsif	Ptrans='0' and Gtrans='1' and oper="100" then					
+            elsif	Ptrans='0' and Gtrans='1' and oper="0100" then					
                  write(sv_line,"---------------" & " result of Gt-R from lower bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish subtraction, ");
-            elsif	Ptrans='1' and Gtrans='0' and oper="100" then					
+            elsif	Ptrans='1' and Gtrans='0' and oper="0100" then					
                  write(sv_line,"---------------" & " result of G-Rt from lower bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish subtraction, ");
-            elsif	Ptrans='1' and Gtrans='1' and oper="100" then					
+            elsif	Ptrans='1' and Gtrans='1' and oper="0100" then					
                  write(sv_line,"---------------" & " result of Gt-Rt from lower bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish subtraction, ");
-            elsif	Ptrans='0' and Gtrans='0' and oper="101" then					
+            elsif	Ptrans='0' and Gtrans='0' and oper="0101" then					
                  write(sv_line,"---------------" & " result of R.G from lower bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish dot multiplication, ");
-            elsif	Ptrans='0' and Gtrans='1' and oper="101" then					
+            elsif	Ptrans='0' and Gtrans='1' and oper="0101" then					
                  write(sv_line,"---------------" & " result of R.Gt from lower bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish dot multiplication, ");
-            elsif	 Ptrans='1' and Gtrans='0' and oper="101" then					
+            elsif	 Ptrans='1' and Gtrans='0' and oper="0101" then					
                  write(sv_line,"---------------" & " result of Rt.G from lower bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish dot multiplication, ");
-            elsif Ptrans='1' and Gtrans='1' and oper="101" then					
+            elsif Ptrans='1' and Gtrans='1' and oper="0101" then					
                  write(sv_line,"---------------" & " result of Rt.Gt from lower bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish dot multiplication, ");
+            elsif Ptrans='0' and Gtrans='0' and oper="0110" then					
+                 write(sv_line,"---------------" & " result of V*R from lower bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish dot multiplication, ");
+            elsif Ptrans='0' and Gtrans='1' and oper="0110" then					
+                 write(sv_line,"---------------" & " result of V*Rt from lower bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish dot multiplication, ");
+            elsif Ptrans='0' and Gtrans='0' and oper="0111" then					
+                 write(sv_line,"---------------" & " result of R*V from lower bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish dot multiplication, ");
+            elsif Ptrans='0' and Gtrans='0' and oper="1000" then					
+                 write(sv_line,"---------------" & " result of S.R from lower bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish dot multiplication, ");
 				end if;
 
 	     else
-				if Ptrans='0' and Gtrans='0' and oper="001" then
+				if Ptrans='0' and Gtrans='0' and oper="0001" then
                  write(sv_line,"---------------" & " result of P * G from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish multiplication, ");
-				elsif Ptrans='0' and Gtrans='1' and oper="001" then
+				elsif Ptrans='0' and Gtrans='1' and oper="0001" then
                  write(sv_line,"---------------" & " result of P * Gt from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish multiplication, ");
-            elsif	Ptrans='1' and Gtrans='0' and oper="001" then					
+            elsif	Ptrans='1' and Gtrans='0' and oper="0001" then					
                  write(sv_line,"---------------" & " result of Pt * G from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish multiplication, ");
-            elsif	Ptrans='1' and Gtrans='1' and oper="001" then					
+            elsif	Ptrans='1' and Gtrans='1' and oper="0001" then					
                  write(sv_line,"---------------" & " result of Pt * Gt from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish multiplication, ");
-            elsif	Ptrans='0' and Gtrans='0' and oper="010" then					
+            elsif	Ptrans='0' and Gtrans='0' and oper="0010" then					
                  write(sv_line,"---------------" & " result of P + G from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish addition, ");
-            elsif	Ptrans='0' and Gtrans='1' and oper="010" then					
+            elsif	Ptrans='0' and Gtrans='1' and oper="0010" then					
                  write(sv_line,"---------------" & " result of P + Gt from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish addition, ");
-            elsif	Ptrans='1' and Gtrans='0' and oper="010" then					
+            elsif	Ptrans='1' and Gtrans='0' and oper="0010" then					
                  write(sv_line,"---------------" & " result of Pt + G from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish addition, ");
-            elsif	Ptrans='1' and Gtrans='1' and oper="010" then					
+            elsif	Ptrans='1' and Gtrans='1' and oper="0010" then					
                  write(sv_line,"---------------" & " result of Pt + Gt from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish addition, ");
-            elsif	Ptrans='0' and Gtrans='0' and oper="011" then					
+            elsif	Ptrans='0' and Gtrans='0' and oper="0011" then					
                  write(sv_line,"---------------" & " result of P - G from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish subtraction, ");
-            elsif	Ptrans='0' and Gtrans='1' and oper="011" then					
+            elsif	Ptrans='0' and Gtrans='1' and oper="0011" then					
                  write(sv_line,"---------------" & " result of P - Gt from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish subtraction, ");
-            elsif	Ptrans='1' and Gtrans='0' and oper="011" then					
+            elsif	Ptrans='1' and Gtrans='0' and oper="0011" then					
                  write(sv_line,"---------------" & " result of Pt - G from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish subtraction, ");
-            elsif	Ptrans='1' and Gtrans='1' and oper="011" then					
+            elsif	Ptrans='1' and Gtrans='1' and oper="0011" then					
                   write(sv_line,"---------------" & " result of Pt - Gt from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish subtraction, ");
-            elsif	Ptrans='0' and Gtrans='0' and oper="100" then					
+            elsif	Ptrans='0' and Gtrans='0' and oper="0100" then					
                  write(sv_line,"---------------" & " result of G-P from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish subtraction, ");
-            elsif	Ptrans='0' and Gtrans='1' and oper="100" then					
+            elsif	Ptrans='0' and Gtrans='1' and oper="0100" then					
                  write(sv_line,"---------------" & " result of Gt-P from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish subtraction, ");
-            elsif	Ptrans='1' and Gtrans='0' and oper="100" then					
+            elsif	Ptrans='1' and Gtrans='0' and oper="0100" then					
                  write(sv_line,"---------------" & " result of G-Pt from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish subtraction, ");
-            elsif	Ptrans='1' and Gtrans='1' and oper="100" then					
+            elsif	Ptrans='1' and Gtrans='1' and oper="0100" then					
                  write(sv_line,"---------------" & " result of Gt-Pt from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish subtraction, ");
-            elsif	Ptrans='0' and Gtrans='0' and oper="101" then					
+            elsif	Ptrans='0' and Gtrans='0' and oper="0101" then					
                  write(sv_line,"---------------" & " result of P.G from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish dot multiplication, ");
-            elsif	Ptrans='0' and Gtrans='1' and oper="101" then					
+            elsif	Ptrans='0' and Gtrans='1' and oper="0101" then					
                  write(sv_line,"---------------" & " result of P.Gt from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish dot multiplication, ");
-            elsif	 Ptrans='1' and Gtrans='0' and oper="101" then					
+            elsif	 Ptrans='1' and Gtrans='0' and oper="0101" then					
                  write(sv_line,"---------------" & " result of Pt.G from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish dot multiplication, ");
-            elsif Ptrans='1' and Gtrans='1' and oper="101" then					
+            elsif Ptrans='1' and Gtrans='1' and oper="0101" then					
                  write(sv_line,"---------------" & " result of Pt.Gt from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish dot multiplication, ");
+            elsif Ptrans='0' and Gtrans='0' and oper="0110" then					
+                 write(sv_line,"---------------" & " result of V*P from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish dot multiplication, ");
+            elsif Ptrans='0' and Gtrans='1' and oper="0110" then					
+                 write(sv_line,"---------------" & " result of V*Pt from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish dot multiplication, ");
+            elsif Ptrans='0' and Gtrans='0' and oper="0111" then					
+                 write(sv_line,"---------------" & " result of P*V from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish dot multiplication, ");
+            elsif Ptrans='0' and Gtrans='1' and oper="0111" then					
+                 write(sv_line,"---------------" & " result of Pt*V from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish dot multiplication, ");
+            elsif Ptrans='0' and Gtrans='0' and oper="1000" then					
+                 write(sv_line,"---------------" & " result of S.P from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish dot multiplication, ");
+
             end if;
 		end if;
 
@@ -533,311 +573,12 @@ PrintResultInCSVFormat; -- Procedure to print the result to a file in CSV format
 
             wait for clk_period; -- wait for the all values to be written to file
 
---PrintResultToConsole; -- Procedure to print the result to console. Read from Result file then print to console.
---PrintResultInCSVFormat; -- Procedure to print the result to a file in CSV format.
-
-
-	
 
 wait;
-   				
+ 				
 				
 
 end process;
---
---CONTROL: process
---variable line_num, line_num2: line;
---variable v_IsTheValueReadGood: boolean:=true;
---variable v_Value: string(1 to 10);
---file Result_file_pointer, Result_file_pointer2: Text; 
---variable line_num_cnt: integer:=0;
---variable c:         character;
---variable is_string: boolean;
-----(cmd_G_READ_START,cmd_P_READ_START,cmd_Unload_BRAM_Content,cmd_PG,cmd_PGt,cmd_PtG,cmd_PtGt);
---variable v_delay_latency: integer;
---begin	
---
-------#################################################################################################################################################################
---
---------------------------------------------- Load GRAM and Load BRAM with initial Data ---------------------------------------------------------------------------------	
-----****************************************Start Reading Operation List****************************************---
---         	   CMD <= cmd_G_READ_START;
---	            wait until GREAD_DONE<='1';	
---	            Bank_sel_in <= '0'; -- Tell BRAM to save data in upper bank
---	            CMD <= cmd_P_READ_START;	
---	            wait until LOADING_DONE ='1';	
---					v_delay_latency := g_cnt_delay_ready; --get the time at which the operation completed
---					--file_open(Result_file_pointer,"../TestingFiles/PG_Result.txt",WRITE_MODE);
---					sv_Result_File_Open := false;
---					Bank_sel_in <= '1'; -- Tell BRAM to Read from upper Bank. Note MSB of ADDR Port B is Banksel and it is inverted.
---					CMD <= cmd_Unload_BRAM_Content;
---					write(sv_line,"---------------" & " Data loaded into BRAM. " & str(v_delay_latency) & " clock cycles to load,");
---					wait until UN_LOADING_DONE = '1';
---------------------------------------------End of Load GRAM and Load BRAM ------------------------------------------------------------------------------------------
---
----------------------------------------------------------------------------------Compute P * G -----------------------------------------------------------------------------
-----	
---	CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
---	wait for clk_period;
---	CMD <= cmd_PG; --Real Command	
---	Bank_sel_in <= '1'; -- Tell BRAM to save result in lower bank.
---	wait until OP_DONE= '1';
---	
---	v_delay_latency := g_cnt_delay_ready;--get the time at which the operation completed	
---	sv_Result_File_Open := true;
---	
---	Bank_sel_in <= '0'; -- Tell BRAM to Read from lower Bank. Note MSB of ADDR Port B is Banksel and it is inverted.
---	CMD <= cmd_Unload_BRAM_Content;	
---	write(sv_line,"---------------" & " result of P * G from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish multiplication, ");
---	wait until UN_LOADING_DONE = '1';
---	
---	CMD <= cmd_dummy;-- fake command. used to force the simulator to see a change in the process.
---	wait for clk_period;
---	CMD <= cmd_PG; --Real Command
---	Bank_sel_in <= '0'; -- Tell BRAM to save result in lower bank.
---	wait until OP_DONE = '1';	
---	v_delay_latency := g_cnt_delay_ready;--get the time at which the operation completed
---	
---	
---	CMD <= cmd_Unload_BRAM_Content;
---	Bank_sel_in <= '1'; -- Tell BRAM to Read from lower Bank. Note MSB of ADDR Port B is Banksel and it is inverted.	
---	write(sv_line,"---------------" & " result of PG * G from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish multiplication, ");
---	wait until UN_LOADING_DONE = '1';
---	----------------------------------------------------------------------End of Comput P * G -----------------------------------------------------------
---		
---	-----------------------------------------------------------------------Compute P * Gt ---------------------------------------------------------------
---	
---	-------------------------------Reload BRAM with initial data -----------------------------------
---	CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
---	wait for clk_period;
---	Bank_sel_in <= '0'; -- Tell BRAM to save data in upper bank
---	CMD <= cmd_P_READ_START;	
---	wait until LOADING_DONE ='1';	
---	v_delay_latency := g_cnt_delay_ready; --get the time at which the operation completed
---	-------------------------------------------------------------------------------------------------
---	
-----	------------------------------------------------------------Display Values ---------------------------------------------------------------------------------------
-----	Bank_sel_in <= '1'; -- Tell BRAM to Read from upper Bank. Note MSB of ADDR Port B is Banksel and it is inverted.
-----	CMD <= cmd_Unload_BRAM_Content;
-----	write(sv_line,"---------------" & " Data loaded into BRAM. " & str(v_delay_latency) & " clock cycles to load,");
-----	wait until UN_LOADING_DONE = '1';
-----    ------------------------------------------End of Display Values ------------------------------------------------------------------------------------------
---	
---	
---	CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
---	wait for clk_period;
---	CMD <= cmd_PGt; --Real Command	
---	Bank_sel_in <= '1'; -- Tell BRAM to save result in lower bank.
---	wait until OP_DONE= '1';
---	
---	v_delay_latency := g_cnt_delay_ready;--get the time at which the operation completed	
---	sv_Result_File_Open := true;
---	
---	Bank_sel_in <= '0'; -- Tell BRAM to Read from lower Bank. Note MSB of ADDR Port B is Banksel and it is inverted.
---	CMD <= cmd_Unload_BRAM_Content;	
---	write(sv_line,"---------------" & " result of P * Gt from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish multiplication, ");
---	wait until UN_LOADING_DONE = '1';
---	
---	CMD <= cmd_dummy;-- fake command. used to force the simulator to see a change in the process.
---	wait for clk_period;
---	CMD <= cmd_PGt; --Real Command
---	Bank_sel_in <= '0'; -- Tell BRAM to save result in upper bank.
---	wait until OP_DONE = '1';	
---	v_delay_latency := g_cnt_delay_ready;--get the time at which the operation completed
---	
---	
---	CMD <= cmd_Unload_BRAM_Content;
---	Bank_sel_in <= '1'; -- Tell BRAM to Read from lower Bank. Note MSB of ADDR Port B is Banksel and it is inverted.	
---	write(sv_line,"---------------" & " result of PG * Gt from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish multiplication, ");
---	wait until UN_LOADING_DONE = '1';
-------------------------------------------------------------------- End of Comput P * Gt ------------------------------------------------------------------	
---
--------------------------------------------------------------------------Compute Pt * G --------------------------------------------------------------------
---	
---	-------------------------------Reload BRAM with initial data -----------------------------------
---	CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
---	wait for clk_period;
---	Bank_sel_in <= '0'; -- Tell BRAM to save data in upper bank
---	CMD <= cmd_P_READ_START;	
---	wait until LOADING_DONE ='1';	
---	v_delay_latency := g_cnt_delay_ready; --get the time at which the operation completed
---	-------------------------------------------------------------------------------------------------
---	
-----	------------------------------------------------------------Display Values ---------------------------------------------------------------------------------------
-----	Bank_sel_in <= '1'; -- Tell BRAM to Read from upper Bank. Note MSB of ADDR Port B is Banksel and it is inverted.
-----	CMD <= cmd_Unload_BRAM_Content;
-----	write(sv_line,"---------------" & " Data loaded into BRAM. " & str(v_delay_latency) & " clock cycles to load,");
-----	wait until UN_LOADING_DONE = '1';
-----    ------------------------------------------End of Display Values ------------------------------------------------------------------------------------------
---	
---	
---	CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
---	wait for clk_period;
---	CMD <= cmd_PtG; --Real Command	
---	Bank_sel_in <= '1'; -- Tell BRAM to save result in lower bank.
---	wait until OP_DONE= '1';
---	
---	v_delay_latency := g_cnt_delay_ready;--get the time at which the operation completed	
---	sv_Result_File_Open := true;
---	
---	Bank_sel_in <= '0'; -- Tell BRAM to Read from lower Bank. Note MSB of ADDR Port B is Banksel and it is inverted.
---	CMD <= cmd_Unload_BRAM_Content;	
---	write(sv_line,"---------------" & " result of Pt * G from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish multiplication, ");
---	wait until UN_LOADING_DONE = '1';
---	
---	CMD <= cmd_dummy;-- fake command. used to force the simulator to see a change in the process.
---	wait for clk_period;
---	CMD <= cmd_PtG; --Real Command
---	Bank_sel_in <= '0'; -- Tell BRAM to save result in upper bank.
---	wait until OP_DONE = '1';	
---	v_delay_latency := g_cnt_delay_ready;--get the time at which the operation completed
---	
---	
---	CMD <= cmd_Unload_BRAM_Content;
---	Bank_sel_in <= '1'; -- Tell BRAM to Read from upper Bank. Note MSB of ADDR Port B is Banksel and it is inverted.	
---	write(sv_line,"---------------" & " result of [PG]t * G from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish multiplication, ");
---	wait until UN_LOADING_DONE = '1';
-------------------------------------------------------------------- End of Comput Pt * G ------------------------------------------------------------------
---
--------------------------------------------------------------------------Compute Pt * Gt --------------------------------------------------------------------
---	
---	-------------------------------Reload BRAM with initial data -----------------------------------
---	CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
---	wait for clk_period;
---	Bank_sel_in <= '0'; -- Tell BRAM to save data in upper bank
---	CMD <= cmd_P_READ_START;	
---	wait until LOADING_DONE ='1';	
---	v_delay_latency := g_cnt_delay_ready; --get the time at which the operation completed
---	-------------------------------------------------------------------------------------------------
---
-----	------------------------------------------------------------Display Values ---------------------------------------------------------------------------------------
-----	Bank_sel_in <= '1'; -- Tell BRAM to Read from upper Bank. Note MSB of ADDR Port B is Banksel and it is inverted.
-----	CMD <= cmd_Unload_BRAM_Content;
-----	write(sv_line,"---------------" & " Data loaded into BRAM. " & str(v_delay_latency) & " clock cycles to load,");
-----	wait until UN_LOADING_DONE = '1';
-----    ------------------------------------------End of Load GRAM and Load BRAM ------------------------------------------------------------------------------------------
---	
---	
---	CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
---	wait for clk_period;
---	CMD <= cmd_PtGt; --Real Command	
---	Bank_sel_in <= '1'; -- Tell BRAM to save result in lower bank.
---	wait until OP_DONE= '1';
---	
---	v_delay_latency := g_cnt_delay_ready;--get the time at which the operation completed	
---	sv_Result_File_Open := true;
---	
---	Bank_sel_in <= '0'; -- Tell BRAM to Read from lower Bank. Note MSB of ADDR Port B is Banksel and it is inverted.
---	CMD <= cmd_Unload_BRAM_Content;	
---	write(sv_line,"---------------" & " result of Pt * Gt from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish multiplication, ");
---	wait until UN_LOADING_DONE = '1';
---	
---	CMD <= cmd_dummy;-- fake command. used to force the simulator to see a change in the process.
---	wait for clk_period;
---	CMD <= cmd_PtGt; --Real Command
---	Bank_sel_in <= '0'; -- Tell BRAM to save result in upper bank.
---	wait until OP_DONE = '1';	
---	v_delay_latency := g_cnt_delay_ready;--get the time at which the operation completed
---	
---	
---	CMD <= cmd_Unload_BRAM_Content;
---	Bank_sel_in <= '1'; -- Tell BRAM to Read from upper Bank. Note MSB of ADDR Port B is Banksel and it is inverted.	
---	write(sv_line,"---------------" & " result of [PG]t * Gt from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish multiplication, ");
---	wait until UN_LOADING_DONE = '1';
-------------------------------------------------------------------- End of Comput Pt * Gt ------------------------------------------------------------------
---
--------------------------------------------------------------------------Compute P+G --------------------------------------------------------------------
---	
---	-------------------------------Reload BRAM with initial data -----------------------------------
---	CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
---	wait for clk_period;
---	Bank_sel_in <= '0'; -- Tell BRAM to save data in upper bank
---	CMD <= cmd_P_READ_START;	
---	wait until LOADING_DONE ='1';	
---	v_delay_latency := g_cnt_delay_ready; --get the time at which the operation completed
---	-----------------------------------------------------------------------------------------------
---
---	------------------------------------------------------------Display Values ---------------------------------------------------------------------------------------
---	Bank_sel_in <= '1'; -- Tell BRAM to Read from upper Bank. Note MSB of ADDR Port B is Banksel and it is inverted.
---	CMD <= cmd_Unload_BRAM_Content;
---	write(sv_line,"---------------" & " Data loaded into BRAM. " & str(v_delay_latency) & " clock cycles to load,");
---	wait until UN_LOADING_DONE = '1';
---    ------------------------------------------End of Load GRAM and Load BRAM ------------------------------------------------------------------------------------------
---	
---	
---	CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
---	wait for clk_period;
---	CMD <= cmd_PpG; --Real Command	
---	Bank_sel_in <= '1'; -- Tell BRAM to save result in lower bank.
---	wait until OP_DONE= '1';
---	
---	v_delay_latency := g_cnt_delay_ready;--get the time at which the operation completed	
---	sv_Result_File_Open := true;
---	
---	Bank_sel_in <= '0'; -- Tell BRAM to Read from lower Bank. Note MSB of ADDR Port B is Banksel and it is inverted.
---	CMD <= cmd_Unload_BRAM_Content;	
---	write(sv_line,"---------------" & " result of P+ G from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish multiplication, ");
---	wait until UN_LOADING_DONE = '1';
---------------------------------------------------------END OF P+G----------------------------------------------------------------------	
----------------------------------------------------------compute P-G------------------------------------------------------
---	CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
---	wait for clk_period;
---	CMD <= cmd_PmG; --Real Command	
---	Bank_sel_in <= '1'; -- Tell BRAM to save result in lower bank.
---	wait until OP_DONE= '1';
---	
---	v_delay_latency := g_cnt_delay_ready;--get the time at which the operation completed	
---	sv_Result_File_Open := true;
---	
---	Bank_sel_in <= '0'; -- Tell BRAM to Read from lower Bank. Note MSB of ADDR Port B is Banksel and it is inverted.
---	CMD <= cmd_Unload_BRAM_Content;	
---	write(sv_line,"---------------" & " result of P - G from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish multiplication, ");
---	wait until UN_LOADING_DONE = '1';
-------------------------------------------End of P-G----------------------------------------------------------------------
-------------------------------------------compute G-P-----------------------------------------------------------------------
---	CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
---	wait for clk_period;
---	CMD <= cmd_GmP; --Real Command	
---	Bank_sel_in <= '1'; -- Tell BRAM to save result in lower bank.
---	wait until OP_DONE= '1';
---	
---	v_delay_latency := g_cnt_delay_ready;--get the time at which the operation completed	
---	sv_Result_File_Open := true;
---	
---	Bank_sel_in <= '0'; -- Tell BRAM to Read from lower Bank. Note MSB of ADDR Port B is Banksel and it is inverted.
---	CMD <= cmd_Unload_BRAM_Content;	
---	write(sv_line,"---------------" & " result of G-P from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish multiplication, ");
---	wait until UN_LOADING_DONE = '1';
-----------------------------------------End of G-P----------------------------------------------------------
-----------------------------------------compute PdG------------------------------------------------------------
---	CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
---	wait for clk_period;
---	CMD <= cmd_PdG; --Real Command	
---	Bank_sel_in <= '1'; -- Tell BRAM to save result in lower bank.
---	wait until OP_DONE= '1';
---	
---	v_delay_latency := g_cnt_delay_ready;--get the time at which the operation completed	
---	sv_Result_File_Open := true;
---	
---	Bank_sel_in <= '0'; -- Tell BRAM to Read from lower Bank. Note MSB of ADDR Port B is Banksel and it is inverted.
---	CMD <= cmd_Unload_BRAM_Content;	
---	write(sv_line,"---------------" & " result of P.G from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish multiplication, ");
---	wait until UN_LOADING_DONE = '1';
-----------------------------------End of PdG-----------------------------
---
---
---wait for clk_period; -- wait for the all values to be written to file
---
---PrintResultToConsole; -- Procedure to print the result to console. Read from Result file then print to console.
---PrintResultInCSVFormat; -- Procedure to print the result to a file in CSV format.
---
---
---	
---
---wait;
---
---end process;
--- 
 
 Execution_Process:process
 file file_pointer : text;
@@ -1193,6 +934,62 @@ begin
 			P <= '1';
 			G <= '1';
 			mode <= "100";
+			rst <= '1';
+			wait for clk_period*3;
+			rst <= '0';
+			wait until OP_DONE = '1';
+		when cmd_VP =>		
+			LOAD <= '0';	-- Tell FSM not to LOAD data.
+			UN_LOAD <= '0'; -- Tell FSM not to go to unloading state.
+			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
+			P <= '0';
+			G <= '0';
+			mode <= "110";
+			rst <= '1';
+			wait for clk_period*3;
+			rst <= '0';
+			wait until OP_DONE = '1';
+		when cmd_VPt =>		
+			LOAD <= '0';	-- Tell FSM not to LOAD data.
+			UN_LOAD <= '0'; -- Tell FSM not to go to unloading state.
+			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
+			P <= '0';
+			G <= '1';
+			mode <= "110";
+			rst <= '1';
+			wait for clk_period*3;
+			rst <= '0';
+			wait until OP_DONE = '1';
+		when cmd_PV =>		
+			LOAD <= '0';	-- Tell FSM not to LOAD data.
+			UN_LOAD <= '0'; -- Tell FSM not to go to unloading state.
+			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
+			P <= '0';
+			G <= '0';
+			mode <= "111";
+			rst <= '1';
+			wait for clk_period*3;
+			rst <= '0';
+			wait until OP_DONE = '1';
+		when cmd_PtV =>		
+			LOAD <= '0';	-- Tell FSM not to LOAD data.
+			UN_LOAD <= '0'; -- Tell FSM not to go to unloading state.
+			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
+			P <= '0';
+			G <= '1';
+			mode <= "111";
+			rst <= '1';
+			wait for clk_period*3;
+			rst <= '0';
+			wait until OP_DONE = '1';
+
+ 		when cmd_SP =>		
+			LOAD <= '0';	-- Tell FSM not to LOAD data.
+			UN_LOAD <= '0'; -- Tell FSM not to go to unloading state.
+			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
+			P <= '0';
+			G <= '0';
+			mode <= "101";
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';

@@ -59,12 +59,11 @@ constant PIPELINE_DELAY: integer:= 10;
 signal i_addr_cnt,i_row_cnt,i_col_cnt: integer range 0 to COLUMN_TOTAL;
  signal s_CSEL: std_logic_vector(COLUMN_TOTAL-1 downto 0);
 
-type state_type is (START,LOADING,LOAD_DONE,PG,PtG,PGt,PtGt,PpG,PpGt,PtpG,PtpGt,PmG,PmGt,PtmG,PtmGt,GmP,GmPt,GtmP,GtmPt,PdG,PdGt,PtdG,PtdGt,DONE,UNLOAD);--,UNLOAD_DONE);
+type state_type is (START,LOADING,LOAD_DONE,PG,PtG,PGt,PtGt,PpG,PpGt,PtpG,PtpGt,VP,VPt,PV,PtV,SSP,DONE,UNLOAD);--,UNLOAD_DONE);
 signal state: state_type;
 --signal current_state,next_state: state_type;
 --signal s_P_ADDR : STD_LOGIC_VECTOR(ADDR_WIDTH - 2 downto 0);
 signal cnt_delay_ready: integer range 0 to (PIPELINE_DELAY + 1 + COLUMN_TOTAL*COLUMN_TOTAL);-- The counter should be able to count up to square of TOTAL_NUM_OF_COLUMNS + 1 +Pipeline delay
-
 
 --dubug sigals
 signal s_a, s_b: integer:=0;
@@ -109,15 +108,26 @@ if rising_edge(CLK) then
 				if v_cnt_delay_ready >= PIPELINE_DELAY then
 					READY <= '1';
 				end if;
-				
-				if v_cnt_delay_ready >= (PIPELINE_DELAY + COLUMN_TOTAL*COLUMN_TOTAL) then
-					UN_LOADING_DONE <= '1';
-				end if;
-			elsif state = PG or state = PGt or state = PtG or state = PtGt or state = PpG or state = PpGt or state = PtpG or state = PtpGt or state = PmG or state = PmGt or state = PtmG or state = PtmGt or state = GmP or state = GtmP or state = GmPt or state = GtmPt or state = PdG or state = PdGt or state = PtdG or state = PtdGt then
+				if mode>"101" then
+		   		if v_cnt_delay_ready >= (PIPELINE_DELAY + COLUMN_TOTAL) then
+      				UN_LOADING_DONE <= '1';
+			   	end if;
+				 else
+				 	if v_cnt_delay_ready >= (PIPELINE_DELAY + COLUMN_TOTAL*COLUMN_TOTAL) then
+      				UN_LOADING_DONE <= '1';
+			      end if;
+				 end if;
+			elsif state = PG or state = PGt or state = PtG or state = PtGt or state = PpG or state = PpGt or state = PtpG or state = PtpGt or state = SSP or state = VP or state = VPt or state = PV or state = PtV then
 				v_cnt_delay_ready := v_cnt_delay_ready + 1;
-				if v_cnt_delay_ready >= (PIPELINE_DELAY + COLUMN_TOTAL*COLUMN_TOTAL) then
-					OP_DONE <= '1';
-				end if;			
+				if mode>"100" then
+				   if v_cnt_delay_ready >= (PIPELINE_DELAY + COLUMN_TOTAL) then
+					   OP_DONE <= '1';
+				   end if;			
+				else
+				   if v_cnt_delay_ready >= (PIPELINE_DELAY + COLUMN_TOTAL*COLUMN_TOTAL) then
+				   OP_DONE <= '1';
+				   end if;			
+           end if;
 			else
 				READY <= '0';
 				LOADING_DONE <= '0';
@@ -138,6 +148,7 @@ variable v_OPCODE: std_logic_vector(OPCODE_WIDTH-1 downto 0);
 variable v_WE: std_logic;
 variable v_LOADING_DONE, v_OP_DONE, v_UNLOAD_DONE: std_logic:='0';
 variable v_i_addr_cnt: integer range 0 to COLUMN_TOTAL;
+variable Unloading_Count: integer range 0 to COLUMN_TOTAL;
 
 begin
 if (rising_edge(CLK)) then
@@ -232,8 +243,11 @@ if (rising_edge(CLK)) then
    						s_CSEL <= (others => '1');--Enble BRAM for Saving multiplication result.		
 							state <= UNLOAD;	
 						else
+
+
 						G_EN <= '1'; -- Enable GRAM
 						if (mode="000") then
+						   Unloading_Count:=COLUMN_TOTAL;
    						Write_SHFT <= '1';
 							OPCODE<="001";
      						s_CSEL <= (others => '1');--Enble BRAM for Saving multiplication result.		
@@ -262,7 +276,54 @@ if (rising_edge(CLK)) then
 									state<=PtGt;
 								end if;
 							end if;
+						elsif mode = "110" then
+						      Unloading_Count:=1;
+     						   Write_SHFT <= '0';
+								if G='0' then
+						         Read_SHFT <='0';
+									i_addr_cnt<=1;
+							      state<=VP;
+								else
+								    Read_SHFT <='1';								
+									 i_addr_cnt<=COLUMN_TOTAL-1;
+ 	 						       state<=VPt;
+							   end if;
+    					      i_row_cnt<=0;						    
+  					         i_col_cnt<=1;
+   							OPCODE<="001";
+      						s_CSEL <= (others => '1');--Enble BRAM for Saving multiplication result.		
+      						WE <= '0';
+
+						elsif mode = "111" then
+						      Unloading_Count:=1;
+     						   Write_SHFT <= '0';
+						      i_row_cnt<=1;						    
+  					         i_col_cnt<=0;
+   							OPCODE<="001";
+      						s_CSEL <= (others => '1');--Enble BRAM for Saving multiplication result.		
+      						WE <= '0';
+								if G='0' then
+								   i_addr_cnt<=COLUMN_TOTAL-1;
+									Read_SHFT <='1';
+						         state<=PV;
+								else
+									i_addr_cnt<=1;
+									Read_SHFT <='0';
+						         state<=PtV;
+								end if;
+						elsif mode = "101" then
+						      Unloading_Count:=1;
+     						   Write_SHFT <= '0';
+						      Read_SHFT <='0';
+    					      i_row_cnt<=0;						    
+  					         i_col_cnt<=0;
+   							OPCODE<="001";
+      						s_CSEL <= (others => '1');--Enble BRAM for Saving multiplication result.		
+      						WE <= '1';
+								i_addr_cnt<=0;
+						      state<=SSP;
 						else
+						   Unloading_Count:=COLUMN_TOTAL;
 						   Write_SHFT <= '0';
 					      i_addr_cnt<=0;
 					      i_row_cnt<=0;
@@ -497,6 +558,229 @@ if (rising_edge(CLK)) then
 							end if;
 							OPCODE<= v_OPCODE; --"111";
 -------------------------------------------------------------------------------------------------
+					when VP =>
+							v_OPCODE :="011";
+							WE <='0';					
+							if v_OP_DONE = '0' then
+								if i= COLUMN_TOTAL-1 then-- full round 
+									j:=j+1;
+									i:=0;
+									v_OPCODE := "001";
+										i_addr_cnt<=0;			-- the last address (COLUMN_TOTAl-1 => 2), like this 0,1,[2] the next round will continue from [2],0,1 instead of [0],1,2. So the address pattern is like this 1,2,0:0,1,2:2,0,1
+
+								else
+									i:=i+1;
+
+									if (i_col_cnt=COLUMN_TOTAL-1) then---G col
+								   	i_col_cnt<=0;
+								   else
+								      i_col_cnt<=i_col_cnt+1;
+								  end if;
+
+
+									if i = COLUMN_TOTAL-1 then
+										WE<='1';								
+									end if;
+								  if i_addr_cnt=COLUMN_TOTAL-1 then -- P addr
+										i_addr_cnt<=0;			-- the last address (COLUMN_TOTAl-1 => 2), like this 0,1,[2] the next round will continue from [2],0,1 instead of [0],1,2. So the address pattern is like this 1,2,0:0,1,2:2,0,1
+								  else							
+										i_addr_cnt <= i_addr_cnt+1;
+								 end if;
+
+--																			i_addr_cnt <= i_addr_cnt+1;
+
+									v_OPCODE := "011";-- make parameterizable latter.					
+								end if;
+								if j= 1 then 
+									v_OP_DONE :='1';
+									v_OPCODE :="111";
+								else
+									v_OP_DONE :='0';
+								end if;
+							else
+								if v_OP_DONE = '1' and cnt_delay_ready = (PIPELINE_DELAY + COLUMN_TOTAL*COLUMN_TOTAL) then -- wait until gets to BRAM.--then
+									state<=DONE;
+									v_OPCODE := "111";
+								end if;
+							end if;
+							OPCODE<= v_OPCODE; --"111";
+
+-------------------------------------------------------------------------------------------------
+					when VPt =>
+							v_OPCODE :="011";
+							WE <='0';					
+							if v_OP_DONE = '0' then
+								if i= COLUMN_TOTAL-1 then-- full round 
+									j:=j+1;
+									i:=0;
+									v_OPCODE := "001";
+								--		i_addr_cnt<=0;			-- the last address (COLUMN_TOTAl-1 => 2), like this 0,1,[2] the next round will continue from [2],0,1 instead of [0],1,2. So the address pattern is like this 1,2,0:0,1,2:2,0,1
+
+								else
+									i:=i+1;
+
+									if (i_col_cnt=COLUMN_TOTAL-1) then---G col
+								   	i_col_cnt<=0;
+								   else
+								      i_col_cnt<=i_col_cnt+1;
+								  end if;
+
+
+									if i = COLUMN_TOTAL-1 then
+										WE<='1';								
+									end if;
+								  if i_addr_cnt=0 then -- P addr
+										i_addr_cnt<=COLUMN_TOTAL-1;			-- the last address (COLUMN_TOTAl-1 => 2), like this 0,1,[2] the next round will continue from [2],0,1 instead of [0],1,2. So the address pattern is like this 1,2,0:0,1,2:2,0,1
+								  else							
+										i_addr_cnt <= i_addr_cnt-1;
+								 end if;
+									v_OPCODE := "011";-- make parameterizable latter.					
+								end if;
+								if j= 1 then 
+									v_OP_DONE :='1';
+									v_OPCODE :="111";
+								else
+									v_OP_DONE :='0';
+								end if;
+							else
+								if v_OP_DONE = '1' and cnt_delay_ready = (PIPELINE_DELAY + COLUMN_TOTAL) then -- wait until gets to BRAM.--then
+									state<=DONE;
+									v_OPCODE := "111";
+								end if;
+							end if;
+							OPCODE<= v_OPCODE; --"111";
+
+-------------------------------------------------------------------------------------------------
+
+					when PV =>
+							v_OPCODE :="011";
+							WE <='0';					
+							if v_OP_DONE = '0' then
+								if i= COLUMN_TOTAL-1 then-- full round 
+									j:=j+1;
+									i:=0;
+									v_OPCODE := "001";
+										i_addr_cnt<=0;			-- the last address (COLUMN_TOTAl-1 => 2), like this 0,1,[2] the next round will continue from [2],0,1 instead of [0],1,2. So the address pattern is like this 1,2,0:0,1,2:2,0,1
+
+								else
+									i:=i+1;
+
+									if (i_row_cnt=COLUMN_TOTAL-1) then---G col
+								   	i_row_cnt<=0;
+								   else
+								      i_row_cnt<=i_row_cnt+1;
+								  end if;
+
+
+									if i = COLUMN_TOTAL-1 then
+										WE<='1';								
+									end if;
+								  if i_addr_cnt=0 then -- P addr
+										i_addr_cnt<=COLUMN_TOTAL-1;			-- the last address (COLUMN_TOTAl-1 => 2), like this 0,1,[2] the next round will continue from [2],0,1 instead of [0],1,2. So the address pattern is like this 1,2,0:0,1,2:2,0,1
+								  else							
+										i_addr_cnt <= i_addr_cnt-1;
+								 end if;
+
+--																			i_addr_cnt <= i_addr_cnt+1;
+
+									v_OPCODE := "011";-- make parameterizable latter.					
+								end if;
+								if j= 1 then 
+									v_OP_DONE :='1';
+									v_OPCODE :="111";
+								else
+									v_OP_DONE :='0';
+								end if;
+							else
+								if v_OP_DONE = '1' and cnt_delay_ready = (PIPELINE_DELAY + COLUMN_TOTAL*COLUMN_TOTAL) then -- wait until gets to BRAM.--then
+									state<=DONE;
+									v_OPCODE := "111";
+								end if;
+							end if;
+							OPCODE<= v_OPCODE; --"111";
+-------------------------------------------------------------------------------------------------
+					when PtV =>
+							v_OPCODE :="011";
+							WE <='0';					
+							if v_OP_DONE = '0' then
+								if i= COLUMN_TOTAL-1 then-- full round 
+									j:=j+1;
+									i:=0;
+									v_OPCODE := "001";
+										i_addr_cnt<=0;			-- the last address (COLUMN_TOTAl-1 => 2), like this 0,1,[2] the next round will continue from [2],0,1 instead of [0],1,2. So the address pattern is like this 1,2,0:0,1,2:2,0,1
+
+								else
+									i:=i+1;
+									if (i_row_cnt=COLUMN_TOTAL-1) then---G col
+								   	i_row_cnt<=0;
+								   else
+								      i_row_cnt<=i_row_cnt+1;
+								  end if;
+
+
+									if i = COLUMN_TOTAL-1 then
+										WE<='1';								
+									end if;
+								  if i_addr_cnt=COLUMN_TOTAL-1 then -- P addr
+										i_addr_cnt<=0;			-- the last address (COLUMN_TOTAl-1 => 2), like this 0,1,[2] the next round will continue from [2],0,1 instead of [0],1,2. So the address pattern is like this 1,2,0:0,1,2:2,0,1
+								  else							
+										i_addr_cnt <= i_addr_cnt+1;
+								 end if;
+
+--																			i_addr_cnt <= i_addr_cnt+1;
+
+									v_OPCODE := "011";-- make parameterizable latter.					
+								end if;
+								if j= 1 then 
+									v_OP_DONE :='1';
+									v_OPCODE :="111";
+								else
+									v_OP_DONE :='0';
+								end if;
+							else
+								if v_OP_DONE = '1' and cnt_delay_ready = (PIPELINE_DELAY + COLUMN_TOTAL*COLUMN_TOTAL) then -- wait until gets to BRAM.--then
+									state<=DONE;
+									v_OPCODE := "111";
+								end if;
+							end if;
+							OPCODE<= v_OPCODE; --"111";
+-------------------------------------------------------------------------------------------------
+
+					when SSP =>
+							if v_OP_DONE = '1' then
+							   WE <='0';
+								s_CSEL <= (others => '1');--Enble BRAM for Saving multiplication result.		
+							end if;
+							if v_OP_DONE = '0' then 
+								WE <='1';					
+--								if i= COLUMN_TOTAL-1 then-- full round 
+									j:=j+1;
+									if i_addr_cnt/=COLUMN_TOTAL-1 then -- P addr
+									   i_addr_cnt<=j;
+                           end if;
+									i:=0;
+--								else
+--									i:=i+1;
+--								end if;
+   							if j= COLUMN_TOTAL then 
+									s_CSEL<=(others => '0');
+								else 
+    							      s_CSEL <= s_CSEL(s_CSEL'length - 2 downto 0) & s_CSEL(s_CSEL'length - 1); --rol 1 (shift one place left with roll over).
+								end if;	
+
+								if j= COLUMN_TOTAL then 
+									v_OP_DONE :='1';
+									v_OPCODE :="111";
+								else
+									v_OP_DONE :='0';
+								end if;
+							else
+								if v_OP_DONE = '1' and cnt_delay_ready = (PIPELINE_DELAY + COLUMN_TOTAL*COLUMN_TOTAL) then -- wait until gets to BRAM.--then
+									WE<='0';								
+									state<=DONE;
+								end if;
+							end if;
+-------------------------------------------------------------------------------------------------
 					when PpG =>
 							if v_OP_DONE = '1' then
 							   WE <='0';
@@ -538,6 +822,7 @@ if (rising_edge(CLK)) then
 								end if;
 							end if;
 -------------------------------------------------------------------------------------------------
+
 					when PpGt =>
 							if v_OP_DONE = '1' then
 							   WE <='0';
@@ -684,11 +969,18 @@ if (rising_edge(CLK)) then
 							v_UNLOAD_DONE := '0';	
 							i:=0;
 							j:=0;
+--						if mode="101" then
+--   				      Unloading_Count:=1;
+--						else
+--					      Unloading_Count:=COLUMN_TOTAL;
+--						end if;
+
 							--s_P_ADDR <= std_logic_vector(to_unsigned(j, ADDR_WIDTH-1));
 							if UN_LOAD = '1' then
 							 state <= UNLOAD;
 							end if;
-					when others =>				
+					when others =>		
+					
 						--s_fsm_generate_address <= true;
 						if v_UNLOAD_DONE = '0' then
 							CONTROL_A_INPUT_OF_DSP <= '1';

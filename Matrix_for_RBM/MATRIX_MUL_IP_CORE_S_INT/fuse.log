@@ -1,21 +1,21 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o E:/valencia/ETSE_GDSP-master - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/TB_MATRIX_MUL_IP_CORE_S_INT_isim_beh.exe -prj E:/valencia/ETSE_GDSP-master - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/TB_MATRIX_MUL_IP_CORE_S_INT_beh.prj work.TB_MATRIX_MUL_IP_CORE_S_INT 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o E:/valencia/ETSE_GDSP-master - Copy - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/TB_MATRIX_MUL_IP_CORE_S_INT_isim_beh.exe -prj E:/valencia/ETSE_GDSP-master - Copy - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/TB_MATRIX_MUL_IP_CORE_S_INT_beh.prj work.TB_MATRIX_MUL_IP_CORE_S_INT 
 ISim P.20131013 (signature 0x8ef4fb42)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Parsing VHDL file "E:/valencia/ETSE_GDSP-master - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/../../IPCores/BRAM_and_DSP/ipcore_dir/BRAM18x1k.vhd" into library work
-Parsing VHDL file "E:/valencia/ETSE_GDSP-master - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/../../IPCores/BRAM_and_DSP/ipcore_dir/DSP_INPUT_C.vhd" into library work
-Parsing VHDL file "E:/valencia/ETSE_GDSP-master - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/../../SharedLibraries/txt_util.vhd" into library work
-Parsing VHDL file "E:/valencia/ETSE_GDSP-master - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/../../SharedLibraries/MATRIX_MUL_IP_CORE_LIBRARY.vhd" into library work
-Parsing VHDL file "E:/valencia/ETSE_GDSP-master - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/../../SharedLibraries/BRAM_WRAPPER_V2.vhd" into library work
-Parsing VHDL file "E:/valencia/ETSE_GDSP-master - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/CONTROL_UNIT_S_INT.vhd" into library work
-Parsing VHDL file "E:/valencia/ETSE_GDSP-master - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/../../SharedLibraries/STANDARD_RAM.vhd" into library work
-Parsing VHDL file "E:/valencia/ETSE_GDSP-master - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/MATRIX_MUL_IP_CORE_S_INT.vhd" into library work
-Parsing VHDL file "E:/valencia/ETSE_GDSP-master - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/TB_MATRIX_MUL_IP_CORE_S_INT.vhd" into library work
+Parsing VHDL file "E:/valencia/ETSE_GDSP-master - Copy - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/../../IPCores/BRAM_and_DSP/ipcore_dir/BRAM18x1k.vhd" into library work
+Parsing VHDL file "E:/valencia/ETSE_GDSP-master - Copy - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/../../IPCores/BRAM_and_DSP/ipcore_dir/DSP_INPUT_C.vhd" into library work
+Parsing VHDL file "E:/valencia/ETSE_GDSP-master - Copy - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/../../SharedLibraries/txt_util.vhd" into library work
+Parsing VHDL file "E:/valencia/ETSE_GDSP-master - Copy - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/../../SharedLibraries/MATRIX_MUL_IP_CORE_LIBRARY.vhd" into library work
+Parsing VHDL file "E:/valencia/ETSE_GDSP-master - Copy - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/../../SharedLibraries/BRAM_WRAPPER_V2.vhd" into library work
+Parsing VHDL file "E:/valencia/ETSE_GDSP-master - Copy - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/CONTROL_UNIT_S_INT.vhd" into library work
+Parsing VHDL file "E:/valencia/ETSE_GDSP-master - Copy - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/../../SharedLibraries/STANDARD_RAM.vhd" into library work
+Parsing VHDL file "E:/valencia/ETSE_GDSP-master - Copy - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/MATRIX_MUL_IP_CORE_S_INT.vhd" into library work
+Parsing VHDL file "E:/valencia/ETSE_GDSP-master - Copy - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/TB_MATRIX_MUL_IP_CORE_S_INT.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Fuse Memory Usage: 109364 KB
-Fuse CPU Usage: 1434 ms
+Fuse CPU Usage: 2074 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package textio
@@ -66,8 +66,8 @@ Compiling architecture behavioral of entity MATRIX_MUL_IP_CORE_S_INT [\MATRIX_MU
 Compiling architecture behavioral of entity STANDARD_RAM [\STANDARD_RAM(4,10,18)\]
 Compiling architecture behavior of entity tb_matrix_mul_ip_core_s_int
 Time Resolution for simulation is 1ps.
-Waiting for 22 sub-compilation(s) to finish...
+Waiting for 31 sub-compilation(s) to finish...
 Compiled 82 VHDL Units
-Built simulation executable E:/valencia/ETSE_GDSP-master - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/TB_MATRIX_MUL_IP_CORE_S_INT_isim_beh.exe
+Built simulation executable E:/valencia/ETSE_GDSP-master - Copy - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/TB_MATRIX_MUL_IP_CORE_S_INT_isim_beh.exe
 Fuse Memory Usage: 152032 KB
-Fuse CPU Usage: 2979 ms
+Fuse CPU Usage: 4055 ms
