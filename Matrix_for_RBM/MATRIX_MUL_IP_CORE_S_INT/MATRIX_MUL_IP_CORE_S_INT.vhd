@@ -15,7 +15,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity MATRIX_MUL_IP_CORE_S_INT is
 	generic(		
-		COLUMN_TOTAL    : integer := 1024;
+		COLUMN_TOTAL    : integer := 10;
 		OPCODE_WIDTH    : integer := 3;
 		ADDR_WIDTH      : integer := 10;
 		DATA_WIDTH      : integer := 18;
@@ -53,7 +53,7 @@ type i_DATA_wide is array (0 to COLUMN_TOTAL-1) of std_logic_vector(DATA_WIDE_WI
 signal i_ALU2ALU: i_DATA_wide;		---- alu-to-alu signal
 
 constant DIN_DELAY: integer:=2;
-constant DELAY_DEPTH: integer:=6+DIN_DELAY;--7+DIN_DELAY;
+constant DELAY_DEPTH: integer:=3+DIN_DELAY;--7+DIN_DELAY;
 
 type pipelined_OPCODE_t is array (0 to DIN_DELAY-1) of  std_logic_vector(OPCODE_WIDTH-1 downto 0);
 signal p_OPCODE: pipelined_OPCODE_t;

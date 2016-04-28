@@ -66,36 +66,36 @@ while(1)
         HM=A;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%----PtGt--PGt---PtG----PG-----%%%%%%%%%%%%%%%%%%%%%%%       
-    elseif (strncmp(s,'Pt*Gt',5))
+    elseif (strncmp(s,'PtGt',4))
         code='0 1 1 0001';
         A=LM'*G';
         HM=A;
-    elseif (strncmp(s,'P*Gt',4))
+    elseif (strncmp(s,'PGt',3))
         code='0 0 1 0001';
         A=LM*G';
         HM=A;
-    elseif (strncmp(s,'Pt*G',4))
+    elseif (strncmp(s,'PtG',3))
         code='0 1 0 0001';    
         A=LM'*G;
         HM=A;
-    elseif (strncmp(s,'P*G',3))
+    elseif (strncmp(s,'PG',2))
         code='0 0 0 0001';
         A=LM*G;
         HM=A;
 %%%%%%%%%%%%%%%%%%%%%%%%----RtGt-------RGt---RtGt----RG-------%%%%%%%%%        
-    elseif (strncmp(s,'Rt*Gt',5))
+    elseif (strncmp(s,'RtGt',4))
         code='1 1 1 0001'; 
         A=HM'*G';
         LM=A;
-   elseif (strncmp(s,'R*Gt',4))
+   elseif (strncmp(s,'RGt',3))
         code='1 0 1 0001';
         A=HM*G';
         LM=A;
-    elseif (strncmp(s,'Rt*G',4))
+    elseif (strncmp(s,'RtG',3))
         code='1 1 0 0001';
         A=HM'*G;
         LM=A;
-    elseif (strncmp(s,'R*G',3))
+    elseif (strncmp(s,'RG',2))
         code='1 0 0 0001';
         A=HM*G;
         LM=A;
@@ -178,7 +178,7 @@ while(1)
         A=G'-LM;
         HM=A;
     elseif (strncmp(s,'G-Pt',4))
-        code='0 1 0 100';
+        code='0 1 0 0100';
         A=G-LM';
         HM=A;
     elseif (strncmp(s,'G-P',3))

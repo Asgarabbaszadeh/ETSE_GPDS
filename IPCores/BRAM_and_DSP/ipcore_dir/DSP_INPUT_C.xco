@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.7
-# Date: Tue Dec 01 11:17:07 2015
+# Date: Mon Apr 25 15:38:43 2016
 #
 ##############################################################
 #
@@ -41,15 +41,15 @@ SELECT DSP48_Macro xilinx.com:ip:xbip_dsp48_macro:2.1
 # BEGIN Parameters
 CSET a_binarywidth=0
 CSET a_width=18
-CSET areg_1=true
-CSET areg_2=true
-CSET areg_3=true
+CSET areg_1=false
+CSET areg_2=false
+CSET areg_3=false
 CSET areg_4=true
 CSET b_binarywidth=0
 CSET b_width=18
-CSET breg_1=true
-CSET breg_2=true
-CSET breg_3=true
+CSET breg_1=false
+CSET breg_2=false
+CSET breg_3=false
 CSET breg_4=true
 CSET c_binarywidth=0
 CSET c_width=48
@@ -71,9 +71,9 @@ CSET creg_4=false
 CSET creg_5=false
 CSET d_binarywidth=0
 CSET d_width=18
-CSET dreg_1=true
-CSET dreg_2=true
-CSET dreg_3=true
+CSET dreg_1=false
+CSET dreg_2=false
+CSET dreg_3=false
 CSET gui_behaviour=Coregen
 CSET has_a_ce=false
 CSET has_a_sclr=false
@@ -108,9 +108,9 @@ CSET instruction7=C
 CSET instruction8=#
 CSET instruction_list=#
 CSET mreg_5=true
-CSET opreg_1=true
-CSET opreg_2=true
-CSET opreg_3=true
+CSET opreg_1=false
+CSET opreg_2=false
+CSET opreg_3=false
 CSET opreg_4=true
 CSET opreg_5=true
 CSET output_properties=Full_Precision
@@ -133,4 +133,4 @@ CSET use_dsp48=true
 MISC pkg_timestamp=2013-07-22T10:40:10Z
 # END Extra information
 GENERATE
-# CRC:  570a692
+# CRC: e9ab964f

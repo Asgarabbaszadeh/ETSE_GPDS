@@ -15,7 +15,7 @@ Parsing VHDL file "E:/valencia/ETSE_GDSP-master - Copy - Copy/Matrix_for_RBM/MAT
 Starting static elaboration
 Completed static elaboration
 Fuse Memory Usage: 109364 KB
-Fuse CPU Usage: 2074 ms
+Fuse CPU Usage: 1247 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package textio
@@ -42,6 +42,14 @@ Compiling package bip_usecase_utils_pkg_v2_0
 Compiling package xbip_pipe_v2_0_xst_comp
 Compiling package bip_dsp48_macro_pkg_v2_1
 Compiling package xbip_pipe_v2_0_comp
+Compiling architecture behavioral of entity xbip_pipe_v2_0 [\xbip_pipe_v2_0(0,0,0,0,0,0,0,"0...]
+Compiling architecture behavioral of entity xbip_pipe_v2_0_xst [\xbip_pipe_v2_0_xst(0,0,0,0,0,0,...]
+Compiling architecture behavioral of entity xbip_pipe_v2_0 [\xbip_pipe_v2_0(0,0,0,0,0,0,0,"0...]
+Compiling architecture behavioral of entity xbip_pipe_v2_0_xst [\xbip_pipe_v2_0_xst(0,0,0,0,0,0,...]
+Compiling architecture behavioral of entity xbip_pipe_v2_0 [\xbip_pipe_v2_0(0,0,0,0,0,0,0,"0...]
+Compiling architecture behavioral of entity xbip_pipe_v2_0_xst [\xbip_pipe_v2_0_xst(0,0,0,0,0,0,...]
+Compiling architecture behavioral of entity xbip_pipe_v2_0 [\xbip_pipe_v2_0(0,0,0,0,0,0,0,"0...]
+Compiling architecture behavioral of entity xbip_pipe_v2_0_xst [\xbip_pipe_v2_0_xst(0,0,0,0,0,0,...]
 Compiling architecture behavioral of entity xbip_pipe_v2_0 [\xbip_pipe_v2_0(1,0,0,0,0,0,0,"0...]
 Compiling architecture behavioral of entity xbip_pipe_v2_0_xst [\xbip_pipe_v2_0_xst(1,0,0,0,0,0,...]
 Compiling architecture behavioral of entity xbip_pipe_v2_0 [\xbip_pipe_v2_0(1,0,0,0,0,0,0,"0...]
@@ -50,8 +58,6 @@ Compiling architecture behavioral of entity xbip_pipe_v2_0 [\xbip_pipe_v2_0(1,0,
 Compiling architecture behavioral of entity xbip_pipe_v2_0_xst [\xbip_pipe_v2_0_xst(1,0,0,0,0,0,...]
 Compiling architecture behavioral of entity xbip_pipe_v2_0 [\xbip_pipe_v2_0(0,0,0,0,0,0,0,"0...]
 Compiling architecture behavioral of entity xbip_pipe_v2_0_xst [\xbip_pipe_v2_0_xst(0,0,0,0,0,0,...]
-Compiling architecture behavioral of entity xbip_pipe_v2_0 [\xbip_pipe_v2_0(1,0,0,0,0,0,0,"0...]
-Compiling architecture behavioral of entity xbip_pipe_v2_0_xst [\xbip_pipe_v2_0_xst(1,0,0,0,0,0,...]
 Compiling architecture behavioral of entity xbip_pipe_v2_0 [\xbip_pipe_v2_0(1,0,0,0,0,0,0,"0...]
 Compiling architecture behavioral of entity xbip_pipe_v2_0_xst [\xbip_pipe_v2_0_xst(1,0,0,0,0,0,...]
 Compiling architecture behavioral of entity xbip_pipe_v2_0 [\xbip_pipe_v2_0(0,0,0,0,0,0,0,"0...]
@@ -66,8 +72,8 @@ Compiling architecture behavioral of entity MATRIX_MUL_IP_CORE_S_INT [\MATRIX_MU
 Compiling architecture behavioral of entity STANDARD_RAM [\STANDARD_RAM(4,10,18)\]
 Compiling architecture behavior of entity tb_matrix_mul_ip_core_s_int
 Time Resolution for simulation is 1ps.
-Waiting for 31 sub-compilation(s) to finish...
-Compiled 82 VHDL Units
+Waiting for 41 sub-compilation(s) to finish...
+Compiled 94 VHDL Units
 Built simulation executable E:/valencia/ETSE_GDSP-master - Copy - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/TB_MATRIX_MUL_IP_CORE_S_INT_isim_beh.exe
 Fuse Memory Usage: 152032 KB
-Fuse CPU Usage: 4055 ms
+Fuse CPU Usage: 2620 ms

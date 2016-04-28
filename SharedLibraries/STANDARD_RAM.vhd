@@ -43,7 +43,7 @@ if rising_edge(CLK) then
 	end if;
 	DOUT<=i_DOUT;
 	ii_DOUT <= i_DOUT;
-	DOUT <= ii_DOUT;--3 clk_cycle pipeline.
+	DOUT <=ii_DOUT;-- ii_DOUT;--3 clk_cycle pipeline.
 end if;
 end process;
 

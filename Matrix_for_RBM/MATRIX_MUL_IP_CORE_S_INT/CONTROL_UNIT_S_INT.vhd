@@ -54,7 +54,7 @@ end CONTROL_UNIT_S_INT;
 
 architecture Behavioral of CONTROL_UNIT_S_INT is
 
-constant PIPELINE_DELAY: integer:= 10;
+constant PIPELINE_DELAY: integer:=7;
 	
 signal i_addr_cnt,i_row_cnt,i_col_cnt: integer range 0 to COLUMN_TOTAL;
  signal s_CSEL: std_logic_vector(COLUMN_TOTAL-1 downto 0);
@@ -108,7 +108,7 @@ if rising_edge(CLK) then
 				if v_cnt_delay_ready >= PIPELINE_DELAY then
 					READY <= '1';
 				end if;
-				if mode>"101" then
+				if mode<"010" then
 		   		if v_cnt_delay_ready >= (PIPELINE_DELAY + COLUMN_TOTAL) then
       				UN_LOADING_DONE <= '1';
 			   	end if;
@@ -119,7 +119,7 @@ if rising_edge(CLK) then
 				 end if;
 			elsif state = PG or state = PGt or state = PtG or state = PtGt or state = PpG or state = PpGt or state = PtpG or state = PtpGt or state = SSP or state = VP or state = VPt or state = PV or state = PtV then
 				v_cnt_delay_ready := v_cnt_delay_ready + 1;
-				if mode>"100" then
+				if mode<"011" then
 				   if v_cnt_delay_ready >= (PIPELINE_DELAY + COLUMN_TOTAL) then
 					   OP_DONE <= '1';
 				   end if;			
@@ -230,7 +230,6 @@ if (rising_edge(CLK)) then
 				when LOAD_DONE =>
 						i:=0;
 						j:=0;
---						WE <= '0';
 						Write_SHFT <= '1';
 						v_UNLOAD_DONE := '0';							
 						s_CSEL <= (others => '1');--Enble BRAM for Saving multiplication result.		
@@ -243,12 +242,18 @@ if (rising_edge(CLK)) then
    						s_CSEL <= (others => '1');--Enble BRAM for Saving multiplication result.		
 							state <= UNLOAD;	
 						else
+						if mode="011" then
+							Write_SHFT <= '1';
+						else
+						    Write_SHFT <= '0';
+						end if;
 
 
 						G_EN <= '1'; -- Enable GRAM
-						if (mode="000") then
+--mode=0 => PG mode=1 =>VP mode=2 =>PV mode=3 =>SP mode=4 =>P+G mode=5 =>P-G mode=6 =>G-P mode=7 =>P.G							
+						if (mode="011") then
 						   Unloading_Count:=COLUMN_TOTAL;
-   						Write_SHFT <= '1';
+--   						Write_SHFT <= '1';
 							OPCODE<="001";
      						s_CSEL <= (others => '1');--Enble BRAM for Saving multiplication result.		
      						WE <= '0';
@@ -276,9 +281,9 @@ if (rising_edge(CLK)) then
 									state<=PtGt;
 								end if;
 							end if;
-						elsif mode = "110" then
+						elsif mode = "000" then
 						      Unloading_Count:=1;
-     						   Write_SHFT <= '0';
+--     						   Write_SHFT <= '0';
 								if G='0' then
 						         Read_SHFT <='0';
 									i_addr_cnt<=1;
@@ -294,9 +299,9 @@ if (rising_edge(CLK)) then
       						s_CSEL <= (others => '1');--Enble BRAM for Saving multiplication result.		
       						WE <= '0';
 
-						elsif mode = "111" then
+						elsif mode = "001" then
 						      Unloading_Count:=1;
-     						   Write_SHFT <= '0';
+--     						   Write_SHFT <= '0';
 						      i_row_cnt<=1;						    
   					         i_col_cnt<=0;
    							OPCODE<="001";
@@ -311,9 +316,9 @@ if (rising_edge(CLK)) then
 									Read_SHFT <='0';
 						         state<=PtV;
 								end if;
-						elsif mode = "101" then
+						elsif mode = "010" then
 						      Unloading_Count:=1;
-     						   Write_SHFT <= '0';
+--     						   Write_SHFT <= '0';
 						      Read_SHFT <='0';
     					      i_row_cnt<=0;						    
   					         i_col_cnt<=0;
@@ -324,7 +329,7 @@ if (rising_edge(CLK)) then
 						      state<=SSP;
 						else
 						   Unloading_Count:=COLUMN_TOTAL;
-						   Write_SHFT <= '0';
+--						   Write_SHFT <= '0';
 					      i_addr_cnt<=0;
 					      i_row_cnt<=0;
 					      i_col_cnt<=0;
@@ -348,13 +353,13 @@ if (rising_edge(CLK)) then
 							     state<=PtpGt;
 						     end if;
                     end if;
-						  if mode="001" then
+						  if mode="100" then
 						     OPCODE<="010";
-   					   elsif mode="010" then
+   					   elsif mode="101" then
 		     				   OPCODE<="100";
-      					elsif mode="011" then
+      					elsif mode="110" then
    						    OPCODE<="101";
-	      				elsif mode="100" then
+	      				elsif mode="111" then
 			   			    OPCODE<="001";
           				end if;		
                   end if;

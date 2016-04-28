@@ -63,52 +63,21 @@ at 55 ns(1), Instance /tb_matrix_mul_ip_core_s_int/uut/\block_a_mem_gen(0)\/MEMA
 at 55 ns(1), Instance /tb_matrix_mul_ip_core_s_int/uut/\block_a_mem_gen(1)\/MEMA/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 55 ns(1), Instance /tb_matrix_mul_ip_core_s_int/uut/\block_a_mem_gen(2)\/MEMA/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 55 ns(1), Instance /tb_matrix_mul_ip_core_s_int/uut/\block_a_mem_gen(3)\/MEMA/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 65 ns(1), Instance /tb_matrix_mul_ip_core_s_int/uut/\block_a_mem_gen(0)\/MEMA/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 65 ns(1), Instance /tb_matrix_mul_ip_core_s_int/uut/\block_a_mem_gen(1)\/MEMA/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 65 ns(1), Instance /tb_matrix_mul_ip_core_s_int/uut/\block_a_mem_gen(2)\/MEMA/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 65 ns(1), Instance /tb_matrix_mul_ip_core_s_int/uut/\block_a_mem_gen(3)\/MEMA/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 75 ns(1), Instance /tb_matrix_mul_ip_core_s_int/uut/\block_a_mem_gen(0)\/MEMA/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 75 ns(1), Instance /tb_matrix_mul_ip_core_s_int/uut/\block_a_mem_gen(1)\/MEMA/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 75 ns(1), Instance /tb_matrix_mul_ip_core_s_int/uut/\block_a_mem_gen(2)\/MEMA/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 75 ns(1), Instance /tb_matrix_mul_ip_core_s_int/uut/\block_a_mem_gen(3)\/MEMA/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 85 ns(1), Instance /tb_matrix_mul_ip_core_s_int/uut/\block_a_mem_gen(0)\/MEMA/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 85 ns(1), Instance /tb_matrix_mul_ip_core_s_int/uut/\block_a_mem_gen(1)\/MEMA/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 85 ns(1), Instance /tb_matrix_mul_ip_core_s_int/uut/\block_a_mem_gen(2)\/MEMA/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 85 ns(1), Instance /tb_matrix_mul_ip_core_s_int/uut/\block_a_mem_gen(3)\/MEMA/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
  ---------------BEGINNING OF SECTION (See end of Section for details)---------------
 1         2         3         4         
 8         5         6         7         
 11        12        9         10        
 14        15        16        13        
---------------- Data loaded into BRAM. 27 clock cycles to load,26 clock cycles to unload---------------
+--------------- Data loaded into BRAM. 24 clock cycles to load,23 clock cycles to unload---------------
  
  ---------------BEGINNING OF SECTION (See end of Section for details)---------------
 1         2         3         4         
 8         5         6         7         
 11        12        9         10        
 14        15        16        13        
---------------- Data loaded into BRAM. 27 clock cycles to load,26 clock cycles to unload---------------
- 
----------------BEGINNING OF SECTION (See end of Section for details)---------------
-13        26        39        52        
-104       65        78        91        
-143       156       117       130       
-182       195       208       169       
---------------- result of S.P from upper bank of BRAM. 14 clock cycles to finish dot multiplication, 26 clock cycles to unload---------------
+--------------- Data loaded into BRAM. 24 clock cycles to load,23 clock cycles to unload---------------
  
 ---------------BEGINNING OF SECTION (See end of Section for details)---------------
 253       294       335       376       
---------------- result of V*P from upper bank of BRAM. 14 clock cycles to finish dot multiplication, 14 clock cycles to unload---------------
- 
----------------BEGINNING OF SECTION (See end of Section for details)---------------
-124       320       516       712       
---------------- result of P*V from upper bank of BRAM. 14 clock cycles to finish dot multiplication, 14 clock cycles to unload---------------
- 
----------------BEGINNING OF SECTION (See end of Section for details)---------------
-94        258       422       586       
---------------- result of V*Pt from upper bank of BRAM. 14 clock cycles to finish dot multiplication, 14 clock cycles to unload---------------
- 
----------------BEGINNING OF SECTION (See end of Section for details)---------------
-349       398       447       496       
---------------- result of Pt*V from upper bank of BRAM. 14 clock cycles to finish dot multiplication, 14 clock cycles to unload---------------
+--------------- result of V*P from upper bank of BRAM. 11 clock cycles to finish dot multiplication, 11 clock cycles to unload---------------
  

@@ -10,13 +10,13 @@
          <ClosedNode>/TB_MATRIX_MUL_IP_CORE_S_INT - behavior E:|valencia|ETSE_GDSP-master|Matrix_for_RBM|MATRIX_MUL_IP_CORE_S_INT|TB_MATRIX_MUL_IP_CORE_S_INT.vhd/uut - MATRIX_MUL_IP_CORE_S_INT - Behavioral/MEMA - BRAM_WRAPPER_V2 - Behavioral</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>uut - MATRIX_MUL_IP_CORE_S_INT - Behavioral (E:/valencia/ETSE_GDSP-master - Copy - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/MATRIX_MUL_IP_CORE_S_INT.vhd)</SelectedItem>
+         <SelectedItem>TB_MATRIX_MUL_IP_CORE_S_INT - behavior (E:/valencia/ETSE_GDSP-master - Copy - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/TB_MATRIX_MUL_IP_CORE_S_INT.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000222000000020000000000000000000000000200000064ffffffff000000810000000300000002000002220000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000244000000020000000000000000000000000200000064ffffffff000000810000000300000002000002440000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>uut - MATRIX_MUL_IP_CORE_S_INT - Behavioral (E:/valencia/ETSE_GDSP-master - Copy - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/MATRIX_MUL_IP_CORE_S_INT.vhd)</CurrentItem>
+      <CurrentItem>TB_MATRIX_MUL_IP_CORE_S_INT - behavior (E:/valencia/ETSE_GDSP-master - Copy - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/TB_MATRIX_MUL_IP_CORE_S_INT.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
@@ -24,6 +24,7 @@
          <ClosedNode>Configure Target Device</ClosedNode>
          <ClosedNode>Design Utilities</ClosedNode>
          <ClosedNode>Implement Design</ClosedNode>
+         <ClosedNode>Synthesize - XST</ClosedNode>
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
@@ -31,7 +32,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000e7000000010000000100000000000000000000000064ffffffff000000810000000000000001000000e70000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001d9000000010000000100000000000000000000000064ffffffff000000810000000000000001000001d90000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem></CurrentItem>
    </ItemView>
@@ -44,7 +45,7 @@
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000495000000040101000100000000000000000000000064ffffffff000000810000000000000004000000d60000000100000000000000d70000000100000000000000660000000100000000000002820000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>BRAM18x1k.xco</CurrentItem>
+      <CurrentItem>..\..\IPCores\BRAM_and_DSP\ipcore_dir\BRAM18x1k.xco</CurrentItem>
    </ItemView>
    <ItemView guiview="Library" >
       <ClosedNodes>
@@ -65,13 +66,13 @@
          <ClosedNode>CORE Generator</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem/>
+         <SelectedItem>CORE Generator</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem/>
+      <CurrentItem>CORE Generator</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
@@ -80,13 +81,13 @@
          <ClosedNode>/testbench - behavior E:|valencia|ETSE_GDSP-master|Matrix_for_RBM|MATRIX_MUL_IP_CORE_S_INT|TB_FSM.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>FSM_UNIT - CONTROL_UNIT_S_INT - Behavioral (E:/valencia/ETSE_GDSP-master - Copy - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/CONTROL_UNIT_S_INT.vhd)</SelectedItem>
+         <SelectedItem>TB_MATRIX_MUL_IP_CORE_S_INT - behavior (E:/valencia/ETSE_GDSP-master - Copy - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/TB_MATRIX_MUL_IP_CORE_S_INT.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >2</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >1</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000212000000020000000000000000000000000200000064ffffffff000000810000000300000002000002120000000100000003000000000000000100000003</ViewHeaderState>
-      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>FSM_UNIT - CONTROL_UNIT_S_INT - Behavioral (E:/valencia/ETSE_GDSP-master - Copy - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/CONTROL_UNIT_S_INT.vhd)</CurrentItem>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000244000000020000000000000000000000000200000064ffffffff000000810000000300000002000002440000000100000003000000000000000100000003</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
+      <CurrentItem>TB_MATRIX_MUL_IP_CORE_S_INT - behavior (E:/valencia/ETSE_GDSP-master - Copy - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/TB_MATRIX_MUL_IP_CORE_S_INT.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -98,7 +99,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000ca000000010000000100000000000000000000000064ffffffff000000810000000000000001000000ca0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>Design Utilities</CurrentItem>
    </ItemView>
@@ -111,7 +112,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001d9000000010000000100000000000000000000000064ffffffff000000810000000000000001000001d90000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>Simulate Behavioral Model</CurrentItem>
    </ItemView>
@@ -124,7 +125,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001d9000000010000000100000000000000000000000064ffffffff000000810000000000000001000001d90000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem/>
    </ItemView>
@@ -142,4 +143,5 @@
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem/>
    </ItemView>
+   <CopyAdditionalFiles/>
 </Project>
