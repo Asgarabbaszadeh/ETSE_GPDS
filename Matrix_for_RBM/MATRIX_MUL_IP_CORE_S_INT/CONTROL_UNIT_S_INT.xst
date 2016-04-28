@@ -1,5 +1,5 @@
-set -tmpdir "E:/valencia/ETSE_GDSP-master - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/xst/projnav.tmp"
-set -xsthdpdir "E:/valencia/ETSE_GDSP-master - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/xst"
+set -tmpdir "E:/valencia/ETSE_GDSP-modified3/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/xst/projnav.tmp"
+set -xsthdpdir "E:/valencia/ETSE_GDSP-modified3/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/xst"
 run -compileonly yes
 -p xc7vx485t-2-ffg1157
 -top CONTROL_UNIT_S_INT

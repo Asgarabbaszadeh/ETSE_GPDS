@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "E:/valencia/ETSE_GDSP-master - Copy - Copy/SharedLibraries/BRAM_WRAPPER_V2.vhd";
+static const char *ng0 = "E:/valencia/ETSE_GDSP-modified3/SharedLibraries/BRAM_WRAPPER_V2.vhd";
 extern char *IEEE_P_2592010699;
 extern char *IEEE_P_1242562249;
 

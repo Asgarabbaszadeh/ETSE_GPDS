@@ -62,7 +62,7 @@ ARCHITECTURE behavior OF TB_MATRIX_MUL_IP_CORE_S_INT IS
    -- Control Signals----
    signal DATA_INPUT: std_logic:='0';
    signal GREAD_DONE: std_logic :='0';   
-   type COMMAND is (cmd_G_READ_START,cmd_P_READ_START,cmd_Unload_BRAM_Content,cmd_PG,cmd_PGt,cmd_PtG,cmd_PtGt,cmd_PpG,cmd_PpGt,cmd_PtpG,cmd_PtpGt,cmd_PmG,cmd_PmGt,cmd_PtmG,cmd_PtmGt,cmd_GmP,cmd_GmPt,cmd_GtmP,cmd_GtmPt,cmd_PdG,cmd_PdGt,cmd_PtdG,cmd_PtdGt,cmd_VP,cmd_VPt,cmd_PV,cmd_PtV,cmd_SP,cmd_dummy);
+   type COMMAND is (cmd_G_READ_START,cmd_P_READ_START,cmd_Unload_BRAM_Content,cmd_PG,cmd_PGt,cmd_PtG,cmd_PtGt,cmd_PpG,cmd_PpGt,cmd_PtpG,cmd_PtpGt,cmd_PmG,cmd_PmGt,cmd_PtmG,cmd_PtmGt,cmd_GmP,cmd_GmPt,cmd_GtmP,cmd_GtmPt,cmd_PdG,cmd_PdGt,cmd_PtdG,cmd_PtdGt,cmd_VP,cmd_VPt,cmd_PV,cmd_PtV,cmd_SP,cmd_SPt,cmd_dummy);
 	signal CMD: COMMAND;
    signal r_loop_count : std_logic_vector(2 downto 0) := (others => '0');
    
@@ -100,7 +100,13 @@ ARCHITECTURE behavior OF TB_MATRIX_MUL_IP_CORE_S_INT IS
    signal LOADING_DONE : std_logic;   
 	signal UN_LOADING_DONE : std_logic;
 	signal delay_latency: integer:=0;
-	
+	signal WE :std_logic;
+   signal CSEL			: std_logic_vector(COLUMN_TOTAL-1 downto 0);
+ 	signal OPCODE       :  STD_LOGIC_VECTOR(OPCODE_WIDTH - 1 downto 0);
+	signal CONTROL_A_INPUT_OF_DSP:  std_logic;
+   signal Write_ADDR	: STD_LOGIC_VECTOR(ADDR_WIDTH - 2 downto 0);
+   signal Read_ADDR	:  STD_LOGIC_VECTOR(ADDR_WIDTH - 2 downto 0);
+
 -------------------------------------------------End of MEMARRY_V3 Signals---------------------------------------
 
 --------------------------------------------------------GRAM Signals--------------------------------------------- 
@@ -115,8 +121,7 @@ ARCHITECTURE behavior OF TB_MATRIX_MUL_IP_CORE_S_INT IS
 	signal MUL_GCOL : std_logic_vector(ADDR_WIDTH-1 downto 0);
 	signal MUL_GROW : std_logic_vector(ADDR_WIDTH-1 downto 0);	
 	signal Bank_sel_in : STD_LOGIC:='0';
-
-	   
+ 	   
 ----------------------------------------------------End of GRAM Signals ------------------------------------------
 
 ---------------------------------------------------------Procedures-----------------------------------------------
@@ -220,7 +225,14 @@ generic map(
           READY		=> READY,
           OP_DONE => OP_DONE,
           LOADING_DONE => LOADING_DONE,
-          UN_LOADING_DONE => UN_LOADING_DONE
+          UN_LOADING_DONE => UN_LOADING_DONE,
+			 WE=>WE,
+			 CSEL=>CSEL,
+          OPCODE=>OPCODE,
+			 Write_ADDR=>Write_ADDR,
+			 Read_ADDR=>Read_ADDR,
+          CONTROL_A_INPUT_OF_DSP=>CONTROL_A_INPUT_OF_DSP
+
         );
 		  
 GRAM:	entity work.STANDARD_RAM
@@ -436,7 +448,10 @@ while not endfile(Result_file_pointer3) loop
            	      CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
            	      wait for clk_period;
 				      CMD <= cmd_SP; --Real Command		 
-						
+            elsif	 Ptrans='0' and Gtrans='1' and oper="1000" then					
+           	      CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
+           	      wait for clk_period;
+				      CMD <= cmd_SPt; --Real Command		 					
 				else
            	      CMD <= cmd_dummy; -- fake command. This was necessary because the simulator will not respond unless this fake command is used to create an event. I guess it is a bug.
            	      wait for clk_period;				
@@ -501,8 +516,12 @@ while not endfile(Result_file_pointer3) loop
                  write(sv_line,"---------------" & " result of V*Rt from lower bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish dot multiplication, ");
             elsif Ptrans='0' and Gtrans='0' and oper="0111" then					
                  write(sv_line,"---------------" & " result of R*V from lower bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish dot multiplication, ");
+            elsif Ptrans='0' and Gtrans='1' and oper="0111" then					
+                 write(sv_line,"---------------" & " result of Rt*V from lower bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish dot multiplication, ");
             elsif Ptrans='0' and Gtrans='0' and oper="1000" then					
                  write(sv_line,"---------------" & " result of S.R from lower bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish dot multiplication, ");
+           elsif Ptrans='0' and Gtrans='0' and oper="1000" then					
+                 write(sv_line,"---------------" & " result of S.Rt from lower bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish dot multiplication, ");
 				end if;
 
 	     else
@@ -556,7 +575,8 @@ while not endfile(Result_file_pointer3) loop
                  write(sv_line,"---------------" & " result of Pt*V from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish dot multiplication, ");
             elsif Ptrans='0' and Gtrans='0' and oper="1000" then					
                  write(sv_line,"---------------" & " result of S.P from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish dot multiplication, ");
-
+            elsif Ptrans='0' and Gtrans='1' and oper="1000" then					
+                 write(sv_line,"---------------" & " result of S.Pt from upper bank of BRAM. " & str(v_delay_latency) & " clock cycles to finish dot multiplication, ");
             end if;
 		end if;
 
@@ -622,6 +642,7 @@ begin
 		----------------------------------------End of GRAM LOAD---------------------------------------------------------	
 		when cmd_P_READ_START =>
 		---------------------------------------Begining of BRAM LOAD-----------------------------------------------------		
+				mode<="111";
 				rst <= '1'; --release FSM from Reset state
 				LOAD <= '1';--PUT the FSM in MEMARRAY_V3 in Loading State.
 				wait for clk_period*3;
@@ -765,7 +786,7 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '0';
 			G <= '0';
-			mode <= "001";
+			mode <= "010";
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -776,7 +797,7 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '0';
 			G <= '1';
-			mode <= "001";
+			mode <= "010";
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -787,7 +808,7 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '1';
 			G <= '0';
-			mode <= "001";
+			mode <= "010";
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -798,7 +819,7 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '1';
 			G <= '1';
-			mode <= "001";
+			mode <= "010";
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -810,7 +831,7 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '0';
 			G <= '0';
-			mode <= "010";
+			mode <= "100";
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -821,7 +842,7 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '0';
 			G <= '1';
-			mode <= "010";
+			mode <= "100";
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -832,7 +853,7 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '1';
 			G <= '0';
-			mode <= "010";
+			mode <= "100";
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -843,7 +864,7 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '1';
 			G <= '1';
-			mode <= "010";
+			mode <= "100";
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -855,7 +876,7 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '0';
 			G <= '0';
-			mode <= "011";
+			mode <= "101";
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -866,7 +887,7 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '0';
 			G <= '1';
-			mode <= "011";
+			mode <= "101";
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -877,7 +898,7 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '1';
 			G <= '0';
-			mode <= "011";
+			mode <= "101";
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -888,7 +909,7 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '1';
 			G <= '1';
-			mode <= "011";
+			mode <= "101";
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -900,7 +921,7 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '0';
 			G <= '0';
-			mode <= "100";
+			mode <= "001";
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -911,7 +932,7 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '0';
 			G <= '1';
-			mode <= "100";
+			mode <= "001";
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -922,7 +943,7 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '1';
 			G <= '0';
-			mode <= "100";
+			mode <= "001";
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -933,7 +954,7 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '1';
 			G <= '1';
-			mode <= "100";
+			mode <= "001";
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -953,8 +974,8 @@ begin
 			LOAD <= '0';	-- Tell FSM not to LOAD data.
 			UN_LOAD <= '0'; -- Tell FSM not to go to unloading state.
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
-			P <= '0';
-			G <= '1';
+			P <= '1';
+			G <= '0';
 			mode <= "110";
 			rst <= '1';
 			wait for clk_period*3;
@@ -975,8 +996,8 @@ begin
 			LOAD <= '0';	-- Tell FSM not to LOAD data.
 			UN_LOAD <= '0'; -- Tell FSM not to go to unloading state.
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
-			P <= '0';
-			G <= '1';
+			P <= '1';
+			G <= '0';
 			mode <= "111";
 			rst <= '1';
 			wait for clk_period*3;
@@ -989,7 +1010,18 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '0';
 			G <= '0';
-			mode <= "101";
+			mode <= "011";
+			rst <= '1';
+			wait for clk_period*3;
+			rst <= '0';
+			wait until OP_DONE = '1';
+ 		when cmd_SPt =>		
+			LOAD <= '0';	-- Tell FSM not to LOAD data.
+			UN_LOAD <= '0'; -- Tell FSM not to go to unloading state.
+			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
+			P <= '0';
+			G <= '0';
+			mode <= "011";
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';

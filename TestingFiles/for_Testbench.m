@@ -14,9 +14,9 @@ WriteMatrixToFileNewlinePerElement(G_Filename, G,0);
 %%%%%%%%%%%%%%%%%%%%%%%%%Generate and save P Matrix%%%%%%%%%%%%%%%%%%%%%
 P_Filename= 'Pdata.txt';
 % P=randi(I_MAX,Column_TOTAL);
-P=[1 2 3 4;
-    5 6 7 8;
-    9 10 11 12;
+P=[1 2 3 ;
+    5 6 7 8 ;
+    9 10 11 12 ;
     13 14 15 16]
 WriteMatrixToFileNewlinePerElement(P_Filename, P,1);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Creat CMD file%%%%%%%%%%%%%%%%

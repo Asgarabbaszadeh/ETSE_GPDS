@@ -1,3 +1,8 @@
 vhdl work "../../SharedLibraries/txt_util.vhd"
 vhdl work "../../SharedLibraries/MATRIX_MUL_IP_CORE_LIBRARY.vhd"
+vhdl work "Unloading.vhd"
+vhdl work "SSP.vhd"
+vhdl work "PpG_PdG.vhd"
+vhdl work "Multiplication.vhd"
+vhdl work "Loading.vhd"
 vhdl work "CONTROL_UNIT_S_INT.vhd"

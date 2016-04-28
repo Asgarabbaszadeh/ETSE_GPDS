@@ -1,16 +1,16 @@
 Release 14.7 - xst P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to E:/valencia/ETSE_GDSP-master - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/xst/projnav.tmp
+--> Parameter TMPDIR set to E:/valencia/ETSE_GDSP-modified3/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.79 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.35 secs
  
---> Parameter xsthdpdir set to E:/valencia/ETSE_GDSP-master - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/xst
+--> Parameter xsthdpdir set to E:/valencia/ETSE_GDSP-modified3/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.80 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.35 secs
  
 --> Reading design: CONTROL_UNIT_S_INT.prj
 
@@ -39,23 +39,38 @@ TABLE OF CONTENTS
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "E:\valencia\ETSE_GDSP-master - Copy\SharedLibraries\txt_util.vhd" into library work
+Parsing VHDL file "E:\valencia\ETSE_GDSP-modified3\SharedLibraries\txt_util.vhd" into library work
 Parsing package <txt_util>.
 Parsing package body <txt_util>.
-Parsing VHDL file "E:\valencia\ETSE_GDSP-master - Copy\SharedLibraries\MATRIX_MUL_IP_CORE_LIBRARY.vhd" into library work
+Parsing VHDL file "E:\valencia\ETSE_GDSP-modified3\SharedLibraries\MATRIX_MUL_IP_CORE_LIBRARY.vhd" into library work
 Parsing package <MATRIX_MUL_IP_CORE_LIBRARY>.
 Parsing package body <MATRIX_MUL_IP_CORE_LIBRARY>.
-Parsing VHDL file "E:\valencia\ETSE_GDSP-master - Copy\Matrix_for_RBM\MATRIX_MUL_IP_CORE_S_INT\CONTROL_UNIT_S_INT.vhd" into library work
+Parsing VHDL file "E:\valencia\ETSE_GDSP-modified3\Matrix_for_RBM\MATRIX_MUL_IP_CORE_S_INT\Unloading.vhd" into library work
+Parsing entity <Unloading>.
+Parsing architecture <Behavioral> of entity <unloading>.
+Parsing VHDL file "E:\valencia\ETSE_GDSP-modified3\Matrix_for_RBM\MATRIX_MUL_IP_CORE_S_INT\SSP.vhd" into library work
+Parsing entity <SSP>.
+Parsing architecture <Behavioral> of entity <ssp>.
+Parsing VHDL file "E:\valencia\ETSE_GDSP-modified3\Matrix_for_RBM\MATRIX_MUL_IP_CORE_S_INT\PpG_PdG.vhd" into library work
+Parsing entity <PpG_PdG>.
+Parsing architecture <Behavioral> of entity <ppg_pdg>.
+Parsing VHDL file "E:\valencia\ETSE_GDSP-modified3\Matrix_for_RBM\MATRIX_MUL_IP_CORE_S_INT\Multiplication.vhd" into library work
+Parsing entity <Multiplication>.
+Parsing architecture <Behavioral> of entity <multiplication>.
+Parsing VHDL file "E:\valencia\ETSE_GDSP-modified3\Matrix_for_RBM\MATRIX_MUL_IP_CORE_S_INT\Loading.vhd" into library work
+Parsing entity <Loading>.
+Parsing architecture <Behavioral> of entity <loading>.
+Parsing VHDL file "E:\valencia\ETSE_GDSP-modified3\Matrix_for_RBM\MATRIX_MUL_IP_CORE_S_INT\CONTROL_UNIT_S_INT.vhd" into library work
 Parsing entity <CONTROL_UNIT_S_INT>.
 Parsing architecture <Behavioral> of entity <control_unit_s_int>.
 
 
-Total REAL time to Xst completion: 14.00 secs
-Total CPU time to Xst completion: 14.70 secs
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 9.61 secs
  
 --> 
 
-Total memory usage is 162000 kilobytes
+Total memory usage is 162384 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

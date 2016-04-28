@@ -1,6 +1,3 @@
 LP
-SP
-VP
 PV
-VPt
 PtV

@@ -1,3 +1,1 @@
-work	"../../SharedLibraries/MATRIX_MUL_IP_CORE_LIBRARY.vhd"
-work	"../../SharedLibraries/txt_util.vhd"
-work	"CONTROL_UNIT_S_INT.vhd"
+work	"Loading.vhd"
