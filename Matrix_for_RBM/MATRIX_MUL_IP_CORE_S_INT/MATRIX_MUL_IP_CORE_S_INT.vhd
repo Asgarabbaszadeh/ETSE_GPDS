@@ -15,7 +15,11 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity MATRIX_MUL_IP_CORE_S_INT is
 	generic(		
+<<<<<<< HEAD
 		COLUMN_TOTAL    : integer := 1000;
+=======
+		COLUMN_TOTAL    : integer := 10;
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 		OPCODE_WIDTH    : integer := 3;
 		ADDR_WIDTH      : integer := 10;
 		DATA_WIDTH      : integer := 18;

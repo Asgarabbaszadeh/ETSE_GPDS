@@ -4,13 +4,21 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 1.00 secs
+<<<<<<< HEAD
 Total CPU time to Xst completion: 0.86 secs
+=======
+Total CPU time to Xst completion: 0.28 secs
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 1.00 secs
+<<<<<<< HEAD
 Total CPU time to Xst completion: 0.86 secs
+=======
+Total CPU time to Xst completion: 0.28 secs
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
  
 --> Reading design: MATRIX_MUL_IP_CORE_S_INT.prj
 
@@ -156,6 +164,7 @@ Elaborating entity <MATRIX_MUL_IP_CORE_S_INT> (architecture <Behavioral>) with g
 
 Elaborating entity <CONTROL_UNIT_S_INT> (architecture <Behavioral>) with generics from library <work>.
 
+<<<<<<< HEAD
 Elaborating entity <Loading> (architecture <Behavioral>) with generics from library <work>.
 WARNING:HDLCompiler:92 - "E:\valencia\ETSE_GDSP-modified3\Matrix_for_RBM\MATRIX_MUL_IP_CORE_S_INT\Loading.vhd" Line 98: s_csel should be on the sensitivity list of the process
 
@@ -189,6 +198,10 @@ WARNING:HDLCompiler:92 - "E:\valencia\ETSE_GDSP-modified3\Matrix_for_RBM\MATRIX_
 
 Elaborating entity <BRAM_WRAPPER_V2> (architecture <Behavioral>) with generics from library <work>.
 WARNING:HDLCompiler:1127 - "E:\valencia\ETSE_GDSP-modified3\SharedLibraries\BRAM_WRAPPER_V2.vhd" Line 52: Assignment to i_oe ignored, since the identifier is never used
+=======
+Elaborating entity <BRAM_WRAPPER_V2> (architecture <Behavioral>) with generics from library <work>.
+WARNING:HDLCompiler:1127 - "E:\valencia\ETSE_GDSP-master - Copy - Copy\SharedLibraries\BRAM_WRAPPER_V2.vhd" Line 52: Assignment to i_oe ignored, since the identifier is never used
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 
 Elaborating entity <BRAM18x1k> (architecture <BRAM18x1k_a>) from library <work>.
 
@@ -210,6 +223,7 @@ Elaborating entity <BRAM_WRAPPER_V2> (architecture <Behavioral>) with generics f
 
 Elaborating entity <BRAM_WRAPPER_V2> (architecture <Behavioral>) with generics from library <work>.
 
+<<<<<<< HEAD
 Elaborating entity <BRAM_WRAPPER_V2> (architecture <Behavioral>) with generics from library <work>.
 
 Elaborating entity <BRAM_WRAPPER_V2> (architecture <Behavioral>) with generics from library <work>.
@@ -28624,25 +28638,266 @@ Optimizing unit <BRAM_WRAPPER_V2_988> ...
 Optimizing unit <BRAM_WRAPPER_V2_989> ...
 
 Optimizing unit <BRAM_WRAPPER_V2_990> ...
+=======
+Elaborating entity <DSP_INPUT_C> (architecture <DSP_INPUT_C_a>) from library <work>.
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 
-Optimizing unit <BRAM_WRAPPER_V2_991> ...
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
 
-Optimizing unit <BRAM_WRAPPER_V2_992> ...
+Synthesizing Unit <MATRIX_MUL_IP_CORE_S_INT>.
+    Related source file is "E:\valencia\ETSE_GDSP-master - Copy - Copy\Matrix_for_RBM\MATRIX_MUL_IP_CORE_S_INT\MATRIX_MUL_IP_CORE_S_INT.vhd".
+        COLUMN_TOTAL = 10
+        OPCODE_WIDTH = 3
+        ADDR_WIDTH = 10
+        DATA_WIDTH = 18
+        MATRIX_WIDTH = 10
+        DATA_WIDE_WIDTH = 48
+    Found 9-bit register for signal <p_Write_ADDR<0>>.
+    Found 9-bit register for signal <p_Write_ADDR<1>>.
+    Found 9-bit register for signal <p_Write_ADDR<2>>.
+    Found 9-bit register for signal <p_Write_ADDR<3>>.
+    Found 9-bit register for signal <p_Write_ADDR<4>>.
+    Found 10-bit register for signal <p_WEB<0>>.
+    Found 10-bit register for signal <p_WEB<1>>.
+    Found 10-bit register for signal <p_WEB<2>>.
+    Found 10-bit register for signal <p_WEB<3>>.
+    Found 10-bit register for signal <p_WEB<4>>.
+    Found 9-bit register for signal <i_P_Write_ADDR>.
+    Found 10-bit register for signal <i_WEB>.
+    Found 3-bit register for signal <p_OPCODE<0>>.
+    Found 3-bit register for signal <p_OPCODE<1>>.
+    Found 3-bit register for signal <i_OPCODE>.
+    WARNING:Xst:2404 -  FFs/Latches <OEB<0:0>> (without init value) have a constant value of 1 in block <MATRIX_MUL_IP_CORE_S_INT>.
+    Summary:
+	inferred 123 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <MATRIX_MUL_IP_CORE_S_INT> synthesized.
 
-Optimizing unit <BRAM_WRAPPER_V2_993> ...
+Synthesizing Unit <CONTROL_UNIT_S_INT>.
+    Related source file is "E:\valencia\ETSE_GDSP-master - Copy - Copy\Matrix_for_RBM\MATRIX_MUL_IP_CORE_S_INT\CONTROL_UNIT_S_INT.vhd".
+        ADDR_WIDTH = 10
+        DATA_WIDTH = 18
+        OPCODE_WIDTH = 3
+        COLUMN_TOTAL = 10
+    Found 1-bit register for signal <READY>.
+    Found 1-bit register for signal <LOADING_DONE>.
+    Found 1-bit register for signal <UN_LOADING_DONE>.
+    Found 1-bit register for signal <OP_DONE>.
+    Found 5-bit register for signal <state>.
+    Found 4-bit register for signal <i_row_cnt>.
+    Found 4-bit register for signal <i_col_cnt>.
+    Found 4-bit register for signal <i_addr_cnt>.
+    Found 1-bit register for signal <G_EN>.
+    Found 1-bit register for signal <v_OP_DONE>.
+    Found 1-bit register for signal <v_LOADING_DONE>.
+    Found 1-bit register for signal <v_UNLOAD_DONE>.
+    Found 1-bit register for signal <CONTROL_A_INPUT_OF_DSP>.
+    Found 4-bit register for signal <i>.
+    Found 4-bit register for signal <j>.
+    Found 1-bit register for signal <Read_SHFT>.
+    Found 1-bit register for signal <Write_SHFT>.
+    Found 1-bit register for signal <WE>.
+    Found 3-bit register for signal <OPCODE>.
+    Found 10-bit register for signal <s_CSEL>.
+    Found 1-bit register for signal <v_WE>.
+    Found 10-bit register for signal <v_CSEL>.
+    Found 7-bit register for signal <FLAGS_and_Current_state_update.v_cnt_delay_ready>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 18                                             |
+    | Transitions        | 70                                             |
+    | Inputs             | 11                                             |
+    | Outputs            | 22                                             |
+    | Clock              | CLK (rising_edge)                              |
+    | Reset              | RST (positive)                                 |
+    | Reset type         | synchronous                                    |
+    | Reset State        | start                                          |
+    | Power Up State     | start                                          |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 5-bit subtractor for signal <GND_8_o_GND_8_o_sub_41_OUT> created at line 207.
+    Found 6-bit subtractor for signal <GND_8_o_GND_8_o_sub_42_OUT> created at line 207.
+    Found 5-bit subtractor for signal <GND_8_o_GND_8_o_sub_554_OUT> created at line 1052.
+    Found 6-bit subtractor for signal <n0609> created at line 207.
+    Found 7-bit adder for signal <FLAGS_and_Current_state_update.v_cnt_delay_ready[6]_GND_8_o_add_5_OUT> created at line 107.
+    Found 4-bit adder for signal <GND_8_o_j[3]_add_197_OUT> created at line 474.
+    Found 5-bit adder for signal <n0595> created at line 625.
+    Found 4-bit adder for signal <n0615> created at line 707.
+    Found 4-bit adder for signal <i[3]_GND_8_o_add_345_OUT> created at line 713.
+    Found 5-bit adder for signal <n0597> created at line 717.
+    Found 4-bit adder for signal <i_addr_cnt[3]_GND_8_o_add_351_OUT> created at line 727.
+    Found 4-bit subtractor for signal <GND_8_o_GND_8_o_sub_163_OUT<3:0>> created at line 429.
+    Found 4-bit subtractor for signal <GND_8_o_GND_8_o_sub_168_OUT<3:0>> created at line 434.
+    Found 4-bit subtractor for signal <GND_8_o_GND_8_o_sub_246_OUT<3:0>> created at line 536.
+    Found 4-bit subtractor for signal <GND_8_o_GND_8_o_sub_326_OUT<3:0>> created at line 681.
+    Found 4-bit subtractor for signal <GND_8_o_GND_8_o_sub_516_OUT<3:0>> created at line 1015.
+    Found 10-bit shifter logical right for signal <n0611> created at line 207
+    Found 10-bit shifter logical left for signal <n0610> created at line 207
+    Found 1-bit 7-to-1 multiplexer for signal <P_P_MUX_221_o> created at line 249.
+    Found 7-bit comparator lessequal for signal <n0001> created at line 98
+    Found 7-bit comparator lessequal for signal <n0008> created at line 108
+    Found 3-bit comparator greater for signal <PWR_8_o_mode[2]_LessThan_8_o> created at line 111
+    Found 3-bit comparator greater for signal <PWR_8_o_mode[2]_LessThan_25_o> created at line 122
+    Found 7-bit comparator lessequal for signal <n0041> created at line 123
+    Found 7-bit comparator lessequal for signal <n0044> created at line 127
+    Found 4-bit comparator greater for signal <j[3]_PWR_8_o_LessThan_40_o> created at line 206
+    Found 5-bit comparator lessequal for signal <n0178> created at line 431
+    Found 5-bit comparator lessequal for signal <n0190> created at line 478
+    Summary:
+	inferred  16 Adder/Subtractor(s).
+	inferred  63 D-type flip-flop(s).
+	inferred   9 Comparator(s).
+	inferred 165 Multiplexer(s).
+	inferred   2 Combinational logic shifter(s).
+	inferred   1 Finite State Machine(s).
+Unit <CONTROL_UNIT_S_INT> synthesized.
 
-Optimizing unit <BRAM_WRAPPER_V2_994> ...
+Synthesizing Unit <BRAM_WRAPPER_V2_1>.
+    Related source file is "E:\valencia\ETSE_GDSP-master - Copy - Copy\SharedLibraries\BRAM_WRAPPER_V2.vhd".
+        COLUMN_NUMBER = 0
+        NUM_COLUMNS = 10
+        ADDR_WIDTH = 10
+        DATA_WIDTH = 18
+    Found 1-bit register for signal <i_rst>.
+    Found 18-bit register for signal <i_dina>.
+    Found 10-bit register for signal <i_write_addr>.
+    Found 10-bit register for signal <i_Read_addr>.
+    Found 1-bit register for signal <i_wea>.
+    Found 9-bit subtractor for signal <GND_9_o_GND_9_o_sub_4_OUT<8:0>> created at line 1308.
+    Found 9-bit subtractor for signal <GND_9_o_GND_9_o_sub_11_OUT<8:0>> created at line 1308.
+    Found 9-bit comparator greater for signal <GND_9_o_Write_ADDR[8]_LessThan_2_o> created at line 59
+    Found 9-bit comparator greater for signal <GND_9_o_Read_ADDR[8]_LessThan_9_o> created at line 70
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  40 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   4 Multiplexer(s).
+Unit <BRAM_WRAPPER_V2_1> synthesized.
 
-Optimizing unit <BRAM_WRAPPER_V2_995> ...
+Synthesizing Unit <BRAM_WRAPPER_V2_2>.
+    Related source file is "E:\valencia\ETSE_GDSP-master - Copy - Copy\SharedLibraries\BRAM_WRAPPER_V2.vhd".
+        COLUMN_NUMBER = 1
+        NUM_COLUMNS = 10
+        ADDR_WIDTH = 10
+        DATA_WIDTH = 18
+    Found 1-bit register for signal <i_rst>.
+    Found 18-bit register for signal <i_dina>.
+    Found 10-bit register for signal <i_write_addr>.
+    Found 10-bit register for signal <i_Read_addr>.
+    Found 1-bit register for signal <i_wea>.
+    Found 9-bit adder for signal <Write_ADDR[8]_GND_11_o_add_4_OUT> created at line 1241.
+    Found 9-bit adder for signal <Read_ADDR[8]_GND_11_o_add_11_OUT> created at line 1241.
+    Found 9-bit subtractor for signal <GND_11_o_GND_11_o_sub_4_OUT<8:0>> created at line 1308.
+    Found 9-bit subtractor for signal <GND_11_o_GND_11_o_sub_11_OUT<8:0>> created at line 1308.
+    Found 9-bit comparator greater for signal <GND_11_o_Write_ADDR[8]_LessThan_2_o> created at line 59
+    Found 9-bit comparator greater for signal <GND_11_o_Read_ADDR[8]_LessThan_9_o> created at line 70
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  40 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   4 Multiplexer(s).
+Unit <BRAM_WRAPPER_V2_2> synthesized.
 
-Optimizing unit <BRAM_WRAPPER_V2_996> ...
+Synthesizing Unit <BRAM_WRAPPER_V2_3>.
+    Related source file is "E:\valencia\ETSE_GDSP-master - Copy - Copy\SharedLibraries\BRAM_WRAPPER_V2.vhd".
+        COLUMN_NUMBER = 2
+        NUM_COLUMNS = 10
+        ADDR_WIDTH = 10
+        DATA_WIDTH = 18
+    Found 1-bit register for signal <i_rst>.
+    Found 18-bit register for signal <i_dina>.
+    Found 10-bit register for signal <i_write_addr>.
+    Found 10-bit register for signal <i_Read_addr>.
+    Found 1-bit register for signal <i_wea>.
+    Found 9-bit adder for signal <Write_ADDR[8]_GND_12_o_add_4_OUT> created at line 1241.
+    Found 9-bit adder for signal <Read_ADDR[8]_GND_12_o_add_11_OUT> created at line 1241.
+    Found 9-bit subtractor for signal <GND_12_o_GND_12_o_sub_4_OUT<8:0>> created at line 1308.
+    Found 9-bit subtractor for signal <GND_12_o_GND_12_o_sub_11_OUT<8:0>> created at line 1308.
+    Found 9-bit comparator greater for signal <GND_12_o_Write_ADDR[8]_LessThan_2_o> created at line 59
+    Found 9-bit comparator greater for signal <GND_12_o_Read_ADDR[8]_LessThan_9_o> created at line 70
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  40 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   4 Multiplexer(s).
+Unit <BRAM_WRAPPER_V2_3> synthesized.
 
-Optimizing unit <BRAM_WRAPPER_V2_997> ...
+Synthesizing Unit <BRAM_WRAPPER_V2_4>.
+    Related source file is "E:\valencia\ETSE_GDSP-master - Copy - Copy\SharedLibraries\BRAM_WRAPPER_V2.vhd".
+        COLUMN_NUMBER = 3
+        NUM_COLUMNS = 10
+        ADDR_WIDTH = 10
+        DATA_WIDTH = 18
+    Found 1-bit register for signal <i_rst>.
+    Found 18-bit register for signal <i_dina>.
+    Found 10-bit register for signal <i_write_addr>.
+    Found 10-bit register for signal <i_Read_addr>.
+    Found 1-bit register for signal <i_wea>.
+    Found 9-bit adder for signal <Write_ADDR[8]_GND_13_o_add_4_OUT> created at line 1241.
+    Found 9-bit adder for signal <Read_ADDR[8]_GND_13_o_add_11_OUT> created at line 1241.
+    Found 9-bit subtractor for signal <GND_13_o_GND_13_o_sub_4_OUT<8:0>> created at line 1308.
+    Found 9-bit subtractor for signal <GND_13_o_GND_13_o_sub_11_OUT<8:0>> created at line 1308.
+    Found 9-bit comparator greater for signal <GND_13_o_Write_ADDR[8]_LessThan_2_o> created at line 59
+    Found 9-bit comparator greater for signal <GND_13_o_Read_ADDR[8]_LessThan_9_o> created at line 70
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  40 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   4 Multiplexer(s).
+Unit <BRAM_WRAPPER_V2_4> synthesized.
 
-Optimizing unit <BRAM_WRAPPER_V2_998> ...
+Synthesizing Unit <BRAM_WRAPPER_V2_5>.
+    Related source file is "E:\valencia\ETSE_GDSP-master - Copy - Copy\SharedLibraries\BRAM_WRAPPER_V2.vhd".
+        COLUMN_NUMBER = 4
+        NUM_COLUMNS = 10
+        ADDR_WIDTH = 10
+        DATA_WIDTH = 18
+    Found 1-bit register for signal <i_rst>.
+    Found 18-bit register for signal <i_dina>.
+    Found 10-bit register for signal <i_write_addr>.
+    Found 10-bit register for signal <i_Read_addr>.
+    Found 1-bit register for signal <i_wea>.
+    Found 9-bit adder for signal <Write_ADDR[8]_GND_14_o_add_4_OUT> created at line 1241.
+    Found 9-bit adder for signal <Read_ADDR[8]_GND_14_o_add_11_OUT> created at line 1241.
+    Found 9-bit subtractor for signal <GND_14_o_GND_14_o_sub_4_OUT<8:0>> created at line 1308.
+    Found 9-bit subtractor for signal <GND_14_o_GND_14_o_sub_11_OUT<8:0>> created at line 1308.
+    Found 9-bit comparator greater for signal <GND_14_o_Write_ADDR[8]_LessThan_2_o> created at line 59
+    Found 9-bit comparator greater for signal <GND_14_o_Read_ADDR[8]_LessThan_9_o> created at line 70
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  40 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   4 Multiplexer(s).
+Unit <BRAM_WRAPPER_V2_5> synthesized.
 
-Optimizing unit <BRAM_WRAPPER_V2_999> ...
+Synthesizing Unit <BRAM_WRAPPER_V2_6>.
+    Related source file is "E:\valencia\ETSE_GDSP-master - Copy - Copy\SharedLibraries\BRAM_WRAPPER_V2.vhd".
+        COLUMN_NUMBER = 5
+        NUM_COLUMNS = 10
+        ADDR_WIDTH = 10
+        DATA_WIDTH = 18
+    Found 1-bit register for signal <i_rst>.
+    Found 18-bit register for signal <i_dina>.
+    Found 10-bit register for signal <i_write_addr>.
+    Found 10-bit register for signal <i_Read_addr>.
+    Found 1-bit register for signal <i_wea>.
+    Found 9-bit adder for signal <Write_ADDR[8]_GND_15_o_add_4_OUT> created at line 1241.
+    Found 9-bit adder for signal <Read_ADDR[8]_GND_15_o_add_11_OUT> created at line 1241.
+    Found 9-bit subtractor for signal <GND_15_o_GND_15_o_sub_4_OUT<8:0>> created at line 1308.
+    Found 9-bit subtractor for signal <GND_15_o_GND_15_o_sub_11_OUT<8:0>> created at line 1308.
+    Found 9-bit comparator greater for signal <GND_15_o_Write_ADDR[8]_LessThan_2_o> created at line 59
+    Found 9-bit comparator greater for signal <GND_15_o_Read_ADDR[8]_LessThan_9_o> created at line 70
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  40 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   4 Multiplexer(s).
+Unit <BRAM_WRAPPER_V2_6> synthesized.
 
+<<<<<<< HEAD
 Optimizing unit <BRAM_WRAPPER_V2_1000> ...
 WARNING:Xst:1710 - FF/Latch <BLOCK_A_MEM_GEN[0].MEMA/i_rst> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <BLOCK_A_MEM_GEN[459].MEMA/i_write_addr_8> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following FF/Latch, which will be removed : <BLOCK_A_MEM_GEN[971].MEMA/i_write_addr_8> 
@@ -31925,10 +32180,359 @@ INFO:Xst:2261 - The FF/Latch <BLOCK_A_MEM_GEN[44].MEMA/i_Read_addr_6> in Unit <M
 INFO:Xst:2261 - The FF/Latch <BLOCK_A_MEM_GEN[72].MEMA/i_write_addr_7> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following FF/Latch, which will be removed : <BLOCK_A_MEM_GEN[840].MEMA/i_write_addr_7> 
 INFO:Xst:2261 - The FF/Latch <BLOCK_A_MEM_GEN[61].MEMA/i_write_addr_5> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following FF/Latch, which will be removed : <BLOCK_A_MEM_GEN[637].MEMA/i_write_addr_5> 
 INFO:Xst:2261 - The FF/Latch <BLOCK_A_MEM_GEN[143].MEMA/i_write_addr_7> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following FF/Latch, which will be removed : <BLOCK_A_MEM_GEN[911].MEMA/i_write_addr_7> 
+=======
+Synthesizing Unit <BRAM_WRAPPER_V2_7>.
+    Related source file is "E:\valencia\ETSE_GDSP-master - Copy - Copy\SharedLibraries\BRAM_WRAPPER_V2.vhd".
+        COLUMN_NUMBER = 6
+        NUM_COLUMNS = 10
+        ADDR_WIDTH = 10
+        DATA_WIDTH = 18
+    Found 1-bit register for signal <i_rst>.
+    Found 18-bit register for signal <i_dina>.
+    Found 10-bit register for signal <i_write_addr>.
+    Found 10-bit register for signal <i_Read_addr>.
+    Found 1-bit register for signal <i_wea>.
+    Found 9-bit adder for signal <Write_ADDR[8]_GND_16_o_add_4_OUT> created at line 1241.
+    Found 9-bit adder for signal <Read_ADDR[8]_GND_16_o_add_11_OUT> created at line 1241.
+    Found 9-bit subtractor for signal <GND_16_o_GND_16_o_sub_4_OUT<8:0>> created at line 1308.
+    Found 9-bit subtractor for signal <GND_16_o_GND_16_o_sub_11_OUT<8:0>> created at line 1308.
+    Found 9-bit comparator greater for signal <GND_16_o_Write_ADDR[8]_LessThan_2_o> created at line 59
+    Found 9-bit comparator greater for signal <GND_16_o_Read_ADDR[8]_LessThan_9_o> created at line 70
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  40 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   4 Multiplexer(s).
+Unit <BRAM_WRAPPER_V2_7> synthesized.
+
+Synthesizing Unit <BRAM_WRAPPER_V2_8>.
+    Related source file is "E:\valencia\ETSE_GDSP-master - Copy - Copy\SharedLibraries\BRAM_WRAPPER_V2.vhd".
+        COLUMN_NUMBER = 7
+        NUM_COLUMNS = 10
+        ADDR_WIDTH = 10
+        DATA_WIDTH = 18
+    Found 1-bit register for signal <i_rst>.
+    Found 18-bit register for signal <i_dina>.
+    Found 10-bit register for signal <i_write_addr>.
+    Found 10-bit register for signal <i_Read_addr>.
+    Found 1-bit register for signal <i_wea>.
+    Found 9-bit adder for signal <Write_ADDR[8]_GND_17_o_add_4_OUT> created at line 1241.
+    Found 9-bit adder for signal <Read_ADDR[8]_GND_17_o_add_11_OUT> created at line 1241.
+    Found 9-bit subtractor for signal <GND_17_o_GND_17_o_sub_4_OUT<8:0>> created at line 1308.
+    Found 9-bit subtractor for signal <GND_17_o_GND_17_o_sub_11_OUT<8:0>> created at line 1308.
+    Found 9-bit comparator greater for signal <GND_17_o_Write_ADDR[8]_LessThan_2_o> created at line 59
+    Found 9-bit comparator greater for signal <GND_17_o_Read_ADDR[8]_LessThan_9_o> created at line 70
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  40 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   4 Multiplexer(s).
+Unit <BRAM_WRAPPER_V2_8> synthesized.
+
+Synthesizing Unit <BRAM_WRAPPER_V2_9>.
+    Related source file is "E:\valencia\ETSE_GDSP-master - Copy - Copy\SharedLibraries\BRAM_WRAPPER_V2.vhd".
+        COLUMN_NUMBER = 8
+        NUM_COLUMNS = 10
+        ADDR_WIDTH = 10
+        DATA_WIDTH = 18
+    Found 1-bit register for signal <i_rst>.
+    Found 18-bit register for signal <i_dina>.
+    Found 10-bit register for signal <i_write_addr>.
+    Found 10-bit register for signal <i_Read_addr>.
+    Found 1-bit register for signal <i_wea>.
+    Found 9-bit adder for signal <Write_ADDR[8]_GND_18_o_add_4_OUT> created at line 1241.
+    Found 9-bit adder for signal <Read_ADDR[8]_GND_18_o_add_11_OUT> created at line 1241.
+    Found 9-bit subtractor for signal <GND_18_o_GND_18_o_sub_4_OUT<8:0>> created at line 1308.
+    Found 9-bit subtractor for signal <GND_18_o_GND_18_o_sub_11_OUT<8:0>> created at line 1308.
+    Found 9-bit comparator greater for signal <GND_18_o_Write_ADDR[8]_LessThan_2_o> created at line 59
+    Found 9-bit comparator greater for signal <GND_18_o_Read_ADDR[8]_LessThan_9_o> created at line 70
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  40 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   4 Multiplexer(s).
+Unit <BRAM_WRAPPER_V2_9> synthesized.
+
+Synthesizing Unit <BRAM_WRAPPER_V2_10>.
+    Related source file is "E:\valencia\ETSE_GDSP-master - Copy - Copy\SharedLibraries\BRAM_WRAPPER_V2.vhd".
+        COLUMN_NUMBER = 9
+        NUM_COLUMNS = 10
+        ADDR_WIDTH = 10
+        DATA_WIDTH = 18
+    Found 1-bit register for signal <i_rst>.
+    Found 18-bit register for signal <i_dina>.
+    Found 10-bit register for signal <i_write_addr>.
+    Found 10-bit register for signal <i_Read_addr>.
+    Found 1-bit register for signal <i_wea>.
+    Found 9-bit adder for signal <Write_ADDR[8]_GND_19_o_add_4_OUT> created at line 1241.
+    Found 9-bit adder for signal <Read_ADDR[8]_GND_19_o_add_11_OUT> created at line 1241.
+    Found 9-bit subtractor for signal <GND_19_o_GND_19_o_sub_4_OUT<8:0>> created at line 1308.
+    Found 9-bit subtractor for signal <GND_19_o_GND_19_o_sub_11_OUT<8:0>> created at line 1308.
+    Found 9-bit comparator greater for signal <GND_19_o_Write_ADDR[8]_LessThan_2_o> created at line 59
+    Found 9-bit comparator greater for signal <GND_19_o_Read_ADDR[8]_LessThan_9_o> created at line 70
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  40 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   4 Multiplexer(s).
+Unit <BRAM_WRAPPER_V2_10> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 54
+ 4-bit adder                                           : 4
+ 4-bit subtractor                                      : 5
+ 5-bit adder                                           : 2
+ 5-bit subtractor                                      : 2
+ 6-bit subtractor                                      : 2
+ 7-bit adder                                           : 1
+ 9-bit adder                                           : 18
+ 9-bit subtractor                                      : 20
+# Registers                                            : 87
+ 1-bit register                                        : 33
+ 10-bit register                                       : 28
+ 18-bit register                                       : 10
+ 3-bit register                                        : 4
+ 4-bit register                                        : 5
+ 7-bit register                                        : 1
+ 9-bit register                                        : 6
+# Comparators                                          : 29
+ 3-bit comparator greater                              : 2
+ 4-bit comparator greater                              : 1
+ 5-bit comparator lessequal                            : 2
+ 7-bit comparator lessequal                            : 4
+ 9-bit comparator greater                              : 20
+# Multiplexers                                         : 206
+ 1-bit 2-to-1 multiplexer                              : 32
+ 1-bit 7-to-1 multiplexer                              : 1
+ 10-bit 2-to-1 multiplexer                             : 21
+ 18-bit 2-to-1 multiplexer                             : 1
+ 3-bit 2-to-1 multiplexer                              : 15
+ 4-bit 2-to-1 multiplexer                              : 91
+ 7-bit 2-to-1 multiplexer                              : 3
+ 9-bit 2-to-1 multiplexer                              : 42
+# Logic shifters                                       : 2
+ 10-bit shifter logical left                           : 1
+ 10-bit shifter logical right                          : 1
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <../../IPCores/BRAM_and_DSP/ipcore_dir/DSP_INPUT_C.ngc>.
+Reading Secure Unit <blk00000001>.
+Reading core <../../IPCores/BRAM_and_DSP/ipcore_dir/BRAM18x1k.ngc>.
+Loading core <DSP_INPUT_C> for timing and area information for instance <FIRST_DSP>.
+Loading core <DSP_INPUT_C> for timing and area information for instance <BLOCK_A_DSP_GEN[1].DSP>.
+Loading core <DSP_INPUT_C> for timing and area information for instance <BLOCK_A_DSP_GEN[2].DSP>.
+Loading core <DSP_INPUT_C> for timing and area information for instance <BLOCK_A_DSP_GEN[3].DSP>.
+Loading core <DSP_INPUT_C> for timing and area information for instance <BLOCK_A_DSP_GEN[4].DSP>.
+Loading core <DSP_INPUT_C> for timing and area information for instance <BLOCK_A_DSP_GEN[5].DSP>.
+Loading core <DSP_INPUT_C> for timing and area information for instance <BLOCK_A_DSP_GEN[6].DSP>.
+Loading core <DSP_INPUT_C> for timing and area information for instance <BLOCK_A_DSP_GEN[7].DSP>.
+Loading core <DSP_INPUT_C> for timing and area information for instance <BLOCK_A_DSP_GEN[8].DSP>.
+Loading core <DSP_INPUT_C> for timing and area information for instance <BLOCK_A_DSP_GEN[9].DSP>.
+Loading core <BRAM18x1k> for timing and area information for instance <BMG_PORT>.
+Loading core <BRAM18x1k> for timing and area information for instance <BMG_PORT>.
+Loading core <BRAM18x1k> for timing and area information for instance <BMG_PORT>.
+Loading core <BRAM18x1k> for timing and area information for instance <BMG_PORT>.
+Loading core <BRAM18x1k> for timing and area information for instance <BMG_PORT>.
+Loading core <BRAM18x1k> for timing and area information for instance <BMG_PORT>.
+Loading core <BRAM18x1k> for timing and area information for instance <BMG_PORT>.
+Loading core <BRAM18x1k> for timing and area information for instance <BMG_PORT>.
+Loading core <BRAM18x1k> for timing and area information for instance <BMG_PORT>.
+Loading core <BRAM18x1k> for timing and area information for instance <BMG_PORT>.
+WARNING:Xst:1710 - FF/Latch <i_rst> (without init value) has a constant value of 0 in block <BLOCK_A_MEM_GEN[0].MEMA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <i_rst> (without init value) has a constant value of 0 in block <BLOCK_A_MEM_GEN[1].MEMA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <i_rst> (without init value) has a constant value of 0 in block <BLOCK_A_MEM_GEN[2].MEMA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <i_rst> (without init value) has a constant value of 0 in block <BLOCK_A_MEM_GEN[3].MEMA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <i_rst> (without init value) has a constant value of 0 in block <BLOCK_A_MEM_GEN[4].MEMA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <i_rst> (without init value) has a constant value of 0 in block <BLOCK_A_MEM_GEN[5].MEMA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <i_rst> (without init value) has a constant value of 0 in block <BLOCK_A_MEM_GEN[6].MEMA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <i_rst> (without init value) has a constant value of 0 in block <BLOCK_A_MEM_GEN[7].MEMA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <i_rst> (without init value) has a constant value of 0 in block <BLOCK_A_MEM_GEN[8].MEMA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <i_rst> (without init value) has a constant value of 0 in block <BLOCK_A_MEM_GEN[9].MEMA>. This FF/Latch will be trimmed during the optimization process.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 54
+ 4-bit adder                                           : 4
+ 4-bit subtractor                                      : 5
+ 5-bit adder                                           : 2
+ 5-bit subtractor                                      : 2
+ 6-bit subtractor                                      : 2
+ 7-bit adder                                           : 1
+ 9-bit adder                                           : 18
+ 9-bit subtractor                                      : 20
+# Registers                                            : 586
+ Flip-Flops                                            : 586
+# Comparators                                          : 29
+ 3-bit comparator greater                              : 2
+ 4-bit comparator greater                              : 1
+ 5-bit comparator lessequal                            : 2
+ 7-bit comparator lessequal                            : 4
+ 9-bit comparator greater                              : 20
+# Multiplexers                                         : 215
+ 1-bit 2-to-1 multiplexer                              : 42
+ 1-bit 7-to-1 multiplexer                              : 1
+ 10-bit 2-to-1 multiplexer                             : 20
+ 18-bit 2-to-1 multiplexer                             : 1
+ 3-bit 2-to-1 multiplexer                              : 15
+ 4-bit 2-to-1 multiplexer                              : 91
+ 7-bit 2-to-1 multiplexer                              : 3
+ 9-bit 2-to-1 multiplexer                              : 42
+# Logic shifters                                       : 2
+ 10-bit shifter logical left                           : 1
+ 10-bit shifter logical right                          : 1
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_UNIT/FSM_0> on signal <state[1:5]> with user encoding.
+-----------------------
+ State     | Encoding
+-----------------------
+ start     | 00000
+ loading   | 00001
+ load_done | 00010
+ pg        | 00011
+ ptg       | 00100
+ pgt       | 00101
+ ptgt      | 00110
+ ppg       | 00111
+ ppgt      | 01000
+ ptpg      | 01001
+ ptpgt     | 01010
+ vp        | 01011
+ vpt       | 01100
+ pv        | 01101
+ ptv       | 01110
+ ssp       | 01111
+ done      | 10000
+ unload    | 10001
+-----------------------
+
+Optimizing unit <MATRIX_MUL_IP_CORE_S_INT> ...
+
+Optimizing unit <CONTROL_UNIT_S_INT> ...
+
+Optimizing unit <BRAM_WRAPPER_V2_1> ...
+
+Optimizing unit <BRAM_WRAPPER_V2_2> ...
+
+Optimizing unit <BRAM_WRAPPER_V2_3> ...
+
+Optimizing unit <BRAM_WRAPPER_V2_4> ...
+
+Optimizing unit <BRAM_WRAPPER_V2_5> ...
+
+Optimizing unit <BRAM_WRAPPER_V2_6> ...
+
+Optimizing unit <BRAM_WRAPPER_V2_7> ...
+
+Optimizing unit <BRAM_WRAPPER_V2_8> ...
+
+Optimizing unit <BRAM_WRAPPER_V2_9> ...
+
+Optimizing unit <BRAM_WRAPPER_V2_10> ...
+WARNING:Xst:1710 - FF/Latch <BLOCK_A_MEM_GEN[0].MEMA/i_Read_addr_8> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[0].MEMA/i_Read_addr_7> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[0].MEMA/i_Read_addr_6> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[0].MEMA/i_Read_addr_5> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[0].MEMA/i_Read_addr_4> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <BLOCK_A_MEM_GEN[9].MEMA/i_rst> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[9].MEMA/i_Read_addr_4> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[9].MEMA/i_Read_addr_8> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[8].MEMA/i_rst> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[8].MEMA/i_Read_addr_4> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[8].MEMA/i_Read_addr_8> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[7].MEMA/i_rst> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[7].MEMA/i_Read_addr_4> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[7].MEMA/i_Read_addr_8> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[6].MEMA/i_rst> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[6].MEMA/i_Read_addr_4> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[6].MEMA/i_Read_addr_8> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[5].MEMA/i_rst> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[5].MEMA/i_Read_addr_4> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[5].MEMA/i_Read_addr_6> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[5].MEMA/i_Read_addr_8> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[4].MEMA/i_rst> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[4].MEMA/i_Read_addr_4> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[4].MEMA/i_Read_addr_8> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[3].MEMA/i_rst> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[3].MEMA/i_Read_addr_4> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[3].MEMA/i_Read_addr_8> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[2].MEMA/i_rst> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[2].MEMA/i_Read_addr_4> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[2].MEMA/i_Read_addr_5> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[2].MEMA/i_Read_addr_6> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[2].MEMA/i_Read_addr_7> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[2].MEMA/i_Read_addr_8> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[1].MEMA/i_rst> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[1].MEMA/i_Read_addr_4> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[1].MEMA/i_Read_addr_8> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <BLOCK_A_MEM_GEN[0].MEMA/i_rst> (without init value) has a constant value of 0 in block <MATRIX_MUL_IP_CORE_S_INT>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <BLOCK_A_MEM_GEN[8].MEMA/i_write_addr_8> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following 3 FFs/Latches, which will be removed : <BLOCK_A_MEM_GEN[8].MEMA/i_write_addr_7> <BLOCK_A_MEM_GEN[8].MEMA/i_write_addr_6> <BLOCK_A_MEM_GEN[8].MEMA/i_write_addr_5> 
+INFO:Xst:2261 - The FF/Latch <p_Write_ADDR_4_4> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following 4 FFs/Latches, which will be removed : <p_Write_ADDR_4_5> <p_Write_ADDR_4_6> <p_Write_ADDR_4_7> <p_Write_ADDR_4_8> 
+INFO:Xst:2261 - The FF/Latch <BLOCK_A_MEM_GEN[3].MEMA/i_write_addr_8> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following 3 FFs/Latches, which will be removed : <BLOCK_A_MEM_GEN[3].MEMA/i_write_addr_7> <BLOCK_A_MEM_GEN[3].MEMA/i_write_addr_6> <BLOCK_A_MEM_GEN[3].MEMA/i_write_addr_5> 
+INFO:Xst:2261 - The FF/Latch <BLOCK_A_MEM_GEN[9].MEMA/i_write_addr_8> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following 3 FFs/Latches, which will be removed : <BLOCK_A_MEM_GEN[9].MEMA/i_write_addr_7> <BLOCK_A_MEM_GEN[9].MEMA/i_write_addr_6> <BLOCK_A_MEM_GEN[9].MEMA/i_write_addr_5> 
+INFO:Xst:2261 - The FF/Latch <i_P_Write_ADDR_4> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following 4 FFs/Latches, which will be removed : <i_P_Write_ADDR_5> <i_P_Write_ADDR_6> <i_P_Write_ADDR_7> <i_P_Write_ADDR_8> 
+INFO:Xst:2261 - The FF/Latch <BLOCK_A_MEM_GEN[4].MEMA/i_write_addr_8> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following 3 FFs/Latches, which will be removed : <BLOCK_A_MEM_GEN[4].MEMA/i_write_addr_7> <BLOCK_A_MEM_GEN[4].MEMA/i_write_addr_6> <BLOCK_A_MEM_GEN[4].MEMA/i_write_addr_5> 
+INFO:Xst:2261 - The FF/Latch <BLOCK_A_MEM_GEN[5].MEMA/i_write_addr_8> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following 3 FFs/Latches, which will be removed : <BLOCK_A_MEM_GEN[5].MEMA/i_write_addr_7> <BLOCK_A_MEM_GEN[5].MEMA/i_write_addr_6> <BLOCK_A_MEM_GEN[5].MEMA/i_write_addr_5> 
+INFO:Xst:2261 - The FF/Latch <BLOCK_A_MEM_GEN[0].MEMA/i_write_addr_0> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following 4 FFs/Latches, which will be removed : <BLOCK_A_MEM_GEN[2].MEMA/i_write_addr_0> <BLOCK_A_MEM_GEN[4].MEMA/i_write_addr_0> <BLOCK_A_MEM_GEN[6].MEMA/i_write_addr_0> <BLOCK_A_MEM_GEN[8].MEMA/i_write_addr_0> 
+INFO:Xst:2261 - The FF/Latch <BLOCK_A_MEM_GEN[0].MEMA/i_write_addr_8> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following 3 FFs/Latches, which will be removed : <BLOCK_A_MEM_GEN[0].MEMA/i_write_addr_7> <BLOCK_A_MEM_GEN[0].MEMA/i_write_addr_6> <BLOCK_A_MEM_GEN[0].MEMA/i_write_addr_5> 
+INFO:Xst:2261 - The FF/Latch <BLOCK_A_MEM_GEN[6].MEMA/i_write_addr_8> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following 3 FFs/Latches, which will be removed : <BLOCK_A_MEM_GEN[6].MEMA/i_write_addr_7> <BLOCK_A_MEM_GEN[6].MEMA/i_write_addr_6> <BLOCK_A_MEM_GEN[6].MEMA/i_write_addr_5> 
+INFO:Xst:2261 - The FF/Latch <BLOCK_A_MEM_GEN[0].MEMA/i_write_addr_9> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following 9 FFs/Latches, which will be removed : <BLOCK_A_MEM_GEN[1].MEMA/i_write_addr_9> <BLOCK_A_MEM_GEN[2].MEMA/i_write_addr_9> <BLOCK_A_MEM_GEN[3].MEMA/i_write_addr_9> <BLOCK_A_MEM_GEN[4].MEMA/i_write_addr_9> <BLOCK_A_MEM_GEN[5].MEMA/i_write_addr_9> <BLOCK_A_MEM_GEN[6].MEMA/i_write_addr_9> <BLOCK_A_MEM_GEN[7].MEMA/i_write_addr_9> <BLOCK_A_MEM_GEN[8].MEMA/i_write_addr_9> <BLOCK_A_MEM_GEN[9].MEMA/i_write_addr_9> 
+INFO:Xst:2261 - The FF/Latch <BLOCK_A_MEM_GEN[1].MEMA/i_write_addr_0> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following 4 FFs/Latches, which will be removed : <BLOCK_A_MEM_GEN[3].MEMA/i_write_addr_0> <BLOCK_A_MEM_GEN[5].MEMA/i_write_addr_0> <BLOCK_A_MEM_GEN[7].MEMA/i_write_addr_0> <BLOCK_A_MEM_GEN[9].MEMA/i_write_addr_0> 
+INFO:Xst:2261 - The FF/Latch <BLOCK_A_MEM_GEN[1].MEMA/i_write_addr_8> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following 2 FFs/Latches, which will be removed : <BLOCK_A_MEM_GEN[1].MEMA/i_write_addr_7> <BLOCK_A_MEM_GEN[1].MEMA/i_write_addr_6> 
+INFO:Xst:2261 - The FF/Latch <p_Write_ADDR_0_0> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following 5 FFs/Latches, which will be removed : <BLOCK_A_MEM_GEN[0].MEMA/i_Read_addr_0> <BLOCK_A_MEM_GEN[2].MEMA/i_Read_addr_0> <BLOCK_A_MEM_GEN[4].MEMA/i_Read_addr_0> <BLOCK_A_MEM_GEN[6].MEMA/i_Read_addr_0> <BLOCK_A_MEM_GEN[8].MEMA/i_Read_addr_0> 
+INFO:Xst:2261 - The FF/Latch <p_Write_ADDR_0_4> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following 4 FFs/Latches, which will be removed : <p_Write_ADDR_0_5> <p_Write_ADDR_0_6> <p_Write_ADDR_0_7> <p_Write_ADDR_0_8> 
+INFO:Xst:2261 - The FF/Latch <BLOCK_A_MEM_GEN[2].MEMA/i_write_addr_8> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following 3 FFs/Latches, which will be removed : <BLOCK_A_MEM_GEN[2].MEMA/i_write_addr_7> <BLOCK_A_MEM_GEN[2].MEMA/i_write_addr_6> <BLOCK_A_MEM_GEN[2].MEMA/i_write_addr_5> 
+INFO:Xst:2261 - The FF/Latch <BLOCK_A_MEM_GEN[0].MEMA/i_Read_addr_9> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following 9 FFs/Latches, which will be removed : <BLOCK_A_MEM_GEN[1].MEMA/i_Read_addr_9> <BLOCK_A_MEM_GEN[2].MEMA/i_Read_addr_9> <BLOCK_A_MEM_GEN[3].MEMA/i_Read_addr_9> <BLOCK_A_MEM_GEN[4].MEMA/i_Read_addr_9> <BLOCK_A_MEM_GEN[5].MEMA/i_Read_addr_9> <BLOCK_A_MEM_GEN[6].MEMA/i_Read_addr_9> <BLOCK_A_MEM_GEN[7].MEMA/i_Read_addr_9> <BLOCK_A_MEM_GEN[8].MEMA/i_Read_addr_9> <BLOCK_A_MEM_GEN[9].MEMA/i_Read_addr_9> 
+INFO:Xst:2261 - The FF/Latch <p_Write_ADDR_1_4> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following 4 FFs/Latches, which will be removed : <p_Write_ADDR_1_5> <p_Write_ADDR_1_6> <p_Write_ADDR_1_7> <p_Write_ADDR_1_8> 
+INFO:Xst:2261 - The FF/Latch <BLOCK_A_MEM_GEN[1].MEMA/i_Read_addr_0> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following 4 FFs/Latches, which will be removed : <BLOCK_A_MEM_GEN[3].MEMA/i_Read_addr_0> <BLOCK_A_MEM_GEN[5].MEMA/i_Read_addr_0> <BLOCK_A_MEM_GEN[7].MEMA/i_Read_addr_0> <BLOCK_A_MEM_GEN[9].MEMA/i_Read_addr_0> 
+INFO:Xst:2261 - The FF/Latch <p_Write_ADDR_2_4> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following 4 FFs/Latches, which will be removed : <p_Write_ADDR_2_5> <p_Write_ADDR_2_6> <p_Write_ADDR_2_7> <p_Write_ADDR_2_8> 
+INFO:Xst:2261 - The FF/Latch <BLOCK_A_MEM_GEN[7].MEMA/i_write_addr_8> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following 3 FFs/Latches, which will be removed : <BLOCK_A_MEM_GEN[7].MEMA/i_write_addr_7> <BLOCK_A_MEM_GEN[7].MEMA/i_write_addr_6> <BLOCK_A_MEM_GEN[7].MEMA/i_write_addr_5> 
+INFO:Xst:2261 - The FF/Latch <p_Write_ADDR_3_4> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following 4 FFs/Latches, which will be removed : <p_Write_ADDR_3_5> <p_Write_ADDR_3_6> <p_Write_ADDR_3_7> <p_Write_ADDR_3_8> 
+INFO:Xst:2261 - The FF/Latch <BLOCK_A_MEM_GEN[1].MEMA/i_Read_addr_7> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following 2 FFs/Latches, which will be removed : <BLOCK_A_MEM_GEN[1].MEMA/i_Read_addr_6> <BLOCK_A_MEM_GEN[1].MEMA/i_Read_addr_5> 
+INFO:Xst:2261 - The FF/Latch <BLOCK_A_MEM_GEN[8].MEMA/i_Read_addr_7> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following 2 FFs/Latches, which will be removed : <BLOCK_A_MEM_GEN[8].MEMA/i_Read_addr_6> <BLOCK_A_MEM_GEN[8].MEMA/i_Read_addr_5> 
+INFO:Xst:2261 - The FF/Latch <BLOCK_A_MEM_GEN[3].MEMA/i_Read_addr_7> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following 2 FFs/Latches, which will be removed : <BLOCK_A_MEM_GEN[3].MEMA/i_Read_addr_6> <BLOCK_A_MEM_GEN[3].MEMA/i_Read_addr_5> 
+INFO:Xst:2261 - The FF/Latch <BLOCK_A_MEM_GEN[9].MEMA/i_Read_addr_7> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following 2 FFs/Latches, which will be removed : <BLOCK_A_MEM_GEN[9].MEMA/i_Read_addr_6> <BLOCK_A_MEM_GEN[9].MEMA/i_Read_addr_5> 
+INFO:Xst:2261 - The FF/Latch <BLOCK_A_MEM_GEN[6].MEMA/i_Read_addr_7> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following 2 FFs/Latches, which will be removed : <BLOCK_A_MEM_GEN[6].MEMA/i_Read_addr_6> <BLOCK_A_MEM_GEN[6].MEMA/i_Read_addr_5> 
+INFO:Xst:2261 - The FF/Latch <BLOCK_A_MEM_GEN[4].MEMA/i_Read_addr_7> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following FF/Latch, which will be removed : <BLOCK_A_MEM_GEN[4].MEMA/i_Read_addr_6> 
+INFO:Xst:2261 - The FF/Latch <BLOCK_A_MEM_GEN[7].MEMA/i_Read_addr_7> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following 2 FFs/Latches, which will be removed : <BLOCK_A_MEM_GEN[7].MEMA/i_Read_addr_6> <BLOCK_A_MEM_GEN[7].MEMA/i_Read_addr_5> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <BLOCK_A_MEM_GEN[4].MEMA/i_Read_addr_7> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following FF/Latch, which will be removed : <BLOCK_A_MEM_GEN[4].MEMA/i_Read_addr_5> 
+Found area constraint ratio of 100 (+ 5) on block MATRIX_MUL_IP_CORE_S_INT, actual ratio is 0.
+INFO:Xst:2260 - The FF/Latch <BLOCK_A_MEM_GEN[1].MEMA/i_write_addr_8> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following FF/Latch : <BLOCK_A_MEM_GEN[1].MEMA/i_write_addr_5> 
+INFO:Xst:2261 - The FF/Latch <BLOCK_A_MEM_GEN[1].MEMA/i_write_addr_8> in Unit <MATRIX_MUL_IP_CORE_S_INT> is equivalent to the following FF/Latch, which will be removed : <BLOCK_A_MEM_GEN[1].MEMA/i_write_addr_5> 
+FlipFlop FSM_UNIT/i_2 has been replicated 1 time(s)
+FlipFlop FSM_UNIT/i_3 has been replicated 1 time(s)
+FlipFlop FSM_UNIT/j_0 has been replicated 1 time(s)
+FlipFlop FSM_UNIT/j_1 has been replicated 1 time(s)
+FlipFlop FSM_UNIT/j_2 has been replicated 2 time(s)
+FlipFlop FSM_UNIT/j_3 has been replicated 1 time(s)
+FlipFlop FSM_UNIT/state_FSM_FFd3 has been replicated 1 time(s)
+FlipFlop FSM_UNIT/state_FSM_FFd5 has been replicated 1 time(s)
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 
 Final Macro Processing ...
 
 Processing Unit <MATRIX_MUL_IP_CORE_S_INT> :
+<<<<<<< HEAD
 	Found 4-bit shift register for signal <i_OPCODE_0>.
 	Found 4-bit shift register for signal <i_OPCODE_1>.
 	Found 4-bit shift register for signal <i_OPCODE_2>.
@@ -32941,17 +33545,46 @@ Processing Unit <MATRIX_MUL_IP_CORE_S_INT> :
 	Found 7-bit shift register for signal <BLOCK_A_MEM_GEN[997].MEMA/i_wea_0>.
 	Found 7-bit shift register for signal <BLOCK_A_MEM_GEN[998].MEMA/i_wea_0>.
 	Found 7-bit shift register for signal <BLOCK_A_MEM_GEN[999].MEMA/i_wea_0>.
+=======
+	Found 3-bit shift register for signal <i_OPCODE_0>.
+	Found 3-bit shift register for signal <i_OPCODE_1>.
+	Found 3-bit shift register for signal <i_OPCODE_2>.
+	Found 5-bit shift register for signal <i_P_Write_ADDR_0>.
+	Found 5-bit shift register for signal <i_P_Write_ADDR_1>.
+	Found 5-bit shift register for signal <i_P_Write_ADDR_2>.
+	Found 5-bit shift register for signal <i_P_Write_ADDR_3>.
+	Found 5-bit shift register for signal <i_P_Write_ADDR_4>.
+	Found 6-bit shift register for signal <BLOCK_A_MEM_GEN[0].MEMA/i_wea_0>.
+	Found 6-bit shift register for signal <BLOCK_A_MEM_GEN[1].MEMA/i_wea_0>.
+	Found 6-bit shift register for signal <BLOCK_A_MEM_GEN[2].MEMA/i_wea_0>.
+	Found 6-bit shift register for signal <BLOCK_A_MEM_GEN[3].MEMA/i_wea_0>.
+	Found 6-bit shift register for signal <BLOCK_A_MEM_GEN[4].MEMA/i_wea_0>.
+	Found 6-bit shift register for signal <BLOCK_A_MEM_GEN[5].MEMA/i_wea_0>.
+	Found 6-bit shift register for signal <BLOCK_A_MEM_GEN[6].MEMA/i_wea_0>.
+	Found 6-bit shift register for signal <BLOCK_A_MEM_GEN[7].MEMA/i_wea_0>.
+	Found 6-bit shift register for signal <BLOCK_A_MEM_GEN[8].MEMA/i_wea_0>.
+	Found 6-bit shift register for signal <BLOCK_A_MEM_GEN[9].MEMA/i_wea_0>.
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 Unit <MATRIX_MUL_IP_CORE_S_INT> processed.
 
 =========================================================================
 Final Register Report
 
 Macro Statistics
+<<<<<<< HEAD
 # Registers                                            : 24852
  Flip-Flops                                            : 24852
 # Shift Registers                                      : 1012
  4-bit shift register                                  : 3
  7-bit shift register                                  : 1009
+=======
+# Registers                                            : 357
+ Flip-Flops                                            : 357
+# Shift Registers                                      : 18
+ 3-bit shift register                                  : 3
+ 5-bit shift register                                  : 5
+ 6-bit shift register                                  : 10
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 
 =========================================================================
 
@@ -32974,6 +33607,7 @@ Top Level Output File Name         : MATRIX_MUL_IP_CORE_S_INT.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
+<<<<<<< HEAD
 # BELS                             : 40581
 #      GND                         : 2001
 #      INV                         : 23
@@ -32997,13 +33631,42 @@ Primitive and Black Box Usage:
 #      RAMB18E1                    : 1000
 # Shift Registers                  : 1012
 #      SRLC16E                     : 1012
+=======
+# BELS                             : 783
+#      GND                         : 21
+#      INV                         : 5
+#      LUT2                        : 59
+#      LUT3                        : 94
+#      LUT4                        : 241
+#      LUT5                        : 122
+#      LUT6                        : 207
+#      MUXF7                       : 13
+#      VCC                         : 21
+# FlipFlops/Latches                : 515
+#      FD                          : 410
+#      FDE                         : 29
+#      FDR                         : 33
+#      FDRE                        : 41
+#      FDS                         : 1
+#      FDSE                        : 1
+# RAMS                             : 10
+#      RAMB18E1                    : 10
+# Shift Registers                  : 18
+#      SRLC16E                     : 18
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 1093
 #      IBUF                        : 27
+<<<<<<< HEAD
 #      OBUF                        : 1066
 # DSPs                             : 1000
 #      DSP48E1                     : 1000
+=======
+#      OBUF                        : 43
+# DSPs                             : 10
+#      DSP48E1                     : 10
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 
 Device utilization summary:
 ---------------------------
@@ -33012,6 +33675,7 @@ Selected Device : 7vx485tffg1157-2
 
 
 Slice Logic Utilization: 
+<<<<<<< HEAD
  Number of Slice Registers:           39846  out of  607200     6%  
  Number of Slice LUTs:                36921  out of  303600    12%  
     Number used as Logic:             35909  out of  303600    11%  
@@ -33024,6 +33688,20 @@ Slice Logic Distribution:
    Number with an unused LUT:         32018  out of  68939    46%  
    Number of fully used LUT-FF pairs:  7828  out of  68939    11%  
    Number of unique control sets:        21
+=======
+ Number of Slice Registers:             515  out of  607200     0%  
+ Number of Slice LUTs:                  746  out of  303600     0%  
+    Number used as Logic:               728  out of  303600     0%  
+    Number used as Memory:               18  out of  130800     0%  
+       Number used as SRL:               18
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   1087
+   Number with an unused Flip Flop:     572  out of   1087    52%  
+   Number with an unused LUT:           341  out of   1087    31%  
+   Number of fully used LUT-FF pairs:   174  out of   1087    16%  
+   Number of unique control sets:        14
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 
 IO Utilization: 
  Number of IOs:                        1095
@@ -33031,12 +33709,19 @@ IO Utilization:
     IOB Flip Flops/Latches:              18
 
 Specific Feature Utilization:
+<<<<<<< HEAD
  Number of Block RAM/FIFO:              500  out of   1030    48%  
     Number using Block RAM only:        500
  Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
  Number of DSP48E1s:                   1000  out of   2800    35%  
 
 WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
+=======
+ Number of Block RAM/FIFO:                5  out of   1030     0%  
+    Number using Block RAM only:          5
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+ Number of DSP48E1s:                     10  out of   2800     0%  
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 
 ---------------------------
 Partition Resource Summary:
@@ -33059,7 +33744,11 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
+<<<<<<< HEAD
 CLK                                | BUFGP                  | 42876 |
+=======
+CLK                                | BUFGP                  | 553   |
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -33070,10 +33759,17 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
+<<<<<<< HEAD
    Minimum period: 2.836ns (Maximum Frequency: 352.609MHz)
    Minimum input arrival time before clock: 2.682ns
    Maximum output required time after clock: 2.196ns
    Maximum combinational path delay: 1.495ns
+=======
+   Minimum period: 2.471ns (Maximum Frequency: 404.727MHz)
+   Minimum input arrival time before clock: 2.197ns
+   Maximum output required time after clock: 0.699ns
+   Maximum combinational path delay: No path found
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 
 Timing Details:
 ---------------
@@ -33081,6 +33777,7 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK'
+<<<<<<< HEAD
   Clock period: 2.836ns (frequency: 352.609MHz)
   Total number of paths / destination ports: 323437 / 151183
 -------------------------------------------------------------------------
@@ -33141,6 +33838,58 @@ Offset:              2.682ns (Levels of Logic = 6)
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
   Total number of paths / destination ports: 9373 / 1066
+=======
+  Clock period: 2.471ns (frequency: 404.727MHz)
+  Total number of paths / destination ports: 5894 / 1624
+-------------------------------------------------------------------------
+Delay:               2.471ns (Levels of Logic = 5)
+  Source:            FSM_UNIT/j_3_1 (FF)
+  Destination:       FSM_UNIT/i_col_cnt_1 (FF)
+  Source Clock:      CLK rising
+  Destination Clock: CLK rising
+
+  Data Path: FSM_UNIT/j_3_1 to FSM_UNIT/i_col_cnt_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             1   0.236   0.522  FSM_UNIT/j_3_1 (FSM_UNIT/j_3_1)
+     LUT4:I0->O           12   0.043   0.664  FSM_UNIT/PWR_8_o_j[3]_equal_254_o<3>11 (FSM_UNIT/PWR_8_o_j[3]_equal_254_o<3>1)
+     LUT6:I1->O            1   0.043   0.000  FSM_UNIT/Mmux__n088852_F (N271)
+     MUXF7:I0->O           1   0.176   0.350  FSM_UNIT/Mmux__n088852 (FSM_UNIT/Mmux__n088851)
+     LUT6:I5->O            1   0.043   0.350  FSM_UNIT/Mmux__n088857 (FSM_UNIT/_n0888<1>)
+     LUT6:I5->O            1   0.043   0.000  FSM_UNIT/i_col_cnt_1_dpot (FSM_UNIT/i_col_cnt_1_dpot)
+     FDRE:D                   -0.000          FSM_UNIT/i_col_cnt_1
+    ----------------------------------------
+    Total                      2.471ns (0.584ns logic, 1.887ns route)
+                                       (23.6% logic, 76.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
+  Total number of paths / destination ports: 278 / 126
+-------------------------------------------------------------------------
+Offset:              2.197ns (Levels of Logic = 5)
+  Source:            mode<2> (PAD)
+  Destination:       FSM_UNIT/state_FSM_FFd4 (FF)
+  Destination Clock: CLK rising
+
+  Data Path: mode<2> to FSM_UNIT/state_FSM_FFd4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            19   0.000   0.714  mode_2_IBUF (mode_2_IBUF)
+     LUT6:I0->O            1   0.043   0.495  FSM_UNIT/state_FSM_FFd4-In2 (FSM_UNIT/state_FSM_FFd4-In3)
+     LUT4:I1->O            2   0.043   0.410  FSM_UNIT/state_FSM_FFd4-In3 (FSM_UNIT/state_FSM_FFd4-In4)
+     LUT4:I2->O            1   0.043   0.405  FSM_UNIT/state_FSM_FFd4-In5_SW0 (N147)
+     LUT6:I4->O            1   0.043   0.000  FSM_UNIT/state_FSM_FFd4-In5 (FSM_UNIT/state_FSM_FFd4-In)
+     FDR:D                    -0.000          FSM_UNIT/state_FSM_FFd4
+    ----------------------------------------
+    Total                      2.197ns (0.172ns logic, 2.025ns route)
+                                       (7.8% logic, 92.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
+  Total number of paths / destination ports: 31 / 31
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 -------------------------------------------------------------------------
 Offset:              2.196ns (Levels of Logic = 4)
   Source:            FSM_UNIT/state_FSM_FFd3 (FF)
@@ -33172,10 +33921,17 @@ Delay:               1.495ns (Levels of Logic = 4)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
+<<<<<<< HEAD
      IBUF:I->O            20   0.000   0.719  G_IBUF (G_IBUF)
      LUT6:I0->O            1   0.043   0.350  FSM_UNIT/Mmux_G_ROW7_SW0 (N10)
      LUT4:I3->O            1   0.043   0.339  FSM_UNIT/Mmux_G_ROW7 (G_ROW_6_OBUF)
      OBUF:I->O                 0.000          G_ROW_6_OBUF (G_ROW<6>)
+=======
+     SEC:CLK->out          3   0.348   0.351  sec_inst (sec_net)
+     end scope: 'BLOCK_A_DSP_GEN[9].DSP/blk00000001:P<17>'
+     end scope: 'BLOCK_A_DSP_GEN[9].DSP:p<17>'
+     OBUF:I->O                 0.000          DOUT_17_OBUF (DOUT<17>)
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
     ----------------------------------------
     Total                      1.495ns (0.086ns logic, 1.409ns route)
                                        (5.8% logic, 94.2% route)
@@ -33190,12 +33946,17 @@ Clock to Setup on destination clock CLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
+<<<<<<< HEAD
 CLK            |    2.836|         |         |         |
+=======
+CLK            |    2.471|         |         |         |
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
+<<<<<<< HEAD
 Total REAL time to Xst completion: 990.00 secs
 Total CPU time to Xst completion: 989.61 secs
  
@@ -33206,4 +33967,16 @@ Total memory usage is 696832 kilobytes
 Number of errors   :    0 (   0 filtered)
 Number of warnings : 3062 (   0 filtered)
 Number of infos    : 2804 (   0 filtered)
+=======
+Total REAL time to Xst completion: 23.00 secs
+Total CPU time to Xst completion: 22.69 secs
+ 
+--> 
+
+Total memory usage is 323584 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   50 (   0 filtered)
+Number of infos    :   32 (   0 filtered)
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 

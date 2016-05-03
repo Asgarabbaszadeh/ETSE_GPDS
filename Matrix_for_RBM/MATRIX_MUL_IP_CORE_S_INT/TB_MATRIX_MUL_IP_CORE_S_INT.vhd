@@ -740,7 +740,7 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '0';
 			G <= '0';
-			mode <= "000";
+			mode <= "011";
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -752,7 +752,7 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '0';
 			G <= '1';
-			mode <= "000";
+			mode <= "011";
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -764,7 +764,7 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '1';
 			G <= '0';
-			mode <= "000";
+			mode <= "011";
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -775,7 +775,7 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '1';
 			G <= '1';
-			mode <= "000";
+			mode <= "011";
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -786,7 +786,11 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '0';
 			G <= '0';
+<<<<<<< HEAD
 			mode <= "010";
+=======
+			mode <= "100";
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -797,7 +801,11 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '0';
 			G <= '1';
+<<<<<<< HEAD
 			mode <= "010";
+=======
+			mode <= "100";
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -808,7 +816,11 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '1';
 			G <= '0';
+<<<<<<< HEAD
 			mode <= "010";
+=======
+			mode <= "100";
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -819,7 +831,11 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '1';
 			G <= '1';
+<<<<<<< HEAD
 			mode <= "010";
+=======
+			mode <= "100";
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -831,7 +847,11 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '0';
 			G <= '0';
+<<<<<<< HEAD
 			mode <= "100";
+=======
+			mode <= "101";
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -842,7 +862,11 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '0';
 			G <= '1';
+<<<<<<< HEAD
 			mode <= "100";
+=======
+			mode <= "101";
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -853,7 +877,11 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '1';
 			G <= '0';
+<<<<<<< HEAD
 			mode <= "100";
+=======
+			mode <= "101";
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -864,7 +892,11 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '1';
 			G <= '1';
+<<<<<<< HEAD
 			mode <= "100";
+=======
+			mode <= "101";
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -876,7 +908,11 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '0';
 			G <= '0';
+<<<<<<< HEAD
 			mode <= "101";
+=======
+			mode <= "110";
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -887,7 +923,11 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '0';
 			G <= '1';
+<<<<<<< HEAD
 			mode <= "101";
+=======
+			mode <= "110";
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -898,7 +938,11 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '1';
 			G <= '0';
+<<<<<<< HEAD
 			mode <= "101";
+=======
+			mode <= "110";
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -909,7 +953,11 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '1';
 			G <= '1';
+<<<<<<< HEAD
 			mode <= "101";
+=======
+			mode <= "110";
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -921,7 +969,11 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '0';
 			G <= '0';
+<<<<<<< HEAD
 			mode <= "001";
+=======
+			mode <= "111";
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -932,7 +984,11 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '0';
 			G <= '1';
+<<<<<<< HEAD
 			mode <= "001";
+=======
+			mode <= "111";
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -943,7 +999,11 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '1';
 			G <= '0';
+<<<<<<< HEAD
 			mode <= "001";
+=======
+			mode <= "111";
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -954,7 +1014,11 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '1';
 			G <= '1';
+<<<<<<< HEAD
 			mode <= "001";
+=======
+			mode <= "111";
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -965,7 +1029,7 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '0';
 			G <= '0';
-			mode <= "110";
+			mode <= "000";
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -974,9 +1038,15 @@ begin
 			LOAD <= '0';	-- Tell FSM not to LOAD data.
 			UN_LOAD <= '0'; -- Tell FSM not to go to unloading state.
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
+<<<<<<< HEAD
 			P <= '1';
 			G <= '0';
 			mode <= "110";
+=======
+			P <= '0';
+			G <= '1';
+			mode <= "000";
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -987,7 +1057,7 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '0';
 			G <= '0';
-			mode <= "111";
+			mode <= "001";
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -996,9 +1066,15 @@ begin
 			LOAD <= '0';	-- Tell FSM not to LOAD data.
 			UN_LOAD <= '0'; -- Tell FSM not to go to unloading state.
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
+<<<<<<< HEAD
 			P <= '1';
 			G <= '0';
 			mode <= "111";
+=======
+			P <= '0';
+			G <= '1';
+			mode <= "001";
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -1010,7 +1086,11 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '0';
 			G <= '0';
+<<<<<<< HEAD
 			mode <= "011";
+=======
+			mode <= "010";
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';
@@ -1021,7 +1101,11 @@ begin
 			DATA_INPUT <= '1'; -- Switch Input data of MEMARRAY_V3 to GRAM. 
 			P <= '0';
 			G <= '0';
+<<<<<<< HEAD
 			mode <= "011";
+=======
+			mode <= "010";
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 			rst <= '1';
 			wait for clk_period*3;
 			rst <= '0';

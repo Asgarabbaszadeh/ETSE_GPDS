@@ -8,7 +8,11 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
+<<<<<<< HEAD
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;E:/valencia/ETSE_GDSP-modified3/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/MATRIX_MUL_IP_CORE_S_INT.vhd&quot; into library work</arg>
+=======
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;E:/valencia/ETSE_GDSP-master - Copy - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/CONTROL_UNIT_S_INT.vhd&quot; into library work</arg>
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 </msg>
 
 </messages>

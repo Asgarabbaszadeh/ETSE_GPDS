@@ -1,11 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
+<<<<<<< HEAD
   <DateModified>2016-05-02T14:54:01</DateModified>
   <ModuleName>MATRIX_MUL_IP_CORE_S_INT</ModuleName>
   <SummaryTimeStamp>2016-05-02T13:31:45</SummaryTimeStamp>
   <SavedFilePath>E:/valencia/ETSE_GDSP-modified3/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/iseconfig/MATRIX_MUL_IP_CORE_S_INT.xreport</SavedFilePath>
   <ImplementationReportsDirectory>E:/valencia/ETSE_GDSP-modified3/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT\</ImplementationReportsDirectory>
+=======
+  <DateModified>2016-04-26T02:59:41</DateModified>
+  <ModuleName>MATRIX_MUL_IP_CORE_S_INT</ModuleName>
+  <SummaryTimeStamp>2016-03-24T11:36:40</SummaryTimeStamp>
+  <SavedFilePath>E:/valencia/ETSE_GDSP-master - Copy - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT/iseconfig/MATRIX_MUL_IP_CORE_S_INT.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>E:/valencia/ETSE_GDSP-master - Copy - Copy/Matrix_for_RBM/MATRIX_MUL_IP_CORE_S_INT\</ImplementationReportsDirectory>
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
   <DateInitialized>2015-11-10T03:00:52</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

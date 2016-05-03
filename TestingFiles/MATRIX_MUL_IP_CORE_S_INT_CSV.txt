@@ -6,6 +6,7 @@
 8,5,6,7,
 11,12,9,10,
 14,15,16,13,
+<<<<<<< HEAD
 94,258,422,586,
 0,0,0,0,
 0,0,0,0,
@@ -14,3 +15,8 @@
 0,0,0,0,
 0,0,0,0,
 0,0,0,0,
+=======
+253,294,335,376,
+---------,-----res,ltofV*P,fromuppe,bankof,RAM.11c,ockcycle,tofinis,dotmult,plication,11clock,cyclesto,unload---,---------,
+
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6

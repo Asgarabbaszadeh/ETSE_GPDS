@@ -8,7 +8,11 @@
 <msg type="warning" file="HDLCompiler" num="746" delta="old" >"E:\valencia\ETSE_GDSP-master - Copy - Copy\IPCores\BRAM_and_DSP\ipcore_dir\tmp\_cg\_dbg\xbip_pipe_v2_0\xbip_pipe_v2_0_xst.vhd" Line 207: Range is empty (null range)
 </msg>
 
+<<<<<<< HEAD
 <msg type="warning" file="HDLCompiler" num="634" delta="old" >"E:\valencia\ETSE_GDSP-master - Copy - Copy\IPCores\BRAM_and_DSP\ipcore_dir\tmp\_cg\_dbg\xbip_dsp48_wrapper_v2_1\xbip_dsp48e1_wrapper_v2_1.vhd" Line 280: Net &lt;<arg fmt="%s" index="1">cea1_i</arg>&gt; does not have a driver.
+=======
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"E:\valencia\ETSE_GDSP-master - Copy - Copy\IPCores\BRAM_and_DSP\ipcore_dir\tmp\_cg\_dbg\xbip_dsp48_wrapper_v2_1\xbip_dsp48e1_wrapper_v2_1.vhd" Line 280: Net &lt;<arg fmt="%s" index="1">cea1_i</arg>&gt; does not have a driver.
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
 </msg>
 
 <msg type="warning" file="HDLCompiler" num="634" delta="new" >"E:\valencia\ETSE_GDSP-master - Copy - Copy\IPCores\BRAM_and_DSP\ipcore_dir\tmp\_cg\_dbg\xbip_dsp48_wrapper_v2_1\xbip_dsp48e1_wrapper_v2_1.vhd" Line 281: Net &lt;<arg fmt="%s" index="1">ceb1_i</arg>&gt; does not have a driver.

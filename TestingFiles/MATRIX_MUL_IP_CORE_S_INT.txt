@@ -3,13 +3,18 @@
 8         5         6         7         
 11        12        9         10        
 14        15        16        13        
+<<<<<<< HEAD
 --------------- Data loaded into BRAM. 0 clock cycles to load,0 clock cycles to unload---------------
+=======
+--------------- Data loaded into BRAM. 24 clock cycles to load,23 clock cycles to unload---------------
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
  
  ---------------BEGINNING OF SECTION (See end of Section for details)---------------
 1         2         3         4         
 8         5         6         7         
 11        12        9         10        
 14        15        16        13        
+<<<<<<< HEAD
 --------------- Data loaded into BRAM. 0 clock cycles to load,0 clock cycles to unload---------------
  
 ---------------BEGINNING OF SECTION (See end of Section for details)---------------
@@ -25,4 +30,11 @@
 0         0         0         0         
 0         0         0         0         
 --------------- result of Pt*V from upper bank of BRAM. 0 clock cycles to finish dot multiplication, 0 clock cycles to unload---------------
+=======
+--------------- Data loaded into BRAM. 24 clock cycles to load,23 clock cycles to unload---------------
+ 
+---------------BEGINNING OF SECTION (See end of Section for details)---------------
+253       294       335       376       
+--------------- result of V*P from upper bank of BRAM. 11 clock cycles to finish dot multiplication, 11 clock cycles to unload---------------
+>>>>>>> 18f3147bfef5a25930a06fdd3be25caa8f4ca9b6
  
